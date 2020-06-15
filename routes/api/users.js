@@ -5,7 +5,6 @@ const User = require('../../models/User');
 const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
-
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
@@ -64,7 +63,7 @@ router.post('/login', (req, res) => {
         return res.status(400).json(errors);
     }
 
-    const email = req.body.email; // Sinan Yucesan
+    const email = req.body.email; // Sinan 
     const password = req.body.password; // Alex
 
     User.findOne({ email })
