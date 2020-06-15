@@ -10,7 +10,7 @@ class SplashPage extends React.Component {
   render() {
     return(
       <div>
-        SPLASH!
+        SPLASH
       </div>
     )
     
