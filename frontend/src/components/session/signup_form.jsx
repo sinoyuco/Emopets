@@ -1,5 +1,6 @@
 import React from 'react';
 import { withRouter } from 'react-router-dom';
+import { Dropdown } from 'semantic-ui-react';
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -55,6 +56,15 @@ class SignupForm extends React.Component {
     }
 
     render() {
+        const languageOptions = [
+            {key: "ru", text: "Ruby"},
+            {key: "re", text: "React"},
+            {key: "ra", text: "Rails"},
+            {key: "js", text: "Javascript"},
+            {key: "no", text: "Node.js"},
+            {key: "ht", text: "html"},
+            {key: "cs", text: "css"}  
+        ]
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit}>
@@ -85,6 +95,14 @@ class SignupForm extends React.Component {
                         />
                         <br />
                         <input type="submit" value="Submit" />
+
+                        <Dropdown 
+                        placeholder='Select Language'
+                        fluid
+                        search
+                        selection
+                        options={languageOptions}/>
+                        
                         {this.renderErrors()}
                     </div>
                 </form>

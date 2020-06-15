@@ -8,8 +8,11 @@ module.exports = function validateRegisterInput(data) {
     data.email = validText(data.email) ? data.email : '';
     data.password = validText(data.password) ? data.password : '';
     data.password2 = validText(data.password2) ? data.password2 : '';
-
-    // if(Vali)
+    data.language = validText(data.language) ? data.language : '';
+    data.goal = validText(data.goal) ? data.goal : '';
+    data.experience = validText(data.experience) ? data.experience : '';
+    data.pronouns = validText(data.pronouns) ? data.pronouns : '';
+    
 
     if (Validator.isEmpty(data.name)) {
         name.email = 'Name field is required';
