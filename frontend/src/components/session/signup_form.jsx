@@ -1,15 +1,18 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import DatePicker from "react-datepicker";
 import { Dropdown } from 'semantic-ui-react';
 
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            startDate: new Date(),
             email: '',
             handle: '',
             password: '',
             password2: '',
+            goals: '',
+            experience: '',
             errors: {}
         };
 
@@ -42,6 +45,12 @@ class SignupForm extends React.Component {
 
         this.props.signup(user, this.props.history);
     }
+
+    handleChange = date => {
+        this.setState({
+            startDate: date
+        });
+    };
 
     renderErrors() {
         return (
@@ -102,6 +111,20 @@ class SignupForm extends React.Component {
                             selection
                             options={languageOptions} />
 
+                        <textarea placeholder='Goals'
+                            onChange={this.update("goals")}
+                            value={this.state.goals}/>
+
+                        <textarea placeholder='Experience'
+                            onChange={this.update("experience")}
+                            value={this.state.experience}/>
+
+                        <DatePicker
+                            selected={this.state.startDate}
+                            onChange={this.handleChange}
+                        />
+
+
                         {this.renderErrors()}
                     </div>
                 </form>
@@ -110,4 +133,4 @@ class SignupForm extends React.Component {
     }
 }
 
-export default withRouter(SignupForm);
+export default SignupForm;
