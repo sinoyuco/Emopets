@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import SplashPage from './signup_form';
+import SplashPage from './splash_page';
 
 const mapStateToProps = (state) => {
   return (null)
