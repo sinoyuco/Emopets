@@ -8,8 +8,10 @@ module.exports = function validateRegisterInput(data) {
     data.email = validText(data.email) ? data.email : '';
     data.password = validText(data.password) ? data.password : '';
     data.password2 = validText(data.password2) ? data.password2 : '';
-
-    // if(Vali)
+    data.language = validText(data.language) ? data.language : '';
+    data.goal = validText(data.goal) ? data.goal : '';
+    data.experience = validText(data.experience) ? data.experience : '';
+    data.pronouns = validText(data.pronouns) ? data.pronouns : '';
 
     if (Validator.isEmpty(data.name)) {
         name.email = 'Name field is required';
@@ -35,9 +37,27 @@ module.exports = function validateRegisterInput(data) {
         errors.password2 = 'Confirm Password field is required';
     }
 
+    if (Validator.isEmpty(data.language)) {
+        errors.language = 'Language field is required';
+    }
+    
+    if (Validator.isEmpty(data.goal)) {
+        errors.goal = 'Goal field is required';
+    }
+
+    if (Validator.isEmpty(data.experience)) {
+        errors.experience = 'Experience field is required';
+    }
+
+    if (Validator.isEmpty(data.pronouns)) {
+        errors.pronouns = 'Pronouns field is required';
+    }
+
     if (!Validator.equals(data.password, data.password2)) {
         errors.password2 = 'Passwords must match';
     }
+
+    
 
     return {
         errors,
