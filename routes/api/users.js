@@ -64,7 +64,7 @@ router.post('/login', (req, res) => {
         return res.status(400).json(errors);
     }
 
-    const email = req.body.email; // Sinan
+    const email = req.body.email; // Sinan Yucesan
     const password = req.body.password; // Alex
 
     User.findOne({ email })
