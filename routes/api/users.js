@@ -98,7 +98,7 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
         email: req.user.email
     });
 })
-
+//sinan
 router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
 
 module.exports = router;
