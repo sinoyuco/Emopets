@@ -2,10 +2,22 @@
     background-image: url('../images/floating_pcs.jpg');
     /* background: firebrick; */
     min-height: 800px;
+    width: 100%;
+    margin-top: 50px;
+    padding-top: 150px;
+    /* position: relative; */
 }
 
 .user-show-content{
+    padding: 10px;
     background: #e4dcd0;
-    margin: 100px auto;
-    width: 60%;
+    /* position: absolute; */
+    /* margin: auto; */
+    margin: 0 auto;
+    width: 40%;
+}
+
+
+.user-show-content h3{
+    font-weight: 500;
 }
