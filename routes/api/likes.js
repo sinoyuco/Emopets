@@ -6,6 +6,7 @@ const jwt = require('jsonwebtoken');
 const keys = require('../../config/keys');
 const passport = require('passport');
 const Like = require('../../models/Like');
+const Notification = require('../../models/Notification');
 const validateLike = require('../../validation/like');
 
 router.get('/', (req, res) => {
@@ -25,7 +26,7 @@ router.get('/:id', (req, res) => {
 });
 
 
-router.post('/',
+router.post('/:id',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         const { errors, isValid } = validateLike(req.body);
@@ -33,11 +34,14 @@ router.post('/',
         if (!isValid) {
             return res.status(400).json(errors);
         }
-        console.log(req);
+        
+        const matchingLikesArr = [];
+        const el = Like.find({user: req.params.id, liked: req.user.id}).then((likes) => matchingLikesArr.push(likes))
+        console.log(matchingLikesArr);
 
         const newLike = new Like({
             user: req.user.id,
-            liked: req.body.liked
+            liked: req.params.id
         });
 
         newLike.save()
