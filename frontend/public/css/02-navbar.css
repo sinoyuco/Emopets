@@ -6,13 +6,13 @@
   top: 0;
   width: 101%;
   box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2);
-  background-color: whitesmoke;
+  background-color: #073049;
   z-index: 999;
   height: 50px;
 
 }
 
-.navbar-back-to-home-button {
+.navbar-button {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
@@ -30,7 +30,7 @@
   margin-right: 40%;
 }
 
-.navbar-back-to-home-button:hover {
+.navbar-button:hover {
 	display: flex;
 	align-items: center;
 	flex-direction: row;
@@ -46,4 +46,24 @@
   outline: none;
   padding-left: 18px;
   margin-right: 40%;
+}
+
+
+.nav-bar ul {
+    display: flex;
+    flex-direction: row;
+    width: 175px;
+    justify-content: space-between;
+}
+
+.nav-bar ul li {
+    list-style: none;
+}
+
+.zero-notificaitons {
+  color: #ECEEEE
+}
+
+.some-notificaitons {
+  color: red;
 }
