@@ -63,6 +63,7 @@ router.post('/login', (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
+    debugger;
 
     const email = req.body.email; // Sinan 
     const password = req.body.password; // Alex
@@ -76,17 +77,20 @@ router.post('/login', (req, res) => {
             bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if (isMatch) {
-                        const payload = { id: user.id, name: user.name };
+                        const payload = { id: user.id, name: user.name, language: user.language, goal: user.goal, experience: user.experience, pronouns: user.pronouns };
 
                         jwt.sign(
                             payload,
                             keys.secretOrKey,
                             { expiresIn: 3600 },
                             (err, token) => {
+                                console.log(res.json);
                                 res.json({
+                                    id: user.id,
                                     success: true,
                                     token: 'Bearer ' + token
                                 });
+                                
                             });
                     } else {
                         return res.status(400).json({ password: 'Incorrect password' });

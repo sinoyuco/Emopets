@@ -6,9 +6,9 @@ module.exports = function validateLike(data) {
     // data.liker = validText(data.email) ? data.email : '';
     // data.password = validText(data.password) ? data.password : '';
 
-    if (Validator.isEmpty(data.liker)) {
-        errors.liker = 'A liker is required';
-    }
+    // if (Validator.isEmpty(data.liker)) {
+    //     errors.liker = 'A liker is required';
+    // }
 
     if (Validator.isEmpty(data.liked)) {
         errors.liked = 'A liked is required';
