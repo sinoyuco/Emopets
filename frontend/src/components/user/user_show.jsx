@@ -6,12 +6,12 @@ class UserShow extends React.Component{
     }
 
     render(){
-        // const user = this.props.user;
+        const user = this.props.user;
         return(
             <div className="user-show-profile">
-                {/* <li>{user.name}</li>
+                <li>{user.name}</li>
+                {/* <li>{user.}</li>
                 <li>{user.}</li>
-                <li>{user.</li>
                 <li></li> */}
             </div>
         )
