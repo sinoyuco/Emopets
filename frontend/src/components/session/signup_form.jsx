@@ -168,22 +168,10 @@ class SignupForm extends React.Component {
         //     { key: "cs", text: "CSS" }
         // ]
         return (
-            <div className="signup-form-container">
-                <nav className='signup-nav'>
-                    <img src='http://localhost:3000/images/main_logo_no_text.png' alt="" height='60' width='200'></img>
-                    <ul>
-                        <li>
-                            <Link to='/login'>
-                                <button>Log In</button>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/'>
-                                <button>Home</button>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
+            <div className="signup-form-container"
+                style={{paddingTop: "50px"}}
+            >
+
                 <form onSubmit={this.handleSubmit} className='signup-form-with-header'>
                     <div className="signup-form">
                     <h1>Sign Up Here</h1>
