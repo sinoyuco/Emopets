@@ -8,9 +8,8 @@ class SplashPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchUsers()
-    
-  }
 
+  }
 
 
   render() {
