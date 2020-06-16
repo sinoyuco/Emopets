@@ -38,7 +38,6 @@ class SignupForm extends React.Component {
     }
 
     update(field) {
-        // debugger
         return e => this.setState({
             [field]: e.currentTarget.value
         });
@@ -53,7 +52,7 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        
         let user = {
             email: this.state.email,
             name: this.state.name,
