@@ -1,14 +1,18 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import DatePicker from "react-datepicker";
+import { Dropdown } from 'semantic-ui-react';
 
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            startDate: new Date(),
             email: '',
             handle: '',
             password: '',
             password2: '',
+            goals: '',
+            experience: '',
             errors: {}
         };
 
@@ -42,6 +46,12 @@ class SignupForm extends React.Component {
         this.props.signup(user, this.props.history);
     }
 
+    handleChange = date => {
+        this.setState({
+            startDate: date
+        });
+    };
+
     renderErrors() {
         return (
             <ul>
@@ -55,6 +65,15 @@ class SignupForm extends React.Component {
     }
 
     render() {
+        const languageOptions = [
+            { key: "ru", text: "Ruby" },
+            { key: "re", text: "React" },
+            { key: "ra", text: "Rails" },
+            { key: "js", text: "Javascript" },
+            { key: "no", text: "Node.js" },
+            { key: "ht", text: "html" },
+            { key: "cs", text: "css" }
+        ]
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit}>
@@ -85,6 +104,28 @@ class SignupForm extends React.Component {
                         />
                         <br />
                         <input type="submit" value="Submit" />
+                        
+                        <Dropdown
+                            placeholder='Select Language'
+                            fluid
+                            search
+                            selection
+                            options={languageOptions} />
+
+                        <textarea placeholder='Goals'
+                            onChange={this.update("goals")}
+                            value={this.state.goals}/>
+
+                        <textarea placeholder='Experience'
+                            onChange={this.update("experience")}
+                            value={this.state.experience}/>
+
+                        <DatePicker
+                            selected={this.state.startDate}
+                            onChange={this.handleChange}
+                        />
+
+
                         {this.renderErrors()}
                     </div>
                 </form>
@@ -93,4 +134,4 @@ class SignupForm extends React.Component {
     }
 }
 
-export default withRouter(SignupForm);
+export default SignupForm;
