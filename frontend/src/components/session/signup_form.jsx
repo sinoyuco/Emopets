@@ -1,29 +1,29 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
 // import { Dropdown } from 'semantic-ui-react';
-import "react-datepicker/dist/react-datepicker.css";
+// import "react-datepicker/dist/react-datepicker.css";
 // import 'semantic-ui-css/semantic.min.css';
 
-// import 'semantic-ui-css/components/dropdown.css'
-// import 'semantic-ui-css/components/transition.css'
-// import 'semantic-ui-css/components/reset.css'
+
 
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            startDate: new Date(),
+            // startDate: new Date(),
+            birthDate: '',
             email: '',
             password: '',
             password2: '',
-            goals: '',
+            goal: '',
             experience: '',
             language: '',
-            birthdate: '',
             pronouns: '',
             errors: {}
         };
 
+        this.handleDropdown = this.handleDropdown.bind(this);
+        this.handleDropdownp = this.handleDropdownp.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
     }
@@ -37,10 +37,19 @@ class SignupForm extends React.Component {
     }
 
     update(field) {
-        debugger
+        // debugger
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    handleDropdown(e) {
+        debugger
+        this.setState({language: e.target.value})
+    }
+    handleDropdownp(e) {
+        debugger
+        this.setState({pronouns: e.target.value})
     }
 
     handleSubmit(e) {
@@ -51,19 +60,20 @@ class SignupForm extends React.Component {
             name: this.state.name,
             password: this.state.password,
             password2: this.state.password2,
-            goals: this.state.goals,
+            goal: this.state.goal,
             experience: this.state.experience,
-            birthdate: this.state.birthdate,
             language: this.state.language,
-            pronouns: this.state.pronouns
+            pronouns: this.state.pronouns,
+            birthDate: this.state.birthDate
         };
 
-        this.props.signup(user, this.props.history);
+        // this.props.signup(user, this.props.history);
+        this.props.signup(user);
     }
 
     handleChange = date => {
         this.setState({
-            startDate: date
+            birthDate: date
         });
     };
 
@@ -90,9 +100,9 @@ class SignupForm extends React.Component {
         //     { key: "cs", text: "CSS" }
         // ]
         return (
-            <div className="login-form-container">
+            <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="login-form">
+                    <div className="signup-form">
                         <br />
                         <input type="text"
                             value={this.state.email}
@@ -121,37 +131,37 @@ class SignupForm extends React.Component {
                         
                         <label>Language:
                             <br />
-                            <select onClick={this.update('language')}> 
+                            <select onChange={this.handleDropdown} value={this.state.value}> 
                                 <option value="" selected disabled hidden>Please Select</option>
-                                <option value={this.state.language}>Ruby</option>
-                                <option value={this.state.language}>Rails</option>
-                                <option value={this.state.language}>Javascript</option>
-                                <option value={this.state.language}>React</option>
-                                <option value={this.state.language}>HTML</option>
-                                <option value={this.state.language}>CSS</option>
-                                <option value={this.state.language}>Node.js</option>
+                                <option value="Ruby">Ruby</option>
+                                <option value="Rails">Rails</option>
+                                <option value="Javascript">Javascript</option>
+                                <option value="React">React</option>
+                                <option value="HTML">HTML</option>
+                                <option value="CSS">CSS</option>
+                                <option value="Node.js">Node.js</option>
                             </select> 
                         </label>
                         < br />
 
                         <label>Pronouns:
                             <br />
-                            <select onClick={this.update('pronouns')}>
+                            <select onChange={this.handleDropdownp} value={this.state.value}>
                                 <option value="" selected disabled hidden>Please Select</option>
-                                <option value={this.state.pronouns}>He/Him/His</option>
-                                <option value={this.state.pronouns}>She/Her/Hers</option>
-                                <option value={this.state.pronouns}>They/Them/Their</option>
-                                <option value={this.state.pronouns}>Xe/Xem/Xyr</option>
+                                <option value="He/Him/His">He/Him/His</option>
+                                <option value="She/Her/Hers">She/Her/Hers</option>
+                                <option value="They/Them/Their">They/Them/Their</option>
+                                <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>
                             </select>
                         </label>
                         < br />
 
 
-                        <label>Goals:
+                        <label>Goal:
                              <br />
                             <textarea
-                                value={this.state.goals}
-                                onChange={this.update('goals')} />
+                                value={this.state.goal}
+                                onChange={this.update('goal')} />
                         </label>
 
                             <br />
@@ -170,7 +180,7 @@ class SignupForm extends React.Component {
 
                         <label>Birthdate:   
                             <DatePicker
-                                selected={this.state.startDate}
+                                selected={this.state.birthDate}
                                 onChange={this.handleChange}
                             />
                         </label>
