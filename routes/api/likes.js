@@ -16,7 +16,6 @@ router.get('/', (req, res) => {
 
 
 router.get('/:id', (req, res) => {
-    debugger;
     Like.findById(req.params.id)
         .then(like => res.json(like))
         .catch(err =>
