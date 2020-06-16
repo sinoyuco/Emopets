@@ -43,11 +43,9 @@ class SignupForm extends React.Component {
     }
 
     handleDropdown(e) {
-        debugger
         this.setState({language: e.target.value})
     }
     handleDropdownp(e) {
-        debugger
         this.setState({pronouns: e.target.value})
     }
 
@@ -100,7 +98,7 @@ class SignupForm extends React.Component {
         // ]
         return (
             <div className="signup-form-container">
-                <form onSubmit={this.handleSubmit}>
+                <form onSubmit={this.handleSubmit} className='signup-form'>
                     <div className="signup-form">
                         <br />
                         <input type="text"
