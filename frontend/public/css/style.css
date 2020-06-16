@@ -12,12 +12,56 @@
 }
 
 .splash-logo{
-	height: 200px;
-	width: 500px;
+	height: 275px;
+	width: 800px;
 }
 
 .top-of-splash{
-	padding-top: 250px;
+	padding-top: 200px;
 	display: flex;
 	justify-content: center;
+}
+
+.signup-and-excel-picture {
+	height: 200px;
+	width: 200px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.signup-and-excel {
+	display: flex;
+	flex-direction: column;
+	color: #F5F5F5;
+	font-weight: bold;
+	font-size: 35px;
+
+}
+
+.signup-list-item{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.splash-signup-now-button {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	background-color: #E1ECF4;
+	cursor: pointer;
+	border-radius: 5px;
+	height:35px;
+	width: 65px;
+	color: #39739D;
+	box-shadow:inset 0px 1px 0px 0px #F6F9FC;
+	border: 1px solid #39739D;
+
 }
