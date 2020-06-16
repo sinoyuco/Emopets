@@ -5,8 +5,17 @@ class UserShow extends React.Component {
         super(props)
     }
 
+    // componentDidMount(){
+    //     //
+    // }
+
     render() {
-        return <button onClick={this.props.logout}>Logout</button>
+        return( 
+        <div className="user-show-master">
+        <h3>{this.props.currentUser.name}</h3>
+        <button onClick={this.props.logout}>Logout</button> 
+        </div>
+        );
     }
 };
 
