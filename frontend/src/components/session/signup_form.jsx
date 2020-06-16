@@ -1,5 +1,6 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
+import { Link } from 'react-router-dom';
 // import { Dropdown } from 'semantic-ui-react';
 // import "react-datepicker/dist/react-datepicker.css";
 // import 'semantic-ui-css/semantic.min.css';
@@ -77,13 +78,13 @@ class SignupForm extends React.Component {
 
     renderErrors() {
         return (
-            <ul>
+            <div>
                 {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
+                    <p key={`error-${i}`} className='signup-error'>
                         {this.state.errors[error]}
-                    </li>
+                    </p>
                 ))}
-            </ul>
+            </div>
         );
     }
 
@@ -99,36 +100,53 @@ class SignupForm extends React.Component {
         // ]
         return (
             <div className="signup-form-container">
+                <nav className='signup-nav'>
+                    <img src='http://localhost:3000/images/main_logo_no_text.png' alt="" height='60' width='200'></img>
+                    <ul>
+                        <li>
+                            <Link to='/login'>
+                                <button>Log In</button>
+                            </Link>
+                        </li>
+                        <li>
+                            <Link to='/'>
+                                <button>Home</button>
+                            </Link>
+                        </li>
+                    </ul>
+                </nav>
                 <form onSubmit={this.handleSubmit} className='signup-form'>
+                    <h1>Sign Up Here</h1>
                     <div className="signup-form">
-                        <br />
+                     
                         <input type="text"
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
+                           
                         />
-                        <br />
+                     
                         <input type="text"
                             value={this.state.name}
                             onChange={this.update('name')}
                             placeholder="name"
                         />
-                        <br />
+                     
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
                         />
-                        <br />
+                     
                         <input type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
                         />
-                        <br />
-                        
-                        <label>Language:
-                            <br />
+                     
+                        <span> 
+                        <label>Language:</label>
+                         
                             <select onChange={this.handleDropdown} value={this.state.value}> 
                                 <option value="" selected disabled hidden>Please Select</option>
                                 <option value="Ruby">Ruby</option>
@@ -139,42 +157,46 @@ class SignupForm extends React.Component {
                                 <option value="CSS">CSS</option>
                                 <option value="Node.js">Node.js</option>
                             </select> 
-                        </label>
-                        < br />
+                    
+                        
+                        </span>
 
-                        <label>Pronouns:
-                            <br />
-                            <select onChange={this.handleDropdownp} value={this.state.value}>
-                                <option value="" selected disabled hidden>Please Select</option>
-                                <option value="He/Him/His">He/Him/His</option>
-                                <option value="She/Her/Hers">She/Her/Hers</option>
-                                <option value="They/Them/Their">They/Them/Their</option>
-                                <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>
-                            </select>
-                        </label>
-                        < br />
+                        <span> 
+                        <label>Pronouns:</label>                          
+                                <select onChange={this.handleDropdownp} value={this.state.value}>
+                                    <option value="" selected disabled hidden>Please Select</option>
+                                    <option value="He/Him/His">He/Him/His</option>
+                                    <option value="She/Her/Hers">She/Her/Hers</option>
+                                    <option value="They/Them/Their">They/Them/Their</option>
+                                    <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>
+                                </select>
+                        </span>
+
+                     
+
 
 
                         <label>Goal:
-                             <br />
+                          <br />
                             <textarea
                                 value={this.state.goal}
                                 onChange={this.update('goal')} />
                         </label>
 
-                            <br />
-                            <br />
+                         
+                         
                             
                         <label> Experience:
-                             <br />
+                          <br />
+
                             <textarea 
                                 value={this.state.experience}
                                 onChange={this.update('experience')} />
                         </label>
 
-                        <br />
+                     
 
-                        <br />
+                     
 
                         <label>Birthdate:   
                             <DatePicker
@@ -182,7 +204,7 @@ class SignupForm extends React.Component {
                                 onChange={this.handleChange}
                             />
                         </label>
-                        <br />
+                     
 
 
                         {this.renderErrors()}
