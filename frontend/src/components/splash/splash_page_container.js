@@ -1,12 +1,15 @@
 import { connect } from 'react-redux';
 import SplashPage from './splash_page';
+import {fetchUsers} from '../../actions/user_actions'
 
 const mapStateToProps = (state) => {
-  return (null)
+  return {users: state.users}
 };
 
 const mapDispatchToProps = (dispatch) => {
-  return (null)
+  return {
+    fetchUsers: () => dispatch(fetchUsers())
+  }
 }
 
 export default connect(

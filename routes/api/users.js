@@ -8,7 +8,11 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({ msg: "This is the users route" }));
+router.get('/', (req, res) => {
+    User.find()
+        .then(users => res.json(users))
+        .catch(err => res.status(404).json({ notweetsfound: 'No users found' }));
+});
 
 router.get('/current', passport.authenticate('jwt', { session: false }), (req, res) => {
     res.json({
@@ -76,7 +80,7 @@ router.post('/login', (req, res) => {
             bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if (isMatch) {
-                        const payload = { id: user.id, name: user.name, language: user.language, goal: user.goal, experience: user.experience, pronouns: user.pronouns };
+                        const payload = { id: user.id, name: user.name, language: user.language, goal: user.goal, birthDate: user.birthDate, experience: user.experience, pronouns: user.pronouns };
 
                         jwt.sign(
                             payload,
