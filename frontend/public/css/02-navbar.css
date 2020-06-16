@@ -7,7 +7,7 @@
   width: 101%;
   box-shadow: 0 0 2px 1px rgba(39, 31, 31, 0.2);
   background-color: #073049;
-  z-index: 999;
+  z-index: 2;
   height: 50px;
 
 }
@@ -57,13 +57,41 @@
 }
 
 .nav-bar ul li {
-    list-style: none;
+  display: flex;
+  align-content: center;
+  list-style: none;
 }
 
+
 .zero-notificaitons {
-  color: #ECEEEE
+    /* display: block; */
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    -moz-border-radius: 50%; /* or 50% */
+    border-radius: 50%; /* or 50% */
+    background-color: gray;
+    color: white;
+    text-align: center;
+    font-size: 12px;
 }
 
 .some-notificaitons {
-  color: red;
+    /* display: block; */
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    -moz-border-radius: 50%; /* or 50% */
+    border-radius: 50%; /* or 50% */
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 12px;
 }
+
+.notification-list-item{
+  padding-top: 5px;
+  padding-left: 15px;
+  cursor: pointer;
+}
+
