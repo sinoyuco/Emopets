@@ -6,6 +6,27 @@ class NavBar extends React.Component{
     super(props);
   }
 
+  notification(){
+    if (this.props.currentUser === undefined) {
+    return(
+      <>
+      </>
+    )
+  } else if (this.props.currentUser.likes === 0) {
+    return(
+      <div className="zero-notifications">
+        0
+      </div>
+    )
+  } else {
+    return (
+    <div className="some-notificaitons">
+      1
+    </div>
+    )
+  }
+
+}
 
   render(){
     return (
@@ -13,7 +34,7 @@ class NavBar extends React.Component{
         <button className="navbar-back-to-home-button">
           Home
         </button>
-        <h6>hr</h6>
+        {/* <h6></h6> */}
       </div>
     );
   }

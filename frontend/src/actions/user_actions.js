@@ -1,12 +1,14 @@
-// import { RECEIVE_CURRENT_USER } from "./session_actions"
+import * as APIUtil from '../util/users_util';
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS"
 
-// export const RECEIVE_USER = "RECEIVE_USER"
 
-// const receiveUser = user => ({
-//     type: RECEIVE_USER,
-//     user
-// });
+export const receiveAllUsers = users => ({
+    type: RECEIVE_ALL_USERS,
+    users
+})
 
-// export const fetchUser = user => dispatch => {
-
-// }
+export const fetchUsers = () => dispatch => {
+    return APIUtil.fetchUsers().then(users => (
+        dispatch(receiveAllUsers(users))
+    ))
+}
