@@ -3,3 +3,9 @@
     /* background: firebrick; */
     min-height: 800px;
 }
+
+.user-show-content{
+    background: #e4dcd0;
+    margin: 100px auto;
+    width: 60%;
+}

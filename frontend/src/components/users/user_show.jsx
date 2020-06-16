@@ -12,8 +12,11 @@ class UserShow extends React.Component {
     render() {
         return( 
         <div className="user-show-master">
-        <h3>{this.props.currentUser.name}</h3>
-        <button onClick={this.props.logout}>Logout</button> 
+            <div className="user-show-content">
+                <h3>Name: {this.props.currentUser.name}</h3>
+                <h3>Language: {this.props.currentUser.language}</h3>
+                <button onClick={this.props.logout}>Logout</button>
+            </div>
         </div>
         );
     }
