@@ -1,13 +1,9 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
-// import { Dropdown } from 'semantic-ui-react';
-// import { MDBDropdown, MDBDropdownToggle, MDBDropdownMenu, MDBDropdownItem } from "mdbreact";
 import "react-datepicker/dist/react-datepicker.css";
 import 'semantic-ui-css/semantic.min.css';
 
-// import 'semantic-ui-css/components/dropdown.css'
-// import 'semantic-ui-css/components/transition.css'
-// import 'semantic-ui-css/components/reset.css'
+
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -103,9 +99,9 @@ class SignupForm extends React.Component {
         //     { key: "cs", text: "CSS" }
         // ]
         return (
-            <div className="login-form-container">
+            <div className="signup-form-container">
                 <form onSubmit={this.handleSubmit}>
-                    <div className="login-form">
+                    <div className="signup-form">
                         <br />
                         <input type="text"
                             value={this.state.email}
