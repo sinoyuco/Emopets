@@ -7,8 +7,8 @@ const LikeSchema = new Schema({
         ref: 'users'
     },
     liked: {
-        type: Schema.Types.ObjectId, 
-        ref: 'users'
+        type: String, 
+        required: true
     }
 })
 
