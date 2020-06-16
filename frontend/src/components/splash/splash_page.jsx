@@ -6,6 +6,12 @@ class SplashPage extends React.Component {
     super(props);
   }
 
+  componentDidMount() {
+    this.props.fetchUsers()
+  }
+
+
+
   render() {
     return (
       <div className="entire-splash">
