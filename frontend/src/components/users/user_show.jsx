@@ -10,10 +10,12 @@ class UserShow extends React.Component {
     // }
 
     render() {
+        const languages = {};
         const age = new Date().getFullYear() - parseInt(this.props.currentUser.birthDate.split("-")[0]);
         return( 
         <div className="user-show-master">
             <div className="user-show-content">
+                    {/* <img src={languages[this.props.currentUser.language]}/> */}
                     <h3><strong>Name</strong>: {this.props.currentUser.name}</h3>
                     <h3><strong>Language:</strong> {this.props.currentUser.language}</h3>
                     <h3><strong>Goal: </strong> {this.props.currentUser.goal}</h3>
