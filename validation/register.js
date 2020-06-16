@@ -14,7 +14,7 @@ module.exports = function validateRegisterInput(data) {
     data.pronouns = validText(data.pronouns) ? data.pronouns : '';
 
     if (Validator.isEmpty(data.name)) {
-        name.email = 'Name field is required';
+        errors.name = 'Name field is required';
     }
 
     if (Validator.isEmpty(data.email)) {
@@ -56,6 +56,14 @@ module.exports = function validateRegisterInput(data) {
     if (!Validator.equals(data.password, data.password2)) {
         errors.password2 = 'Passwords must match';
     }
+
+    if (Validator.isEmpty(data.birthDate)) {
+        errors.birthdate = 'Birthdate field is required';
+    }
+
+    // if (Validator.isEmpty(data.birthDate)) {
+    //     errors.experience = 'Experience field is required';
+    // }
 
     
 
