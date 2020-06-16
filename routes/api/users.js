@@ -39,6 +39,7 @@ router.post('/register', (req, res) => {
                     birthDate: req.body.birthDate,
                     pronouns: req.body.pronouns
                 });
+ 
 
                 bcrypt.genSalt(10, (err, salt) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
