@@ -1,14 +1,13 @@
 import { connect } from 'react-redux';
 import UserShow from './user_show';
-import User from '../../../../models/User';
 
-const mapStateToProps = (state) => {
-    return (null)
-};
+const mapStateToProps = (state, ownProps) => ({
+    // user: state.entities.users[ownProps.match.params.userId]
+});
 
-const mapDispatchToProps = (dispatch) => {
-    return (null)
-}
+const mapDispatchToProps = (dispatch) => ({
+    
+});
 
 export default connect(
     mapStateToProps,
