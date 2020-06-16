@@ -3,8 +3,10 @@ import { logout } from '../../actions/session_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state) => {
+    debugger;
     return {
-        errors: state.errors.session
+        errors: state.errors.session,
+        currentUser: state.session.user
     };
 };
 
