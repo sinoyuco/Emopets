@@ -1,8 +1,8 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
-import { Dropdown } from 'semantic-ui-react';
+// import { Dropdown } from 'semantic-ui-react';
 import "react-datepicker/dist/react-datepicker.css";
-import 'semantic-ui-css/semantic.min.css';
+// import 'semantic-ui-css/semantic.min.css';
 
 // import 'semantic-ui-css/components/dropdown.css'
 // import 'semantic-ui-css/components/transition.css'
