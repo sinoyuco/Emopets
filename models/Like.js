@@ -7,9 +7,9 @@ const LikeSchema = new Schema({
         ref: 'users'
     },
     liked: {
-        type: Schema.Types.ObjectId, 
-        ref: 'users'
+        type: String, 
+        required: true
     }
 })
 
-module.exports = Like = mongoose.model('likes', LikeSchema);
+module.exports = Like = mongoose.model('Like', LikeSchema);
