@@ -11,7 +11,6 @@ class Play extends React.Component {
     }
 
     render() {
-        debugger
         const usersSome = this.props.users
         if (this.props.users.length) {
             return(
