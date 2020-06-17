@@ -1,5 +1,6 @@
 import * as APIUtil from '../util/users_util';
-export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS"
+export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
+export const RECEIVE_USER = 'RECEIVE_USER';
 
 
 export const receiveAllUsers = users => ({
@@ -7,8 +8,16 @@ export const receiveAllUsers = users => ({
     users
 })
 
+const receiveUser = (user) => ({
+    type: RECEIVE_USER,
+    user
+})
+
 export const fetchUsers = () => dispatch => {
     return APIUtil.fetchUsers().then(users => (
         dispatch(receiveAllUsers(users))
     ))
 }
+
+export const fetchUser = (userId) => dispatch => (APIUtil.fetchUser(userId))
+.then((user) => dispatch(receiveUser(user)))
