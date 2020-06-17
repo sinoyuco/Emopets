@@ -8,7 +8,7 @@ const mSTP = (state) => {
     return {
     users: Object.values(state.users),
     currentUser: state.session.user,
-    likes: Object.keys(state.likes) }
+    likes: Object.values(state.likes) }
 };
 
 const mDTP = (dispatch) => ({
