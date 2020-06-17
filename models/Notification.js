@@ -3,10 +3,10 @@ const Schema = mongoose.Schema;
 
 const NotificationSchema = new Schema({
     user: {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
+        type: String,
+        required: true
     },
-    date: {
+    matched_with: {
         type: String,
         required: true
     }

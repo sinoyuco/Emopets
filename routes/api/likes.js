@@ -29,15 +29,30 @@ router.get('/:id', (req, res) => {
 router.post('/:id',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
-        const { errors, isValid } = validateLike(req.body);
-
-        if (!isValid) {
-            return res.status(400).json(errors);
-        }
+        // const { errors, isValid } = validateLike(req.body);
+        console.log(req);
+        // if (!isValid) {
+        //     return res.status(400).json(errors);
+        // }
         
-        const matchingLikesArr = [];
-        const el = Like.find({user: req.params.id, liked: req.user.id}).then((likes) => matchingLikesArr.push(likes))
-        console.log(matchingLikesArr);
+        Like.find({ user: req.params.id, liked: req.user.id }).then((likes) => {
+            if (likes.length!==0) {
+                const newNotif = new Notification({ 
+                    user: req.params.id,
+                    matched_with: req.user.id
+                 });
+
+                 newNotif.save().then(() => console.log('saved'));
+
+                const newNotif2 = new Notification({
+                    user: req.user.id,
+                    matched_with: req.params.id
+                });
+
+                newNotif2.save().then(() => console.log('saved'));
+
+            }});
+        
 
         const newLike = new Like({
             user: req.user.id,
@@ -47,6 +62,8 @@ router.post('/:id',
         newLike.save()
         .then(like => res.json(like))
         .catch(err => console.log(err));
+
+        
     }
 );
 
