@@ -12,7 +12,7 @@ const validateLike = require('../../validation/like');
 router.get('/', (req, res) => {
     Like.find()
         .then(likes => res.json(likes))
-        .catch(err => res.status(404).json({ notweetsfound: 'No tweets found' }));
+        .catch(err => res.status(404).json({ nolikesfound: 'No likes found' }));
 });
 
 
@@ -20,12 +20,12 @@ router.get('/:id', (req, res) => {
     Like.find({user: req.params.id})
         .then(likes => res.json(likes))
         .catch(err =>
-            res.status(404).json({ nolikefound: 'No likes found for this user' })
+            res.status(404).json({ nolikesfound: 'No likes found for this user' })
         );
 });
 
 
-router.post('/:id',
+router.post('/',
     passport.authenticate('jwt', { session: false }),
     (req, res) => {
         // const { errors, isValid } = validateLike(req.body);
@@ -33,11 +33,11 @@ router.post('/:id',
         // if (!isValid) {
         //     return res.status(400).json(errors);
         // }
-        
-        Like.find({ user: req.params.id, liked: req.user.id }).then((likes) => {
+        if (req.body.type='like'){
+        Like.find({ user: req.body.liked, liked: req.user.id, type: 'like' }).then((likes) => {
             if (likes.length!==0) {
                 const newNotif = new Notification({ 
-                    user: req.params.id,
+                    user: req.body.liked,
                     matched_with: req.user.id
                  });
 
@@ -45,17 +45,19 @@ router.post('/:id',
 
                 const newNotif2 = new Notification({
                     user: req.user.id,
-                    matched_with: req.params.id
+                    matched_with: req.body.liked
                 });
 
                 newNotif2.save().then(() => console.log('saved'));
 
             }});
+        }
         
 
         const newLike = new Like({
             user: req.user.id,
-            liked: req.params.id
+            liked: req.body.liked,
+            type: req.body.type
         });
 
         newLike.save()

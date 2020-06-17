@@ -28,32 +28,17 @@ class Play extends React.Component {
     }
 
     render() {
-        const liked = this.props.likes.map(like => like['liked'])
+        const liked = this.props.likes.filter(like => (like['type']==='like')).map(like => like['liked']);
+        const disliked = this.props.likes.filter(like => (like['type'] === 'dislike')).map(like => like['liked']);
+
         debugger;
         if (this.props.users.length) {
             let usersSome
                 if (this.state.search.length) {
-                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (this.props.currentUser.id !== user._id) && this.state.search.includes(user.language));
+                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (!disliked.includes(user._id)) && (this.props.currentUser.id !== user._id) && (this.state.search.includes(user.language)));
                 } else if (this.state.search.some(ele => !ele.checked) || this.state.search.length === 0) {
-                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (this.props.currentUser.id !== user._id));
-                } 
-
-            let display
-            if (usersSome.length) {
-                display = <ul className="card-container">
-                    {
-                        usersSome.map(user => (
-                            <PlayItem
-                                user={user}
-                                key={user._id}
-                                postLike={this.props.postLike}
-                            />
-                        ))
-                    }
-                </ul>
-            } else {
-                display = <p className="no-users-filter">No users matches your criteria, please lower your expectations, this is just beta version</p>
-            }
+                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (!disliked.includes(user._id)) && (this.props.currentUser.id !== user._id));
+                }
             return(
                 <div className="cards-container">
                     {display}

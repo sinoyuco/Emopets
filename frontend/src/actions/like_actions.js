@@ -12,8 +12,8 @@ const receiveUserLikes = (likes) => ({
     likes
 });
 
-export const postLike = (userId) => dispatch => {
-    return APIUtil.postLike(userId).then(like => (
+export const postLike = (like) => dispatch => {
+    return APIUtil.postLike(like).then(like => (
         dispatch(receiveLike(like))
     ))
 }
