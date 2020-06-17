@@ -6,34 +6,57 @@ class NavBar extends React.Component{
     super(props);
   }
 
+  showNav(){
+    let dropdown = document.getElementsByClassName("hidden-nav-dropdown")[0]
+    dropdown.className ="show-nav-dropdown"
+  }
+
+  hideNav(){
+    let dropdown = document.getElementsByClassName("show-nav-dropdown")[0]
+    dropdown.className ="hidden-nav-dropdown"
+  }
+
+
   notification(){
+    debugger
       if (this.props.currentUser === undefined) {
       return(
         <>
         </>
       )
-    } else if (this.props.currentUser.likes === 0) {
+    // } else if (this.props.currentUser.likes === undefined) {
+      // return (
+      //   <h3 id="zero-notifications"
+      //   onMouseEnter={this.showNav}
+      //   onMouseLeave={this.hideNav}
+      //   >
+      //     0
+      //     <div className="hidden-nav-dropdown">
+      //       <h5>Nobody likes you!</h5>
+      //       <img
+      //         src="/images/emo_character.png"
+      //         alt=""
+      //       />
+      //     </div>
+      //   </h3>
+      // );
+    } else {
       return (
-        <h3 className="zero-notifications">
-          0
-          <div className="no-content">
-            <h5>You have no likes yet. Get out there!</h5>
+        <h3 id="some-notificaitons"
+          onMouseEnter={this.showNav}
+          onMouseLeave={this.hideNav}
+        >
+          V
+          <div className="hidden-nav-dropdown">
+            <h3>Your Likes Below!</h3>
+            <h5>Nobody likes you :(</h5>
             <img
               src="/images/emo_character.png"
               alt=""
-              height="60"
-              width="200"
             />
           </div>
         </h3>
       );
-    } else {
-      return <h3 className="some-notificaitons">
-        ✔️
-        <div className="with-likes">
-
-        </div>
-        </h3>;
     }
   }
 

@@ -37,7 +37,11 @@ class PlayItem extends React.Component {
     render() {
         if (this.props.user) {
             const { language, goal, name, experience, birthDate, pronouns} = this.props.user
-            const fixedBirth = this.birthHandler(birthDate)
+            let fixedBirth
+            if (birthDate) {
+                const birth = birthDate.split('-')
+                fixedBirth = [birth[0], birth[1], birth[2].slice(0, 2)].join('/')
+            }
             return(
                 <div className="main-card">
                     <div className="thecard">
