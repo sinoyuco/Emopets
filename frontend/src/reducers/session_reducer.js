@@ -26,7 +26,7 @@ export default function (state = initialState, action) {
       return {
         ...state,
         isSignedIn: true,
-        isAuthenticated: true,
+        // isAuthenticated: true,
 
       }
     default:
