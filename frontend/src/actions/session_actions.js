@@ -12,8 +12,6 @@ export const receiveCurrentUser = currentUser => ({
     currentUser
 });
 
-
-
 export const receiveUserSignIn = () => ({
     type: RECEIVE_USER_SIGN_IN
 });
