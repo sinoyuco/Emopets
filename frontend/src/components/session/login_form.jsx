@@ -24,6 +24,12 @@ class LoginForm extends React.Component {
 
   componentDidMount() {
     this.props.clearSessionErrors();
+    let eles = document.getElementsByClassName("login-yes-errors-input");
+
+    Array.from(eles).forEach(ele => {
+        ele.className = "login-no-errors-input";
+    })
+
   }
 
   update(field) {
@@ -45,14 +51,30 @@ class LoginForm extends React.Component {
   }
 
   handleEmailErr() {
-    if (this.props.errors.email) {
-      return this.props.errors.email;
+      let field = document.getElementById("login-email");
+      if (this.props.errors.email) {
+        field.className = "login-yes-errors-input";
+        return this.props.errors.email;
+    } else {
+        if (field === null) {
+          return;
+        } else {
+          field.className = "login-no-errors-input";
+        }
     }
   }
 
   handlePasswordErr() {
-    if (this.props.errors.password) {
-      return "Password field is required";
+      let field = document.getElementById("login-password");
+      if (this.props.errors.password) {
+        field.className = "login-yes-errors-input";
+        return "Password field is required";
+    } else {
+        if (field === null) {
+          return;
+        } else {
+          field.className = "login-no-errors-input";
+        }
     }
   }
 
@@ -64,6 +86,8 @@ class LoginForm extends React.Component {
           <form onSubmit={this.handleSubmit}>
             <h1>Log-In Here</h1>
             <input
+                id="login-email"
+              className="login-no-errors-input"
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
@@ -71,7 +95,9 @@ class LoginForm extends React.Component {
             />
             <p className="signup-error">{this.handleEmailErr()}</p>
             <input
+                id="login-password"
               type="password"
+              className="login-no-errors-input"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
