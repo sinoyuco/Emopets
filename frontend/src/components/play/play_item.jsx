@@ -4,21 +4,31 @@ class PlayItem extends React.Component {
     constructor(props) {
         super(props);
         this.handleLike = this.handleLike.bind(this);
+        this.handleDislike = this.handleDislike.bind(this);
     }
     
 
     handleLike(e){
         e.preventDefault();
-        this.props.postLike(this.props.user._id);
+        const like ={
+            liked: this.props.user._id,
+            type: 'like'
+        };
+        this.props.postLike(like);
     }
 
-    // handleDislike(e){
-    //     e.preventDefault();
-    //     // pluck this user out of users and rerender on play level.
-    // }
+    handleDislike(e){
+        e.preventDefault();
+        const dislike ={
+            liked: this.props.user._id,
+            type: 'dislike'
+        };
+        this.props.postLike(dislike);
+    }
 
     birthHandler(date) {
-        if (this.props.user) {
+        if (this.props.user.data) {
+            debugger;
             const birth = this.props.user.birthDate.split('-')
             return [birth[0], birth[1], birth[2].slice(0, 2)].join('/')
         }
@@ -65,7 +75,7 @@ class PlayItem extends React.Component {
                                 </div>
                                 <div className="card-profile-b">
                                     <div className="card-profile-bottom-footer">
-                                        <button className="no-btn"><i className="far fa-times-circle"></i></button>
+                                        <button onClick={this.handleDislike} className="no-btn"><i className="far fa-times-circle"></i></button>
                                         <button onClick={this.handleLike} className="yes-btn"><i className="far fa-check-square"></i></button>
                                     </div>
                                 </div>

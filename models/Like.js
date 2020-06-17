@@ -9,6 +9,10 @@ const LikeSchema = new Schema({
     liked: {
         type: String,
         required: true
+    },
+    type: {
+        type: String,
+        required: true
     }
 })
 
