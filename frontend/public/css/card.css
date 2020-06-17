@@ -1,11 +1,14 @@
 .main-card{
   position: absolute;
-  width: 350px;
-  height: 450px;
+  width: 360px;
+  height: 480px;
   background: none;
   top: 50%;
   left: 50%;
+  border-radius: 10px;  
   transform: translate(-50%, -50%);
+  font-family: 'Comfortaa', cursive;
+  box-shadow: 0 5px 10px -5px #312f2f70;
 }
 
 .thecard{
@@ -16,7 +19,8 @@
   height: 100%;
   border-radius: 10px;
   transform-style: preserve-3d;
-  transition: all 0.8s ease;
+  transition: 1s ease-in-out;
+  box-shadow: inset 0 12px 12px -12px rgba(0, 0, 0, 0.5);
 }
 
 .thecard:hover{
@@ -39,8 +43,16 @@
 
 .thefront img {
     width: 100%;
+    height: 100%;
 }
 
+.card-profile-bottom-middle, .card-profile-bottom-bottom  {
+  margin-top: -10px;
+}
+
+.card-profile-bottom-footer {
+  margin-top: -20px;
+}
 
 .theback{
   position: absolute;
@@ -115,5 +127,76 @@
     justify-content: space-between;
     padding: 35px;
 }
+
+.card-profile-b {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name {
+  font-size: 22px;
+}
+
+.profile-age {
+  font-size: 15px;
+}
+
+.profile-language, .profile-pronouns, .card-profile-goal, .card-profile-exp {
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+
+.profile-language label {
+  font-size: 13px;
+  color: rgb(109, 107, 107);
+}
+
+.profile-pronouns label, .card-profile-goal label, .card-profile-exp label {
+  font-size: 13px;
+  color: rgb(39, 35, 35);
+}
+
+.yes-btn, .no-btn {
+  border: none;
+  outline: none;
+  font-size: 55px;
+}
+
+.yes-btn {
+  color: rgb(91, 185, 155) ;
+  background-color: white;
+}
+
+.no-btn {
+  color: red;
+  background-color: white;
+}
+
+.language-options {
+   top: 3%;
+  left: 35%;
+  margin-top: 100px;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  width: 500px;
+  height: 50px;
+  background-color: #073049;;
+  /* opacity: 0.8; */
+  margin-left: 30px;
+  text-align: left;
+  color: white;
+}
+
+.language-option {
+  margin-top: 18px;
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+
+
+
 
 

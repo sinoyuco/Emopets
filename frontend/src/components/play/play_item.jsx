@@ -23,31 +23,33 @@ class PlayItem extends React.Component {
                         <div className="card-profile-bottom">
                             <div className="card-profile-bottom-header">
                                 <div className="profile-name">{name}</div>
-                                <div>{fixedBirth}</div>
+                                <div className="profile-age">{fixedBirth}</div>
                             </div>
                             <div className="card-profile-bottom-middle">
-                                <div className="profile-language">
-                                    <label>Language</label>
-                                    {language}
+                                <div className="profile-middle-left">
+                                    <div className="card-profile-bottom-bottom">
+                                        <div className="card-profile-goal">
+                                            <label>Goal</label>
+                                            <div>{goal}</div>
+                                        </div>
+                                        <div className="card-profile-exp">
+                                            <label>Experience</label>
+                                            <div>{experience}</div>
+                                        </div>
+                                    </div>
                                 </div>
-                                <div className="profile-pronouns">
-                                    <label>Pronouns</label>
-                                    {pronouns}
+                                <div className="profile-middle-rigth">
+                                    <div className="profile-pronouns">
+                                        <label>Pronouns</label>
+                                        {pronouns}
+                                    </div>
                                 </div>
                             </div>
-                            <div className="card-profile-bottom-bottom">
-                                <div className="card-profile-goal">
-                                    <label>Goal</label>
-                                    <div>{goal}</div>
+                            <div className="card-profile-b">
+                                <div className="card-profile-bottom-footer">
+                                    <button className="no-btn"><i className="far fa-times-circle"></i></button>
+                                    <button className="yes-btn"><i className="far fa-check-square"></i></button>
                                 </div>
-                                <div className="card-profile-exp">
-                                    <label>Experience</label>
-                                    <div>{experience}</div>
-                                </div>
-                            </div>
-                            <div className="card-profile-bottom-footer">
-                                <button>No</button>
-                                <button>Yes</button>
                             </div>
                         </div>
                     </div>
