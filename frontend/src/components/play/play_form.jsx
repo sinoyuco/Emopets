@@ -44,7 +44,7 @@ class Play extends React.Component {
                 }
             return(
                 <div className="cards-container">
-                    <div className="card-container">
+                    <ul className="card-container">
                         {
                             usersSome.map(user => (
                                 <PlayItem 
@@ -54,7 +54,7 @@ class Play extends React.Component {
                                 />
                             ))
                         }
-                    </div>
+                    </ul>
                     <div className="language-options">
                         <label><input type="checkbox" id="check" className="language-option" value="Ruby" onChange={this.updateCards} />Ruby</label>
                         <label><input type="checkbox" id="check" className="language-option" value="Rails" onChange={this.updateCards} />Rails</label>

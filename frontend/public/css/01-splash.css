@@ -68,6 +68,21 @@
 	padding-left: 25px;
 }
 
+.splash-make-profile {
+	margin-right: 20%;
+	margin-top: 4%;
+}
+
+.splash-edit-profile {
+	margin-top: 4%;
+	margin-left: 20%;
+}
+
+.splash-celebrate {
+	margin-right: 20%;
+	margin-top: 4%;
+}
+
 .splash-signup-now-button:hover {
 	display: flex;
 	align-items: center;

@@ -51,7 +51,7 @@ class SplashPage extends React.Component {
             />
           </div>
         </div>
-        <Link to="/signup">
+        <Link to="/play">
         <button className="splash-signup-now-button">
           Start Pairing Now!
         </button>
