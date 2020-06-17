@@ -3,19 +3,15 @@ import React from 'react';
 class UserShow extends React.Component {
     constructor(props){
         super(props);
-        debugger;
     }
 
     componentDidMount(){
-        debugger;
         if (this.props.currentUser) {
             this.props.fetchUser(this.props.currentUser.id)
         };
-        debugger;
     }
 
     render() {
-        debugger;
         const languages = {};
 
         if (this.props.currentUser === undefined) {

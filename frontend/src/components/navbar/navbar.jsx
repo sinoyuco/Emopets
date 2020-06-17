@@ -38,12 +38,8 @@ class NavBar extends React.Component{
   }
 
   logInOrSignUpButton() {
-<<<<<<< HEAD
-    if (!this.props.currentUser) {
-=======
     debugger
     if (this.props.currentUser === undefined || !this.props.currentUser.id) {
->>>>>>> 8a0b58b115025b06c9e92a0fe0356daf54afa767
       return (
         <li className="nav-signin-login-buttons">
         <Link to="/login">

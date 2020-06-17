@@ -17,11 +17,13 @@ class Play extends React.Component {
 
     componentDidMount() {
         this.props.fetchUsers();
+        this.props.fetchLikes(this.props.currentUser.id);
     }
 
     render() {
-        debugger
+        debugger;
         let usersSome
+        // const likes = this.props.likes
         if (this.state.search.length) {
             usersSome = this.props.users.filter(
                 user => (
@@ -40,6 +42,7 @@ class Play extends React.Component {
                                 <PlayItem 
                                     user={user}
                                     key={user.id}
+                                    postLike={this.props.postLike}
                                 />
                             ))
                         }

@@ -17,10 +17,10 @@ router.get('/', (req, res) => {
 
 
 router.get('/:id', (req, res) => {
-    Like.findById(req.params.id)
-        .then(like => res.json(like))
+    Like.find({user: req.params.id})
+        .then(likes => res.json(likes))
         .catch(err =>
-            res.status(404).json({ nolikefound: 'No like found with that ID' })
+            res.status(404).json({ nolikefound: 'No likes found for this user' })
         );
 });
 

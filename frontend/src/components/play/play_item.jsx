@@ -2,7 +2,20 @@ import React from 'react';
 
 class PlayItem extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.handleLike = this.handleLike.bind(this);
+        this.handleDislike = this.handleDislike.bind(this);
+    }
+
+    handleLike(e){
+        e.preventDefault();
+        this.props.postLike(this.props.user._id);
+         // pluck this user out of users and rerender on play level.
+    }
+
+    handleDislike(e){
+        e.preventDefault();
+        // pluck this user out of users and rerender on play level.
     }
 
 
@@ -47,8 +60,8 @@ class PlayItem extends React.Component {
                             </div>
                             <div className="card-profile-b">
                                 <div className="card-profile-bottom-footer">
-                                    <button className="no-btn"><i className="far fa-times-circle"></i></button>
-                                    <button className="yes-btn"><i className="far fa-check-square"></i></button>
+                                    <button onClick={this.handleDislike} className="no-btn"><i className="far fa-times-circle"></i></button>
+                                    <button onClick={this.handleLike} className="yes-btn"><i className="far fa-check-square"></i></button>
                                 </div>
                             </div>
                         </div>
