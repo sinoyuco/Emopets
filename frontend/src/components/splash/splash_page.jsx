@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter, Link } from 'react-router-dom';
 
 class SplashPage extends React.Component {
   constructor(props) {
@@ -8,9 +8,8 @@ class SplashPage extends React.Component {
 
   componentDidMount() {
     this.props.fetchUsers()
-    
-  }
 
+  }
 
 
   render() {
@@ -52,10 +51,11 @@ class SplashPage extends React.Component {
             />
           </div>
         </div>
-
+        <Link to="/signup">
         <button className="splash-signup-now-button">
           Start Pairing Now!
         </button>
+        </Link>
       </div>
     );
     

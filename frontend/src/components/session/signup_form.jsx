@@ -1,8 +1,11 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
 import { Link } from 'react-router-dom';
+// import DayPicker from 'react-day-picker';
+
+// import 'react-day-picker/lib/style.css';
 // import { Dropdown } from 'semantic-ui-react';
-// import "react-datepicker/dist/react-datepicker.css";
+import "react-datepicker/dist/react-datepicker.css";
 // import 'semantic-ui-css/semantic.min.css';
 
 
@@ -25,19 +28,21 @@ class SignupForm extends React.Component {
 
         this.handleDropdown = this.handleDropdown.bind(this);
         this.handleDropdownp = this.handleDropdownp.bind(this);
+        // this.hanldeChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.clearedErrors = false;
     }
 
-    componentWillReceiveProps(nextProps) {
-        if (nextProps.signedIn === true) {
-            this.props.history.push('/login');
-        }
+    // componentWillReceiveProps(nextProps) {
+    //     if (nextProps.signedIn === true) {
+    //         this.props.history.push('/login');
+    //     }
 
-        this.setState({ errors: nextProps.errors })
-    }
+    //     this.setState({ errors: nextProps.errors })
+    // }
 
     update(field) {
+        // 
         return e => this.setState({
             [field]: e.currentTarget.value
         });
@@ -67,25 +72,90 @@ class SignupForm extends React.Component {
 
         // this.props.signup(user, this.props.history);
         this.props.signup(user);
+        // this.props.history.push('/show')
+        
     }
-
-    handleChange = date => {
+   
+    handleChange = (date) => {
         this.setState({
             birthDate: date
         });
     };
 
-    renderErrors() {
-        return (
-            <div>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <p key={`error-${i}`} className='signup-error'>
-                        {this.state.errors[error]}
-                    </p>
-                ))}
-            </div>
-        );
+    handleEmailErr() {
+        
+        if (this.props.errors.email) {
+            return 'Enter a valid email'
+        }
+
     }
+
+    handlePasswordErr() {
+        if (this.props.errors.password) {
+            return 'Password must be at least 6 characters'
+        }
+
+    }
+
+    handlePassword2Err() {
+        if (this.props.errors.password2) {
+            return 'Passwords must match'
+        }
+
+    }
+
+    handleNameErr() {
+        if (this.props.errors.name) {
+            return 'Name field is required'
+        }
+    }
+
+    handleLangErr() {
+        if (this.props.errors.language) {
+            return 'Language field is required'
+        }
+    }
+
+    handleProErr() {
+        if (this.props.errors.pronouns) {
+            return 'Pronoun field is required'
+        }
+    }
+
+    handleBirthDateErr() {
+        if (this.props.errors.language) {
+            return 'Birthdate field is required'
+        }
+
+    }
+
+    handleGoalErr() {
+        if (this.props.errors.goal) {
+            return 'Goal field is required'
+        }
+    }
+
+
+    handleExpErr() {
+        if (this.props.errors.experience) {
+            return 'Experience field is required'
+        }
+    }
+
+
+
+    // renderErrors() {
+    //     
+    //     return (
+    //         <div>
+    //             {Object.keys(this.state.errors).map((error, i) => (
+    //                 <p key={`error-${i}`} className='signup-error'>
+    //                     {this.state.errors[error]}
+    //                 </p>
+    //             ))}
+    //         </div>
+    //     );
+    // }
 
     render() {
         // const languageOptions = [
@@ -98,22 +168,10 @@ class SignupForm extends React.Component {
         //     { key: "cs", text: "CSS" }
         // ]
         return (
-            <div className="signup-form-container">
-                <nav className='signup-nav'>
-                    <img src='http://localhost:3000/images/main_logo_no_text.png' alt="" height='60' width='200'></img>
-                    <ul>
-                        <li>
-                            <Link to='/login'>
-                                <button>Log In</button>
-                            </Link>
-                        </li>
-                        <li>
-                            <Link to='/'>
-                                <button>Home</button>
-                            </Link>
-                        </li>
-                    </ul>
-                </nav>
+            <div className="signup-form-container"
+                style={{paddingTop: "50px"}}
+            >
+
                 <form onSubmit={this.handleSubmit} className='signup-form-with-header'>
                     <div className="signup-form">
                     <h1>Sign Up Here</h1>
@@ -122,31 +180,41 @@ class SignupForm extends React.Component {
                             value={this.state.email}
                             onChange={this.update('email')}
                             placeholder="Email"
+                            id='signup-email'
                            
                         />
+                        <p className='signup-error'>{this.handleEmailErr()}</p>
                      
                         <input type="text"
                             value={this.state.name}
                             onChange={this.update('name')}
                             placeholder="Name"
+                            id='signup-name'
                         />
+
+                        <p className='signup-error'>{this.handleNameErr()}</p>
+
                      
                         <input type="password"
                             value={this.state.password}
                             onChange={this.update('password')}
                             placeholder="Password"
+                            id='signup-password'
                         />
-                     
+                        <p className='signup-error'>{this.handlePasswordErr()}</p>
+
                         <input type="password"
                             value={this.state.password2}
                             onChange={this.update('password2')}
                             placeholder="Confirm Password"
                         />
                      
+                        <p className='signup-error'>{this.handlePassword2Err()}</p>
+
                         <span> 
-                        <label>Language:</label>
+                        <label>Language/Framework:</label>
                          
-                            <select onChange={this.handleDropdown} value={this.state.value}> 
+                            <select onChange={this.handleDropdown} value={this.state.value} id='signup-lang'> 
                                 <option value="" selected disabled hidden>Please Select</option>
                                 <option value="Ruby">Ruby</option>
                                 <option value="Rails">Rails</option>
@@ -159,10 +227,12 @@ class SignupForm extends React.Component {
                     
                         
                         </span>
+                        <p className='signup-error'>{this.handleLangErr()}</p>
+
 
                         <span> 
                         <label>Pronouns:</label>                          
-                                <select onChange={this.handleDropdownp} value={this.state.value}>
+                                <select onChange={this.handleDropdownp} value={this.state.value} id='signup-pro'>
                                     <option value="" selected disabled hidden>Please Select</option>
                                     <option value="He/Him/His">He/Him/His</option>
                                     <option value="She/Her/Hers">She/Her/Hers</option>
@@ -170,6 +240,8 @@ class SignupForm extends React.Component {
                                     <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>
                                 </select>
                         </span>
+                        <p className='signup-error'>{this.handleProErr()}</p>
+
 
                      
 
@@ -179,34 +251,39 @@ class SignupForm extends React.Component {
                           <br />
                             <textarea
                                 value={this.state.goal}
-                                onChange={this.update('goal')} />
+                                onChange={this.update('goal')} 
+                                id='signup-goal'/>
                         </label>
 
                          
-                         
+                        <p className='signup-error'>{this.handleGoalErr()}</p>
+
                             
                         <label> Experience:
                           <br />
 
                             <textarea 
                                 value={this.state.experience}
-                                onChange={this.update('experience')} />
+                                onChange={this.update('experience')} 
+                                id='signup-exp'/>
                         </label>
 
                      
+                        <p className='signup-error'>{this.handleExpErr()}</p>
 
                      
 
-                        <label>Birthdate:   
+                        <label id='signup-birthdate'>Birthdate:   
                             <DatePicker
                                 selected={this.state.birthDate}
                                 onChange={this.handleChange}
                             />
                         </label>
-                     
+                        <p className='signup-error'>{this.handleBirthDateErr()}</p>
 
+                    
+                        {/* {this.renderErrors()} */}
 
-                        {this.renderErrors()}
                         <input type="submit" value="Submit" />
                     </div>
                 </form>
