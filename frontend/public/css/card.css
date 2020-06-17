@@ -40,9 +40,7 @@
   border-radius: 10px;
   backface-visibility: hidden;
   overflow: hidden;
-  /* background: transparent; */
   color: #000;
-  /* border: 1px solid black; */
 }
 
 .thefront img {
@@ -91,10 +89,12 @@
     justify-content: space-between;
     padding: 15px;
 }
+
 .card-profile-bottom-middle{
     display: flex;
     justify-content: space-between;
 }
+
 .profile-language {
     display: flex;
     flex-direction: column;
@@ -126,10 +126,10 @@
 }
 
 .card-profile-bottom-footer {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 35px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 35px;
 }
 
 .card-profile-b {
@@ -186,6 +186,7 @@
   flex-direction: column;
   width: 200px;
   height: 307px;
+  border-radius: 15px;
   background-color: #073049;
   font-family: 'Comfortaa', cursive;
   margin-left: 30px;

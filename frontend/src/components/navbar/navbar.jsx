@@ -19,7 +19,7 @@ class NavBar extends React.Component{
           <div className="no-content">
             <h5>You have no likes yet. Get out there!</h5>
             <img
-              src="http://localhost:3000/images/emo_character.png"
+              src="/images/emo_character.png"
               alt=""
               height="60"
               width="200"
@@ -42,11 +42,11 @@ class NavBar extends React.Component{
       return (
         <li className="nav-signin-login-buttons">
         <Link to="/login">
-          <button className="navbar-button">Log In!</button>
+          <button className="navbar-button">Log In</button>
         </Link>
 
         <Link to="/signup">
-          <button className="navbar-button">Sign Up!</button>
+          <button className="navbar-button">Sign Up</button>
         </Link>
         </li>
       );
@@ -55,7 +55,7 @@ class NavBar extends React.Component{
         <li className="nav-logout-button">
             <button 
             onClick={() => this.props.logout()}
-            className="navbar-button">Log Out!</button>
+            className="navbar-button">Log Out</button>
         </li>
       );
     }
@@ -66,7 +66,7 @@ class NavBar extends React.Component{
       <nav className="nav-bar">
         <Link to="/" style={{ marginRight: "33%" }}>
           <img
-            src="http://localhost:3000/images/main_logo_no_text.png"
+            src="/images/main_logo_no_text.png"
             alt=""
             height="60"
             width="200"
