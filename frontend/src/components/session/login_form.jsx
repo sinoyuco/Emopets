@@ -52,29 +52,26 @@ class LoginForm extends React.Component {
 
   handleEmailErr() {
       let field = document.getElementById("login-email");
+        if (field === null) return;
+
       if (this.props.errors.email) {
         field.className = "login-yes-errors-input";
         return this.props.errors.email;
     } else {
-        if (field === null) {
-          return;
-        } else {
-          field.className = "login-no-errors-input";
-        }
+        field.className = "login-no-errors-input";
     }
   }
 
   handlePasswordErr() {
       let field = document.getElementById("login-password");
+        if (field === null) return;
+
+
       if (this.props.errors.password) {
         field.className = "login-yes-errors-input";
         return "Password field is required";
     } else {
-        if (field === null) {
-          return;
-        } else {
-          field.className = "login-no-errors-input";
-        }
+        field.className = "login-no-errors-input";
     }
   }
 
