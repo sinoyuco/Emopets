@@ -11,10 +11,10 @@
     "dev": "concurrently \"npm run server\" \"npm run frontend\""
   },
   "engines": {
-  "node": "12.5.0",
-  "npm": "6.9.0"
+    "node": "12.5.0",
+    "npm": "6.9.0"
   },
-  "author": "", 
+  "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^0.19.2",
