@@ -66,7 +66,7 @@
 }
 
 
-.zero-notificaitons {
+#zero-notificaitons {
     /* display: block; */
     height: 25px;
     width: 25px;
@@ -79,7 +79,7 @@
     font-size: 12px;
 }
 
-.some-notificaitons {
+#some-notificaitons {
     /* display: block; */
     height: 25px;
     width: 25px;
@@ -101,4 +101,20 @@
 .nav-signin-login-buttons{
 	display: flex;
 	flex-direction: row;
+}
+
+.with-likes{
+opacity: 92%;
+background-color: black;
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin-left: -800%;
+width: 800%;
+display: none;
+}
+
+.no-content{
+
+
 }

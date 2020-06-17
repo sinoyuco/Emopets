@@ -6,6 +6,11 @@ class NavBar extends React.Component{
     super(props);
   }
 
+  showNav(){
+    let notifications = document.getElementById()
+  }
+
+
   notification(){
       if (this.props.currentUser === undefined) {
       return(
@@ -14,26 +19,33 @@ class NavBar extends React.Component{
       )
     } else if (this.props.currentUser.likes === 0) {
       return (
-        <h3 className="zero-notifications">
+        <h3 id="zero-notifications"
+        onMouseEnter={() => this.showNav()}
+        onMouseLeave={() => this.hideNav()}
+        >
           0
           <div className="no-content">
-            <h5>You have no likes yet. Get out there!</h5>
+            <h5>Nobody likes you!</h5>
             <img
               src="http://localhost:3000/images/emo_character.png"
               alt=""
-              height="60"
-              width="200"
             />
           </div>
         </h3>
       );
     } else {
-      return <h3 className="some-notificaitons">
-        ✔️
-        <div className="with-likes">
-
-        </div>
-        </h3>;
+      return (
+        <h3 id="some-notificaitons">
+          ✔️
+          <div className="with-likes">
+            <h5>Nobody likes you!</h5>
+            <img
+              src="http://localhost:3000/images/emo_character.png"
+              alt=""
+            />
+          </div>
+        </h3>
+      );
     }
   }
 
