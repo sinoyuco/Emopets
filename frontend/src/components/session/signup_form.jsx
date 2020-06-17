@@ -170,6 +170,7 @@ class SignupForm extends React.Component {
             <h1>Sign Up Here</h1>
 
             <input
+            className="no-error"
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
@@ -179,6 +180,7 @@ class SignupForm extends React.Component {
             <p className="signup-error">{this.handleEmailErr()}</p>
 
             <input
+            className="no-error"
               type="text"
               value={this.state.name}
               onChange={this.update("name")}
@@ -189,6 +191,7 @@ class SignupForm extends React.Component {
             <p className="signup-error">{this.handleNameErr()}</p>
 
             <input
+            className="no-error"
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
@@ -198,6 +201,7 @@ class SignupForm extends React.Component {
             <p className="signup-error">{this.handlePasswordErr()}</p>
 
             <input
+            className="no-error"
               type="password"
               value={this.state.password2}
               onChange={this.update("password2")}
@@ -214,7 +218,9 @@ class SignupForm extends React.Component {
                 value={this.state.value}
                 id="signup-lang"
               >
-                <option value="" selected disabled hidden>
+                <option 
+                className="no-error" 
+                value="" selected disabled hidden>
                   Please Select
                 </option>
                 <option value="Ruby">Ruby</option>
@@ -235,7 +241,7 @@ class SignupForm extends React.Component {
                 value={this.state.value}
                 id="signup-pro"
               >
-                <option value="" selected disabled hidden>
+                <option className="no-error" value="" selected disabled hidden>
                   Please Select
                 </option>
                 <option value="He/Him/His">He/Him/His</option>
@@ -250,6 +256,7 @@ class SignupForm extends React.Component {
               Goal:
               <br />
               <textarea
+                className="no-error"
                 value={this.state.goal}
                 onChange={this.update("goal")}
                 id="signup-goal"
@@ -263,6 +270,7 @@ class SignupForm extends React.Component {
               Experience:
               <br />
               <textarea
+                className="no-error"
                 value={this.state.experience}
                 onChange={this.update("experience")}
                 id="signup-exp"

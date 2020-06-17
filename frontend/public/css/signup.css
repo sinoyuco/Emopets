@@ -76,6 +76,7 @@
 .signup-form textarea {
     border-radius: 7px;
     outline: none;
+    resize: none;
 }
 
 .signup-form input[type=submit] {
