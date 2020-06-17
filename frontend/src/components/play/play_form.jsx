@@ -33,14 +33,14 @@ class Play extends React.Component {
         if (this.props.users.length) {
             let usersSome
                 if (this.state.search.length) {
-                    usersSome = this.props.users.filter( user => (!liked.includes(user._id)))
+                    usersSome = this.props.users.filter( user => (!liked.includes(user._id)) && (this.props.currentUser.id !== user._id ));
                     usersSome = this.props.users.filter(
                         user => (
                             this.state.search.includes(user.language)
                         )
                     )
                 } else if (this.state.search.some(ele => !ele.checked) || this.state.search.length === 0) {
-                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)))
+                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (this.props.currentUser.id !== user._id));
                 }
             return(
                 <div className="cards-container">
