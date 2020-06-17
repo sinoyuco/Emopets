@@ -66,7 +66,7 @@
 }
 
 
-.zero-notificaitons {
+#zero-notificaitons {
     /* display: block; */
     height: 25px;
     width: 25px;
@@ -79,7 +79,7 @@
     font-size: 12px;
 }
 
-.some-notificaitons {
+#some-notificaitons {
     /* display: block; */
     height: 25px;
     width: 25px;
@@ -101,4 +101,21 @@
 .nav-signin-login-buttons{
 	display: flex;
 	flex-direction: row;
+}
+
+.show-nav-dropdown{
+opacity: 92%;
+background-color: black;
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin-left: -250px;
+width: 300px;
+padding-top: 30px;
+border-radius: 15px;
+}
+
+.hidden-nav-dropdown{
+display: none;
+
 }

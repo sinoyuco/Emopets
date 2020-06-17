@@ -75,6 +75,8 @@
 .signup-form textarea {
     border-radius: 7px;
     outline: none;
+    resize: none;
+    width: 100%;
 }
 
 .signup-form input[type=submit] {
@@ -89,3 +91,4 @@
 .signup-error {
     color: red;
 }
+

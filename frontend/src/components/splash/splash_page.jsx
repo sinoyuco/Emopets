@@ -18,7 +18,7 @@ class SplashPage extends React.Component {
         <div className="top-of-splash">
           <img
             className="splash-logo"
-            src="http://localhost:3000/images/main_logo.png"
+            src="/images/main_logo.png"
             alt="My_Logo"
           />
         </div>
@@ -28,7 +28,7 @@ class SplashPage extends React.Component {
             Create a profile
             <img
               className="signup-and-excel-picture"
-              src="http://localhost:3000/images/createprofile.png"
+              src="/images/createprofile.png"
               alt="Sign_up"
             />
           </div>
@@ -36,7 +36,7 @@ class SplashPage extends React.Component {
           <div className="splash-edit-profile signup-list-item">
             <img
               className="signup-and-excel-picture"
-              src="http://localhost:3000/images/language.png"
+              src="/images/language.png"
               alt="My_Logo"
             />
             Add the language you'd like to practice
@@ -46,12 +46,12 @@ class SplashPage extends React.Component {
             Make friends and learn new things
             <img
               className="signup-and-excel-picture"
-              src="http://localhost:3000/images/highfive.png"
+              src="/images/highfive.png"
               alt="My_Logo"
             />
           </div>
         </div>
-        <Link to="/signup">
+        <Link to="/play">
         <button className="splash-signup-now-button">
           Start Pairing Now!
         </button>

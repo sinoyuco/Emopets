@@ -6,49 +6,70 @@ class NavBar extends React.Component{
     super(props);
   }
 
+  showNav(){
+    let dropdown = document.getElementsByClassName("hidden-nav-dropdown")[0]
+    dropdown.className ="show-nav-dropdown"
+  }
+
+  hideNav(){
+    let dropdown = document.getElementsByClassName("show-nav-dropdown")[0]
+    dropdown.className ="hidden-nav-dropdown"
+  }
+
+
   notification(){
-      debugger
+    debugger
       if (this.props.currentUser === undefined) {
       return(
         <>
         </>
       )
-    } else if (this.props.currentUser.likes === 0) {
+    // } else if (this.props.currentUser.likes === undefined) {
+      // return (
+      //   <h3 id="zero-notifications"
+      //   onMouseEnter={this.showNav}
+      //   onMouseLeave={this.hideNav}
+      //   >
+      //     0
+      //     <div className="hidden-nav-dropdown">
+      //       <h5>Nobody likes you!</h5>
+      //       <img
+      //         src="/images/emo_character.png"
+      //         alt=""
+      //       />
+      //     </div>
+      //   </h3>
+      // );
+    } else {
       return (
-        <h3 className="zero-notifications">
-          0
-          <div className="no-content">
-            <h5>You have no likes yet. Get out there!</h5>
+        <h3 id="some-notificaitons"
+          onMouseEnter={this.showNav}
+          onMouseLeave={this.hideNav}
+        >
+          V
+          <div className="hidden-nav-dropdown">
+            <h3>Your Likes Below!</h3>
+            <h5>Nobody likes you :(</h5>
             <img
-              src="http://localhost:3000/images/emo_character.png"
+              src="/images/emo_character.png"
               alt=""
-              height="60"
-              width="200"
             />
           </div>
         </h3>
       );
-    } else {
-      return <h3 className="some-notificaitons">
-        ✔️
-        <div className="with-likes">
-
-        </div>
-        </h3>;
     }
   }
 
   logInOrSignUpButton() {
-    debugger
     if (this.props.currentUser === undefined || !this.props.currentUser.id) {
       return (
         <li className="nav-signin-login-buttons">
         <Link to="/login">
-          <button className="navbar-button">Log In!</button>
+          <button className="navbar-button">Log In</button>
         </Link>
 
         <Link to="/signup">
-          <button className="navbar-button">Sign Up!</button>
+          <button className="navbar-button">Sign Up</button>
         </Link>
         </li>
       );
@@ -57,7 +78,7 @@ class NavBar extends React.Component{
         <li className="nav-logout-button">
             <button 
             onClick={() => this.props.logout()}
-            className="navbar-button">Log Out!</button>
+            className="navbar-button">Log Out</button>
         </li>
       );
     }
@@ -68,7 +89,7 @@ class NavBar extends React.Component{
       <nav className="nav-bar">
         <Link to="/" style={{ marginRight: "33%" }}>
           <img
-            src="http://localhost:3000/images/main_logo_no_text.png"
+            src="/images/main_logo_no_text.png"
             alt=""
             height="60"
             width="200"

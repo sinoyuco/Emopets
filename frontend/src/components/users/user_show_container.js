@@ -4,7 +4,6 @@ import {fetchUser} from '../../actions/user_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
-  debugger;
     return {
         errors: state.errors.session,
         // user: state.users[ownProps.match.params._id]

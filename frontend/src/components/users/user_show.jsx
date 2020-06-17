@@ -4,28 +4,25 @@ import {Link} from 'react-router-dom';
 class UserShow extends React.Component {
     constructor(props){
         super(props);
-        debugger;
+        this.goPlay = this.goPlay.bind(this);
     }
 
     componentDidMount(){
-        debugger;
         if (this.props.currentUser) {
             this.props.fetchUser(this.props.currentUser.id)
         };
-        debugger;
+    }
+
+    goPlay() {
+        this.props.history.push('/play')
     }
 
     render() {
-        debugger;
         const languages = {};
-
         if (this.props.currentUser === undefined) {
             return <> </>
-
         } else {
-        
             const age = new Date().getFullYear() - parseInt(this.props.currentUser.birthDate.split("-")[0]);
-      
             return( 
             <div className="user-show-master">
                 <div className="user-show-content">
