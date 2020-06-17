@@ -80,7 +80,7 @@ router.post('/login', (req, res) => {
             bcrypt.compare(password, user.password)
                 .then(isMatch => {
                     if (isMatch) {
-                        const payload = { id: user.id, name: user.name, language: user.language, goal: user.goal, birthDate: user.birthDate, experience: user.experience, pronouns: user.pronouns };
+                        const payload = { id: user.id, email: user.email, password: user.password, name: user.name, language: user.language, goal: user.goal, birthDate: user.birthDate, experience: user.experience, pronouns: user.pronouns };
 
                         jwt.sign(
                             payload,
@@ -110,5 +110,40 @@ router.get('/:id', (req, res) => {
         );
 });
 
+router.patch('/edit', (req, res) => {
+    const user = User.findOneAndUpdate({_id: req.body.id}, req.body, {new: true }, function (err, user) {
+        
+        if (err) {
+            res.status(404).json(err)
+        } else {
+            res.send(user)
+        }
+    })
+    console.log(user);
+    // let id = req.params.id;
+    // let user = req.params.body
+    // let doc = await User.findOneAndUpdate(id, user, {new: true});
+    // await doc.save();
+//    User.findOneAndUpdate(req.params.id, {
+//        email: req.body.email,
+//        password: req.body.password,
+//        birthDate: req.body.birthDate,
+//        name: req.body.name,
+//        language: req.body.language,
+//        pronouns: req.body.pronouns,
+//        goal: req.body.goal,
+//        experience: req.body.experience
+//     })
+
+//     .then(user => res.json(user))
+//      .catch(err => res.status(404).json({ noUserFound: 'No user found' }))
+   
+     
+    });
+    
+    //    { new: true })
+    //     debugger;
+    //    if (!user) return res.status(404).json({noUserFound: 'No user found'})
+    //    return res.json(user);
 module.exports = router;
        

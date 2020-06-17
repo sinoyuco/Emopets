@@ -35,12 +35,14 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    debugger
 
     let user = {
       email: this.state.email,
       password: this.state.password,
     };
 
+    debugger
     this.props.login(user);
   }
 
