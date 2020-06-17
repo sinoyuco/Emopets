@@ -141,29 +141,9 @@ class SignupForm extends React.Component {
     this.props.clearSessionErrors();
   }
 
-  // renderErrors() {
-  //
-  //     return (
-  //         <div>
-  //             {Object.keys(this.state.errors).map((error, i) => (
-  //                 <p key={`error-${i}`} className='signup-error'>
-  //                     {this.state.errors[error]}
-  //                 </p>
-  //             ))}
-  //         </div>
-  //     );
-  // }
 
   render() {
-    // const languageOptions = [
-    //     { key: "ru", text: "Ruby" },
-    //     { key: "re", text: "React" },
-    //     { key: "ra", text: "Rails" },
-    //     { key: "js", text: "Javascript" },
-    //     { key: "no", text: "Node.js" },
-    //     { key: "ht", text: "HTML" },
-    //     { key: "cs", text: "CSS" }
-    // ]
+
     return (
       <div className="signup-form-container" style={{ paddingTop: "50px" }}>
         <form onSubmit={this.handleSubmit} className="signup-form-with-header">
