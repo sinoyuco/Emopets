@@ -3,6 +3,7 @@ import React from 'react';
 class UserShow extends React.Component {
     constructor(props){
         super(props);
+        this.goPlay = this.goPlay.bind(this);
     }
 
     componentDidMount(){
@@ -11,16 +12,16 @@ class UserShow extends React.Component {
         };
     }
 
+    goPlay() {
+        this.props.history.push('/play')
+    }
+
     render() {
         const languages = {};
-
         if (this.props.currentUser === undefined) {
             return <> </>
-
         } else {
-        
             const age = new Date().getFullYear() - parseInt(this.props.currentUser.birthDate.split("-")[0]);
-      
             return( 
             <div className="user-show-master">
                 <div className="user-show-content">
@@ -31,7 +32,7 @@ class UserShow extends React.Component {
                         <h3><strong>Experience:</strong> {this.props.currentUser.experience}</h3>
                         <h3><strong>Age:</strong> {age}</h3>
                         <h3><strong>Pronouns:</strong> {this.props.currentUser.pronouns}</h3>
-                    <button onClick={this.props.logout}>Logout</button>
+                    <button onClick={this.goPlay}>Play</button>
                 </div>
             </div>
             );
