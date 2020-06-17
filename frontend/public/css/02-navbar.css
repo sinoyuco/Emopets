@@ -103,18 +103,19 @@
 	flex-direction: row;
 }
 
-.with-likes{
+.show-nav-dropdown{
 opacity: 92%;
 background-color: black;
 display: flex;
 justify-content: center;
 flex-direction: column;
-margin-left: -800%;
-width: 800%;
-display: none;
+margin-left: -250px;
+width: 300px;
+padding-top: 30px;
+border-radius: 15px;
 }
 
-.no-content{
-
+.hidden-nav-dropdown{
+display: none;
 
 }
