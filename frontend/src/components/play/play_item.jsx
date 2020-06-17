@@ -5,6 +5,7 @@ class PlayItem extends React.Component {
         super(props)
     }
 
+
     render() {
         const { language, goal, name, experience, birthDate, pronouns} = this.props.user
         const birth = birthDate.split('-')
@@ -13,15 +14,15 @@ class PlayItem extends React.Component {
             <div className="main-card">
                 <div className="thecard">
                     <div className="thefront">
-                        <img src='http://localhost:3000/images/Javascript-front-card.png' />
+                        <img src={`http://localhost:3000/images/${language}-front-card.png`} />
                     </div>
                     <div className="theback">
                         <div className="card-profile-picture">
-                            <img src='http://localhost:3000/images/Javascript-back-card.png' />
+                            <img src={`http://localhost:3000/images/${language}-back-card.png`} />
                         </div>
                         <div className="card-profile-bottom">
                             <div className="card-profile-bottom-header">
-                                <div>{name}</div>
+                                <div className="profile-name">{name}</div>
                                 <div>{fixedBirth}</div>
                             </div>
                             <div className="card-profile-bottom-middle">
