@@ -55,7 +55,9 @@ class LoginForm extends React.Component {
 
     render() {
         return (
-            <div>
+            <div
+            style={{padding: "250px"}}
+            >
                 <form onSubmit={this.handleSubmit}>
                     <div>
                         <br />
