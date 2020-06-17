@@ -9,6 +9,12 @@ const bodyParser = require('body-parser');
 const passport = require('passport');
 const path = require('path');
 
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static('frontend/build'));
+    app.get('/', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    })
+}
 
 
 app.get("/", (req, res) => res.send("Hello World!!!"));
@@ -21,12 +27,7 @@ mongoose
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json()); 
 
-if (process.env.NODE_ENV === 'production') {
-    app.use(express.static('frontend/build'));
-    app.get('/', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
-    })
-}
+
 
 
 app.use(passport.initialize());
