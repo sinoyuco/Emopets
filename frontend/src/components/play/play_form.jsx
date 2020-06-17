@@ -35,7 +35,7 @@ class Play extends React.Component {
                             this.state.search.includes(user.language)
                         )
                     )
-                } else if (this.state.search.some(ele => !ele.checked) || this.state.search.length === 0) {
+                } else if (this.state.search.every(ele => !ele.checked) || this.state.search.length === 0) {
                     usersSome = this.props.users
                 }
                 debugger

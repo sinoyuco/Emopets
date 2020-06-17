@@ -4,22 +4,28 @@ class PlayItem extends React.Component {
     constructor(props) {
         super(props)
     }
+    
 
+    birthHandler(date) {
+        if (this.props.user) {
+            const birth = this.props.user.birthDate.split('-')
+            return [birth[0], birth[1], birth[2].slice(0, 2)].join('/')
+        }
+    }
 
     render() {
         if (this.props.user) {
             const { language, goal, name, experience, birthDate, pronouns} = this.props.user
-            const birth = birthDate.split('-')
-            const fixedBirth = [birth[0],birth[1],birth[2].slice(0,2)].join('/') // birthdate formatting
+            const fixedBirth = this.birthHandler(birthDate)
             return(
                 <div className="main-card">
                     <div className="thecard">
                         <div className="thefront">
-                            <img src={`http://localhost:3000/images/${language}-front-card.png`} />
+                            <img src={`/images/${language}-front-card.png`} />
                         </div>
                         <div className="theback">
                             <div className="card-profile-picture">
-                                <img src={`http://localhost:3000/images/${language}-back-card.png`} />
+                                <img src={`/images/${language}-back-card.png`} />
                             </div>
                             <div className="card-profile-bottom">
                                 <div className="card-profile-bottom-header">
