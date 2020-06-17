@@ -1,0 +1,89 @@
+.entire-splash {
+	background-color: #E4DCD0;
+	height: 1500px;
+	width: 100vw;
+
+}
+
+
+.splash-header {
+  color: red;
+	margin-top: 100px;
+}
+
+.splash-logo{
+	height: 275px;
+	width: 800px;
+}
+
+.top-of-splash{
+	padding-top: 200px;
+	display: flex;
+	justify-content: center;
+}
+
+.signup-and-excel-picture {
+	height: 200px;
+	width: 200px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+
+.signup-and-excel {
+	display: flex;
+	flex-direction: column;
+	color: #F5F5F5;
+	font-weight: bold;
+	font-size: 35px;
+
+}
+
+.signup-list-item{
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.splash-signup-now-button {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	box-shadow:inset 0px 1px 0px 0px #3B4449;
+	border: 1px solid #053049;
+	background-color: #053049;
+	cursor: pointer;
+	border-radius: 5px;
+	/* padding-left: ; */
+	height: 45px;
+	width: 165px;
+	color: #FFFFFF;
+	outline: none;
+	padding-left: 25px;
+}
+
+.splash-signup-now-button:hover {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 50px;
+	box-shadow:inset 0px 1px 0px 0px #2D5066;
+	border: 1px solid #0A4266;
+	background-color: #0A4266;
+	cursor: pointer;
+	border-radius: 5px;
+	/* padding-left: ; */
+	height: 45px;
+	width: 165px;
+	color: #FFFFFF;
+	outline: none;
+	padding-left: 25px;
+}
