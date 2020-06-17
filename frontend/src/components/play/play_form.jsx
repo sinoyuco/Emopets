@@ -11,12 +11,14 @@ class Play extends React.Component {
     }
 
     render() {
+        debugger
+        const usersSome = this.props.users
         if (this.props.users.length) {
             return(
                 <div className="cards-container">
                     <div className="card-container">
                         {
-                            this.props.users.map(user => (
+                            usersSome.map(user => (
                                 <PlayItem 
                                     user={user}
                                     key={user.id}
