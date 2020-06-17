@@ -7,7 +7,6 @@ class NavBar extends React.Component{
   }
 
   notification(){
-      debugger
       if (this.props.currentUser === undefined) {
       return(
         <>
@@ -39,7 +38,6 @@ class NavBar extends React.Component{
   }
 
   logInOrSignUpButton() {
-    debugger
     if (this.props.currentUser === undefined || !this.props.currentUser.id) {
       return (
         <li className="nav-signin-login-buttons">
