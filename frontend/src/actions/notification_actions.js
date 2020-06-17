@@ -12,4 +12,4 @@ export const fetchLikes = (userId) => dispatch => {
     return APIUtil.fetchNotifications(userId).then(notifs => (
         dispatch(receiveNotifications(notifs))
     ))
-}
+};
