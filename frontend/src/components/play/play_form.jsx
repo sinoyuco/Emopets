@@ -1,5 +1,6 @@
 import React from 'react';
-import PlayItem from './play_item'
+// import PlayItem from './play_item'
+import Deck from '../test/test'
 
 class Play extends React.Component {
     constructor(props) {
@@ -13,18 +14,19 @@ class Play extends React.Component {
     render() {
         if (this.props.users.length) {
             return(
-                <div className="cards-container">
-                    <div className="card-container">
-                        {
-                            this.props.users.map(user => (
-                                <PlayItem 
-                                    user={user}
-                                    key={user.id}
-                                />
-                            ))
-                        }
-                    </div>
-                </div>
+                // <div className="cards-container">
+                //     <div className="card-container">
+                //         {
+                //             this.props.users.map(user => (
+                //                 <PlayItem 
+                //                     user={user}
+                //                     key={user.id}
+                //                 />
+                //             ))
+                //         }
+                //     </div>
+                // </div>
+                <Deck/>
             )
         } else {
             return null;

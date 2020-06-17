@@ -44,11 +44,11 @@ class PlayItem extends React.Component {
                                     <div>{experience}</div>
                                 </div>
                             </div>
-                        </div>
                             <div className="card-profile-bottom-footer">
                                 <button>No</button>
                                 <button>Yes</button>
                             </div>
+                        </div>
                     </div>
                 </div>
             </div>
