@@ -12,22 +12,15 @@ class PlayItem extends React.Component {
         this.props.postLike(this.props.user._id);
     }
 
-    // handleDislike(e){
-    //     e.preventDefault();
-    //     // pluck this user out of users and rerender on play level.
-    // }
-
-    birthHandler(date) {
-        if (this.props.user) {
-            const birth = this.props.user.birthDate.split('-')
-            return [birth[0], birth[1], birth[2].slice(0, 2)].join('/')
-        }
-    }
 
     render() {
         if (this.props.user) {
             const { language, goal, name, experience, birthDate, pronouns} = this.props.user
-            const fixedBirth = this.birthHandler(birthDate)
+            let fixedBirth
+            if (birthDate) {
+                const birth = birthDate.split('-')
+                fixedBirth = [birth[0], birth[1], birth[2].slice(0, 2)].join('/')
+            }
             return(
                 <div className="main-card">
                     <div className="thecard">

@@ -13,6 +13,13 @@
 
 .cards-container {
   background-color: #E4DCD0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.card-container {
+  display: flex;
+  flex-direction: row;
 }
 
 .thecard{
@@ -165,6 +172,7 @@
   border: none;
   outline: none;
   font-size: 55px;
+  cursor: pointer;
 }
 
 .yes-btn {
@@ -207,6 +215,7 @@
   outline: none;
   transition: .5s;
   margin-right: 12px;
+  cursor: pointer;
 }
 
 .language-option:before {
