@@ -1,8 +1,4 @@
 import React from 'react';
-<<<<<<< HEAD
-import { withRouter } from 'react-router-dom';
-import { Dropdown } from 'semantic-ui-react';
-=======
 import DatePicker from "react-datepicker";
 import { Link } from 'react-router-dom';
 // import DayPicker from 'react-day-picker';
@@ -13,7 +9,6 @@ import "react-datepicker/dist/react-datepicker.css";
 // import 'semantic-ui-css/semantic.min.css';
 
 
->>>>>>> auth
 
 class SignupForm extends React.Component {
     constructor(props) {
@@ -163,17 +158,6 @@ class SignupForm extends React.Component {
     // }
 
     render() {
-<<<<<<< HEAD
-        const languageOptions = [
-            {key: "ru", text: "Ruby"},
-            {key: "re", text: "React"},
-            {key: "ra", text: "Rails"},
-            {key: "js", text: "Javascript"},
-            {key: "no", text: "Node.js"},
-            {key: "ht", text: "html"},
-            {key: "cs", text: "css"}  
-        ]
-=======
         // const languageOptions = [
         //     { key: "ru", text: "Ruby" },
         //     { key: "re", text: "React" },
@@ -183,7 +167,6 @@ class SignupForm extends React.Component {
         //     { key: "ht", text: "HTML" },
         //     { key: "cs", text: "CSS" }
         // ]
->>>>>>> auth
         return (
             <div className="signup-form-container"
                 style={{paddingTop: "50px"}}
@@ -302,18 +285,6 @@ class SignupForm extends React.Component {
                         {/* {this.renderErrors()} */}
 
                         <input type="submit" value="Submit" />
-<<<<<<< HEAD
-
-                        <Dropdown 
-                        placeholder='Select Language'
-                        fluid
-                        search
-                        selection
-                        options={languageOptions}/>
-                        
-                        {this.renderErrors()}
-=======
->>>>>>> auth
                     </div>
                 </form>
             </div>

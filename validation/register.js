@@ -12,10 +12,6 @@ module.exports = function validateRegisterInput(data) {
     data.goal = validText(data.goal) ? data.goal : '';
     data.experience = validText(data.experience) ? data.experience : '';
     data.pronouns = validText(data.pronouns) ? data.pronouns : '';
-<<<<<<< HEAD
-    
-=======
->>>>>>> auth
 
     if (Validator.isEmpty(data.name)) {
         errors.name = 'Name field is required';
