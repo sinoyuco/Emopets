@@ -76,7 +76,6 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    debugger;
     return (
       <div className="login-form-container" style={{ padding: "250px" }}>
         <div className="login-form">

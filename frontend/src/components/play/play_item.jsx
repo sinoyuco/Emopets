@@ -2,24 +2,41 @@ import React from 'react';
 
 class PlayItem extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.handleLike = this.handleLike.bind(this);
+    }
+    
+
+    handleLike(e){
+        e.preventDefault();
+        this.props.postLike(this.props.user._id);
     }
 
+    // handleDislike(e){
+    //     e.preventDefault();
+    //     // pluck this user out of users and rerender on play level.
+    // }
+
+    birthHandler(date) {
+        if (this.props.user) {
+            const birth = this.props.user.birthDate.split('-')
+            return [birth[0], birth[1], birth[2].slice(0, 2)].join('/')
+        }
+    }
 
     render() {
         if (this.props.user) {
             const { language, goal, name, experience, birthDate, pronouns} = this.props.user
-            const birth = birthDate.split('-')
-            const fixedBirth = [birth[0],birth[1],birth[2].slice(0,2)].join('/') // birthdate formatting
+            const fixedBirth = this.birthHandler(birthDate)
             return(
                 <div className="main-card">
                     <div className="thecard">
                         <div className="thefront">
-                            <img src={`http://localhost:3000/images/${language}-front-card.png`} />
+                            <img src={`/images/${language}-front-card.png`} />
                         </div>
                         <div className="theback">
                             <div className="card-profile-picture">
-                                <img src={`http://localhost:3000/images/${language}-back-card.png`} />
+                                <img src={`/images/${language}-back-card.png`} />
                             </div>
                             <div className="card-profile-bottom">
                                 <div className="card-profile-bottom-header">
@@ -49,7 +66,7 @@ class PlayItem extends React.Component {
                                 <div className="card-profile-b">
                                     <div className="card-profile-bottom-footer">
                                         <button className="no-btn"><i className="far fa-times-circle"></i></button>
-                                        <button className="yes-btn"><i className="far fa-check-square"></i></button>
+                                        <button onClick={this.handleLike} className="yes-btn"><i className="far fa-check-square"></i></button>
                                     </div>
                                 </div>
                             </div>

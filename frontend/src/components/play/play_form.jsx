@@ -24,21 +24,24 @@ class Play extends React.Component {
 
     componentDidMount() {
         this.props.fetchUsers();
+        this.props.fetchLikes(this.props.currentUser.id);
     }
 
     render() {
+        const liked = this.props.likes.map(like => like['liked'])
+        debugger;
         if (this.props.users.length) {
             let usersSome
                 if (this.state.search.length) {
+                    usersSome = this.props.users.filter( user => (!liked.includes(user._id)) && (this.props.currentUser.id !== user._id ));
                     usersSome = this.props.users.filter(
                         user => (
                             this.state.search.includes(user.language)
                         )
                     )
                 } else if (this.state.search.some(ele => !ele.checked) || this.state.search.length === 0) {
-                    usersSome = this.props.users
+                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (this.props.currentUser.id !== user._id));
                 }
-                debugger
             return(
                 <div className="cards-container">
                     <div className="card-container">
@@ -47,6 +50,7 @@ class Play extends React.Component {
                                 <PlayItem 
                                     user={user}
                                     key={user._id}
+                                    postLike={this.props.postLike}
                                 />
                             ))
                         }
