@@ -1,7 +1,7 @@
 .main-card{
   position: absolute;
-  width: 400px;
-  height: 550px;
+  width: 30vw;
+  height: 72vh;
   background: none;
   top: 50%;
   left: 50%;
@@ -27,10 +27,10 @@
   font-size: 40px;
 }
 
-.card-container {
+/* .card-container {
   display: flex;
   flex-direction: row;
-}
+} */
 
 .thecard{
   position: relative;
@@ -46,6 +46,7 @@
 
 .thecard:hover{
   transform: rotateY(180deg);
+  box-shadow: none;
 }
 
  .thefront{
