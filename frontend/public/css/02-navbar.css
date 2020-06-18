@@ -119,3 +119,33 @@ border-radius: 15px;
 display: none;
 
 }
+
+#has-notificaitons {
+    /* display: block; */
+    height: 25px;
+    width: 25px;
+    line-height: 25px;
+    -moz-border-radius: 50%; /* or 50% */
+    border-radius: 50%; /* or 50% */
+    background-color: red;
+    color: white;
+    text-align: center;
+    font-size: 12px;
+}
+
+.has-nav-dropdown{
+opacity: 92%;
+background-color: black;
+display: flex;
+justify-content: center;
+flex-direction: column;
+margin-left: -250px;
+width: 300px;
+padding-top: 30px;
+border-radius: 15px;
+}
+
+.match-notifs h3:hover {
+  background-color: rgb(31, 29, 29);
+  cursor: pointer;
+}

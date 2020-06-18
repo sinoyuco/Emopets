@@ -12,4 +12,4 @@ export const fetchNotifications = (userId) => dispatch => {
     return APIUtil.fetchNotifications(userId).then(notifs => (
         dispatch(receiveNotifications(notifs))
     ))
-}
+};

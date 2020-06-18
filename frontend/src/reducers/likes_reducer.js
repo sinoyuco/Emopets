@@ -5,13 +5,13 @@ const likesReducer = (state={}, action) => {
     switch(action.type){
         case RECEIVE_LIKE:
             debugger;
-            return Object.assign({},state,{[action.like.data._id]: action.like.data});
+            return Object.assign({}, state, {[action.like.data._id]: action.like.data});
         case RECEIVE_USER_LIKES:
             let likes = {};
             action.likes.data.forEach(like => {
                 likes[like._id] = like
             });
-            return Object.assign({},state,likes);
+            return Object.assign({}, state, likes);
         default:
             return state;
     }
