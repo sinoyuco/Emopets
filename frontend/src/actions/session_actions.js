@@ -32,8 +32,8 @@ export const clearSessionErrors = () => ({
 
 
 export const signup = user => dispatch => {
-    return APIUtil.signup(user).then(() => (
-        dispatch(receiveUserSignIn())
+    return APIUtil.signup(user).then((user) => (
+        dispatch(receiveCurrentUser(user))
     ), err => (
         dispatch(receiveErrors(err.response.data))
     ))

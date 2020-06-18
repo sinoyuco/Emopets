@@ -26,6 +26,16 @@ class SignupForm extends React.Component {
       errors: {},
     };
 
+    this.handleEmailErr = this.handleEmailErr.bind(this)
+    this.handleNameErr = this.handleNameErr.bind(this)
+    this.handlePasswordErr = this.handlePasswordErr.bind(this)
+    this.handlePassword2Err = this.handlePassword2Err.bind(this)
+    this.handleLangErr = this.handleLangErr.bind(this)
+    this.handleProErr = this.handleProErr.bind(this)
+    this.handleGoalErr = this.handleGoalErr.bind(this)
+    this.handleExpErr = this.handleExpErr.bind(this)
+    this.handleBirthDateErr = this.handleBirthDateErr.bind(this)
+
     this.handleDropdown = this.handleDropdown.bind(this);
     this.handleDropdownp = this.handleDropdownp.bind(this);
     // this.hanldeChange = this.handleChange.bind(this);
@@ -52,6 +62,7 @@ class SignupForm extends React.Component {
   handleDropdown(e) {
     this.setState({ language: e.target.value });
   }
+
   handleDropdownp(e) {
     this.setState({ pronouns: e.target.value });
   }
@@ -72,8 +83,15 @@ class SignupForm extends React.Component {
     };
 
     // this.props.signup(user, this.props.history);
+
     this.props.signup(user);
-    this.props.login(user);
+    console.log(this.props.errors)
+    // this.props.login(user);
+
+    // debugger
+    // if (this.props.errors.length === 0 || this.state.name){
+    //   this.props.login(user);
+    // }
     // this.props.history.push('/show')
   }
 
@@ -84,76 +102,144 @@ class SignupForm extends React.Component {
   };
 
   handleEmailErr() {
+    let field = document.getElementById("signup-email");
+    if (field === null) return;
+
     if (this.props.errors.email) {
+      field.className = "signup-yes-errors-input";
       return "Enter a valid email";
+    } else {
+      field.className = "signup-no-errors-input";
     }
   }
 
+  
+  handleNameErr() {
+    let field = document.getElementById("signup-name");
+    if (field === null) return;
+    
+    if (this.props.errors.name) {
+      field.className = "signup-yes-errors-input";
+      return "Name field is required";
+    } else {
+      field.className = "signup-no-errors-input";
+    }
+  }
+  
   handlePasswordErr() {
+    let field = document.getElementById("signup-password-1");
+    if (field === null) return;
+
     if (this.props.errors.password) {
+      field.className = "signup-yes-errors-input";
       return "Password must be at least 6 characters";
+    } else {
+      field.className = "signup-no-errors-input";
     }
   }
 
   handlePassword2Err() {
-    if (this.props.errors.password2) {
-      return "Passwords must match";
-    }
-  }
+    let field = document.getElementById("signup-password-2");
+    if (field === null) return;
 
-  handleNameErr() {
-    if (this.props.errors.name) {
-      return "Name field is required";
+    if (this.props.errors.password2) {
+      field.className = "signup-yes-errors-input";
+      return "Passwords must match";
+    } else {
+      field.className = "signup-no-errors-input";
     }
   }
 
   handleLangErr() {
+    let field = document.getElementById("signup-lang");
+    if (field === null) return;
+
     if (this.props.errors.language) {
+      field.className = "signup-yes-errors-select";
       return "Language field is required";
+    } else {
+      field.className = "signup-no-errors-select";
     }
   }
 
   handleProErr() {
+    let field = document.getElementById("signup-pro");
+    if (field === null) return;
+
     if (this.props.errors.pronouns) {
+      field.className = "signup-yes-errors-select";
       return "Pronoun field is required";
+    } else {
+      field.className = "signup-no-errors-select";
+    }
+  }
+  
+  handleGoalErr() {
+    let field = document.getElementById("signup-goal");
+    if (field === null) return;
+
+    if (this.props.errors.goal) {
+      field.className = "signup-yes-errors-textarea";
+      return "Goal field is required";
+    } else {
+      field.className = "signup-no-errors-textarea";
+    }
+  }
+  
+  handleExpErr() {
+    let field = document.getElementById("signup-exp");
+    if (field === null) return;
+
+    if (this.props.errors.experience) {
+      field.className = "signup-yes-errors-textarea";
+      return "Experience field is required";
+    } else {
+      field.className = "signup-no-errors-textarea";
     }
   }
 
   handleBirthDateErr() {
-    if (this.props.errors.language) {
+    let field = document.getElementById("signup-exp");
+    if (field === null) return;
+
+    if (this.props.errors.birthdate) {
+      field.className = "signup-yes-errors-date";
       return "Birthdate field is required";
+    } else {
+      field.className = "signup-no-errors-date";
     }
   }
 
-  handleGoalErr() {
-    if (this.props.errors.goal) {
-      return "Goal field is required";
-    }
-  }
-
-  handleExpErr() {
-    if (this.props.errors.experience) {
-      return "Experience field is required";
-    }
-  }
 
   componentDidMount() {
     this.props.clearSessionErrors();
+
+
+    let inputs = document.getElementsByClassName("signup-yes-errors-input");
+
+    Array.from(inputs).forEach(input => {
+      input.className = "signup-no-errors-input";
+    });
+
+    let selects = document.getElementsByClassName("signup-yes-errors-select");
+
+    Array.from(selects).forEach(select => {
+      select.className = "signup-no-errors-select";
+    });
+
+    let textareas = document.getElementsByClassName("signup-yes-errors-textarea");
+
+    Array.from(textareas).forEach(textarea => {
+      textarea.className = "signup-no-errors-textarea";
+    });
+
+    let date = document.getElementsByClassName("signup-yes-errors-date")
+
+    date.className = "signup-no-errors-date"
+
   }
 
-  // renderErrors() {
-  //
-  //     return (
-  //         <div>
-  //             {Object.keys(this.state.errors).map((error, i) => (
-  //                 <p key={`error-${i}`} className='signup-error'>
-  //                     {this.state.errors[error]}
-  //                 </p>
-  //             ))}
-  //         </div>
-  //     );
-  // }
-
+  
   render() {
     // const languageOptions = [
     //     { key: "ru", text: "Ruby" },
@@ -171,17 +257,18 @@ class SignupForm extends React.Component {
             <h1>Sign Up Here</h1>
 
             <input
-            className="no-error"
+              className="signup-no-errors-input"
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
               placeholder="Email"
               id="signup-email"
             />
+
             <p className="signup-error">{this.handleEmailErr()}</p>
 
             <input
-            className="no-error"
+            className="signup-no-errors-input"
               type="text"
               value={this.state.name}
               onChange={this.update("name")}
@@ -192,21 +279,22 @@ class SignupForm extends React.Component {
             <p className="signup-error">{this.handleNameErr()}</p>
 
             <input
-            className="no-error"
+            className="signup-no-errors-input"
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
-              id="signup-password"
+              id="signup-password-1"
             />
             <p className="signup-error">{this.handlePasswordErr()}</p>
 
             <input
-            className="no-error"
+            className="signup-no-errors-input"
               type="password"
               value={this.state.password2}
               onChange={this.update("password2")}
               placeholder="Confirm Password"
+              id="signup-password-2"
             />
 
             <p className="signup-error">{this.handlePassword2Err()}</p>
@@ -220,7 +308,7 @@ class SignupForm extends React.Component {
                 id="signup-lang"
               >
                 <option 
-                className="no-error" 
+                className="signup-no-errors-select" 
                 value="" selected disabled hidden>
                   Please Select
                 </option>
@@ -242,7 +330,7 @@ class SignupForm extends React.Component {
                 value={this.state.value}
                 id="signup-pro"
               >
-                <option className="no-error" value="" selected disabled hidden>
+                <option className="signup-no-errors-select" value="" selected disabled hidden>
                   Please Select
                 </option>
                 <option value="He/Him/His">He/Him/His</option>
@@ -257,7 +345,7 @@ class SignupForm extends React.Component {
               Goal:
               <br />
               <textarea
-                className="no-error"
+                className="signup-no-errors-textarea"
                 value={this.state.goal}
                 onChange={this.update("goal")}
                 id="signup-goal"
@@ -271,7 +359,7 @@ class SignupForm extends React.Component {
               Experience:
               <br />
               <textarea
-                className="no-error"
+                className="signup-no-errors-textarea"
                 value={this.state.experience}
                 onChange={this.update("experience")}
                 id="signup-exp"
@@ -283,13 +371,12 @@ class SignupForm extends React.Component {
             <label id="signup-birthdate">
               Birthdate:
               <DatePicker
+                className="signup-no-errors-date"
                 selected={this.state.birthDate}
                 onChange={this.handleChange}
               />
             </label>
             <p className="signup-error">{this.handleBirthDateErr()}</p>
-
-            {/* {this.renderErrors()} */}
 
             <input type="submit" value="Submit" />
           </div>
