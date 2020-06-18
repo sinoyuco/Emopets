@@ -1,19 +1,22 @@
 import { connect } from 'react-redux';
-import { fetchLikes } from '../../actions/notification_actions';
+import { fetchNotifications } from '../../actions/notification_actions';
+import { fetchUsers } from '../../actions/user_actions';
 import Notifications from './notification'
+// import { fetchUser } from '../../util/users_util';
 
 const mSTP = state => {
-    debugger;
     return {
         currentUser: state.session.user,
         likes: state.likes,
-        notifications: state.notifications
+        notifications: Object.values(state.notifications),
+        users: state.users
     };
 
     }
 
 const mDTP = dispatch => ({
-    fetchLikes: (userId) => dispatch(fetchLikes(userId))
+    fetchNotifications: (userId) => dispatch(fetchNotifications(userId)),
+    fetchUsers: () => dispatch(fetchUsers())
 
 });
 
