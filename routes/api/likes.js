@@ -33,7 +33,7 @@ router.post('/',
         // if (!isValid) {
         //     return res.status(400).json(errors);
         // }
-        if (req.body.type='like'){
+        if (req.body.type=='like'){
         Like.find({ user: req.body.liked, liked: req.user.id, type: 'like' }).then((likes) => {
             if (likes.length!==0) {
                 const newNotif = new Notification({ 
