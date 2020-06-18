@@ -81,10 +81,10 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container" style={{ padding: "250px" }}>
+      <div className="login-form-container"> 
         <div className="login-form">
-          <form onSubmit={this.handleSubmit}>
             <h1>Log-In Here</h1>
+          <form onSubmit={this.handleSubmit}>
             <input
                 id="login-email"
               className="login-no-errors-input"

@@ -240,7 +240,7 @@ class SignupForm extends React.Component {
   render() {
 
     return (
-      <div className="signup-form-container" style={{ paddingTop: "50px" }}>
+      <div className="signup-form-container" >
         <form onSubmit={this.handleSubmit} className="signup-form-with-header">
           <div className="signup-form">
             <h1>Sign Up Here</h1>
@@ -287,9 +287,9 @@ class SignupForm extends React.Component {
             />
 
             <p className="signup-error">{this.handlePassword2Err()}</p>
-
+          <div className="signup-dropdown">
             <span>
-              <label>Language/Framework:</label>
+              {/* <label>Language/Framework:</label> */}
 
               <select
                 onChange={this.handleDropdown}
@@ -299,7 +299,7 @@ class SignupForm extends React.Component {
                 <option 
                 className="signup-no-errors-select" 
                 value="" selected disabled hidden>
-                  Please Select
+                  Language/framework
                 </option>
                 <option value="Ruby">Ruby</option>
                 <option value="Rails">Rails</option>
@@ -313,14 +313,14 @@ class SignupForm extends React.Component {
             <p className="signup-error">{this.handleLangErr()}</p>
 
             <span>
-              <label>Pronouns:</label>
+              {/* <label>Pronouns:</label> */}
               <select
                 onChange={this.handleDropdownp}
                 value={this.state.value}
                 id="signup-pro"
               >
                 <option className="signup-no-errors-select" value="" selected disabled hidden>
-                  Please Select
+                  Pronouns
                 </option>
                 <option value="He/Him/His">He/Him/His</option>
                 <option value="She/Her/Hers">She/Her/Hers</option>
@@ -329,9 +329,10 @@ class SignupForm extends React.Component {
               </select>
             </span>
             <p className="signup-error">{this.handleProErr()}</p>
+          </div>
 
             <label>
-              Goal:
+              {/* Goal: */}
               <br />
               <textarea
               style={{resize: "none"}}
@@ -339,6 +340,7 @@ class SignupForm extends React.Component {
                 value={this.state.goal}
                 onChange={this.update("goal")}
                 id="signup-goal"
+                placeholder="Your goal"
               />
             </label>
 
@@ -346,7 +348,7 @@ class SignupForm extends React.Component {
 
             <label>
               {" "}
-              Experience:
+              {/* Experience: */}
               <br />
               <textarea
               style={{resize: "none"}}
@@ -354,18 +356,20 @@ class SignupForm extends React.Component {
                 value={this.state.experience}
                 onChange={this.update("experience")}
                 id="signup-exp"
+                placeholder="Experience"
               />
             </label>
 
             <p className="signup-error">{this.handleExpErr()}</p>
 
             <label >
-              Birthdate:
+              {/* Birthdate: */}
               <DatePicker
                 id="date-exp"
                 className="signup-no-errors-date"
                 selected={this.state.birthDate}
                 onChange={this.handleChange}
+                placeholderText='Birthdate'
               />
             </label>
             <p className="signup-error">{this.handleBirthDateErr()}</p>
