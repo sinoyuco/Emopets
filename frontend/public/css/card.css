@@ -185,9 +185,19 @@
   background-color: white;
 }
 
+.yes-btn:hover {
+  color: white;
+  background-color: rgb(91, 185, 155);
+}
+
 .no-btn {
   color: red;
   background-color: white;
+}
+
+.no-btn:hover{
+  color: white;
+  background-color: red;
 }
 
 .language-options {
