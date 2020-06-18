@@ -1,14 +1,19 @@
 .main-card{
   position: absolute;
   width: 30vw;
-  height: 72vh;
+  height: 80vh;
   background: none;
   top: 50%;
   left: 50%;
   border-radius: 10px;  
   transform: translate(-50%, -50%);
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Josefin Sans', sans-serif;
   box-shadow: 0 5px 10px -5px #312f2f70;
+}
+
+.card-profile-bottom {
+  min-height: fit-content;
 }
 
 .cards-container {
@@ -71,10 +76,13 @@
 
 .card-profile-bottom-middle, .card-profile-bottom-bottom  {
   margin-top: -10px;
+  margin-bottom: 0;
 }
 
 .card-profile-bottom-footer {
-  margin-top: -20px;
+  /* margin-top: -20px; */
+  margin-top: 0;
+ 
 }
 
 .theback{
@@ -131,7 +139,8 @@
 }
 
 .thefront h1, .theback h1{
-  font-family: 'zilla slab', sans-serif;
+  /* font-family: 'zilla slab', sans-serif; */
+  font-family: 'Josefin Sans', sans-serif;
   padding: 30px;
   font-weight: bold;
   font-size: 24px;
@@ -150,7 +159,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 35px;
+  padding: 10px;
 }
 
 .card-profile-b {
@@ -194,6 +203,7 @@
 .yes-btn {
   color: rgb(91, 185, 155) ;
   background-color: transparent;
+  margin-right: 25px
 }
 
 .yes-btn:hover {
@@ -203,6 +213,8 @@
 .no-btn {
   color: red;
   background-color: transparent;
+  margin-left: 25px
+
 }
 
 .no-btn:hover{
@@ -220,7 +232,7 @@
   height: 307px;
   border-radius: 15px;
   background-color: #073049;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Josefin Sans', sans-serif;
   margin-left: 30px;
   text-align: left;
   color: white;

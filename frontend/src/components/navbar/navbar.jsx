@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, Redirect, Route } from 'react-router-dom';
+import { useStore } from 'react-redux';
 
 class NavBar extends React.Component{
   constructor(props){
@@ -37,7 +38,7 @@ class NavBar extends React.Component{
     } else if (this.props.notifications.length === 0) {
 
       return (
-
+        <Link to='/notifications'>
         <h3 id="some-notificaitons"
           onMouseEnter={this.showNav}
           onMouseLeave={this.hideNav}
@@ -61,6 +62,7 @@ class NavBar extends React.Component{
           </div>
           
         </h3>
+        </Link>
       );
 
     } else {
@@ -164,3 +166,15 @@ class NavBar extends React.Component{
 }
 
 export default NavBar;
+
+
+
+
+// user.old_notifs = []
+
+
+// fetchNotifications() (- users show page) => returns an array (this.props.notifications)
+
+// iiterate through this.props.notifications(updated state) and iterate through user.old_notifs to
+// find the values dont match 
+// [those_values].length = you have _ new matches. 

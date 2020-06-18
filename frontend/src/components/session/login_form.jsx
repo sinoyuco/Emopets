@@ -4,7 +4,6 @@ import { withRouter } from 'react-router-dom';
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       email: "",
       password: "",
@@ -12,6 +11,7 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleDemo = this.handleDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -20,6 +20,10 @@ class LoginForm extends React.Component {
     }
 
     this.setState({ errors: nextProps.errors });
+  }
+
+  handleDemo() {
+    this.props.login(this.props.demoUser);
   }
 
   componentDidMount() {
@@ -77,10 +81,10 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div className="login-form-container" style={{ padding: "250px" }}>
+      <div className="login-form-container"> 
         <div className="login-form">
-          <form onSubmit={this.handleSubmit}>
             <h1>Log-In Here</h1>
+          <form onSubmit={this.handleSubmit}>
             <input
                 id="login-email"
               className="login-no-errors-input"
@@ -101,6 +105,7 @@ class LoginForm extends React.Component {
             <p className="signup-error">{this.handlePasswordErr()}</p>
             <input type="submit" value="Submit" />
           </form>
+            <button className="demo-button" onClick={() => this.handleDemo()}>Demo</button>
         </div>
       </div>
     );

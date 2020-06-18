@@ -24,7 +24,9 @@
   left: 50%;
   border-radius: 10px;  
   transform: translate(-50%, -50%);
-    font-family: 'Acme', sans-serif;
+  /* font-family: 'MuseoModerno', cursive; */
+    /* font-family: 'Acme', sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
   box-shadow: 0 5px 10px -5px #312f2f70;
   background-color: wheat;
 }
@@ -145,7 +147,9 @@
     display: inline-block !important;
     position: relative !important;
     text-align: center !important;
-    font-family: 'Acme', sans-serif;
+    /* font-family: 'MuseoModerno', cursive; */
+    /* font-family: 'Acme', sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
 
     font-size: 22px !important;
     line-height: 18px !important;
@@ -209,7 +213,9 @@
     display: inline-block !important;
     position: relative !important;
     text-align: center !important;
-    font-family: 'Acme', sans-serif;
+    /* font-family: 'MuseoModerno', cursive; */
+    /* font-family: 'Acme', sans-serif; */
+    font-family: 'Josefin Sans', sans-serif;
     font-size: 22px  !important;
     line-height: 18px !important;
     font-weight: 500 !important;
@@ -260,3 +266,5 @@
 .play-button:focus::before {
     color: white;
 }
+
+/* dsajk */
