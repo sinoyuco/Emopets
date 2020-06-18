@@ -17,6 +17,15 @@
   height: 100vh;
 }
 
+.no-cards {
+  position: relative;
+  top: 50%;
+  left: 25%;
+  color: #F5F5F5;
+	font-weight: bold;
+  font-size: 40px;
+}
+
 .card-container {
   display: flex;
   flex-direction: row;

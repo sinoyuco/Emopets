@@ -54,7 +54,9 @@ class Play extends React.Component {
                                 }
                         </ul>
             } else {
-                display = <p>There is no more users that you haven't liked already...</p>
+                display = <div className="no-cards">
+                              <p>There is no more users that you haven't liked already...</p>
+                        </div>
             }
             return(
                 <div className="cards-container">

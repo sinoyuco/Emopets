@@ -26,7 +26,6 @@ class NavBar extends React.Component{
   }
 
   notification(){
-
       if (this.props.currentUser === undefined) {
       return(
         <>
