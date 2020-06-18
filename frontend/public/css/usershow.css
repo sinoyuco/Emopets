@@ -42,6 +42,7 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
+    min-height: fit-content;
 }
 
 .profile-header, .profile-middle {
@@ -56,26 +57,27 @@
     width: 50%;
 }
 
-.prof-name, .prof-birth {
+/* .prof-name, .prof-birth {
     font-size: 35px;
     padding-top: 15px;
     font-weight: 700;
-}
+} */
 
 .profile-footer {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin-top: 30px;
-    /* position: absolute; */
+    margin-top: 230px;
+    position: absolute;
     width: 100%;
-    /* padding-right: 50px; */
+    padding-right: 5px;
+    padding-left: 5px;
 }
 .prof-name {
     text-align: left;
     display: flex;
     flex-direction: column;
-    font-size: 22px;
+    font-size: 21px;
     /* margin-top: 25px; */
     justify-content: center;
 }
@@ -88,36 +90,29 @@
     /* margin-top: 20px; */
     justify-content: center;
 }
-.prof-goal , .prof-exp  {
-     text-align: left;
+
+.prof-language, .prof-exp {
+    text-align: left;
     display: flex;
     flex-direction: column;
-    font-size: 23px;
-    margin-top: 12px;
-    padding: 3px;
+    font-size: 21px;
+    margin-top: 17px;
     justify-content: center;
+    min-width: fit-content;
 }
 
-.prof-language {
+.prof-pronouns, .prof-goal {
     text-align: right;
     display: flex;
     flex-direction: column;
-    font-size: 23px;
-    margin-top: 15px;
+    font-size: 21px;
+    margin-top: 17px;
     justify-content: center;
-}
-
-.prof-pronouns  {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    font-size: 23px;
-    margin-top: 25px;
-    justify-content: center;
+    min-width: fit-content;
 }
 
 .prof-language label, .prof-pronouns label,.prof-goal label ,.prof-birth label, .prof-exp label, .prof-name label {
-    font-size: 17px;
+    font-size: 15px;
     color: rgb(109, 107, 107);
     /* padding: 5px; */
 }
@@ -135,7 +130,7 @@
     margin-bottom: -130px;
     border: transparent;
     background: transparent;
-     justify-content: space-between;
+    justify-content: space-between;
     cursor: pointer !important;
     display: inline-block !important;
     position: relative !important;
@@ -148,9 +143,10 @@
     padding-bottom: 7px !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
+    margin-right: 27px;
     /* margin-bottom: 150px; */
      height: 43px;
-    width: 135px;
+    width: 125px;
     --accent-color :#ff0066;
     /* margin-left: 72px; */
 }
