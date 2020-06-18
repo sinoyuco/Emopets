@@ -1,7 +1,7 @@
 .main-card{
   position: absolute;
-  width: 400px;
-  height: 550px;
+  width: 30vw;
+  height: 72vh;
   background: none;
   top: 50%;
   left: 50%;
@@ -15,6 +15,7 @@
   background-color: #E4DCD0;
   width: 100vw;
   height: 100vh;
+  z-index: 1;
 }
 
 .no-cards {
@@ -26,10 +27,10 @@
   font-size: 40px;
 }
 
-.card-container {
+/* .card-container {
   display: flex;
   flex-direction: row;
-}
+} */
 
 .thecard{
   position: relative;
@@ -45,6 +46,7 @@
 
 .thecard:hover{
   transform: rotateY(180deg);
+  box-shadow: none;
 }
 
  .thefront{
@@ -265,7 +267,7 @@
 }
 
 
-.no-users-filter {
+/* .no-users-filter {
   margin-top: 500px;
   position: absolute;
   top: 50%;
@@ -273,7 +275,7 @@
   color: #F5F5F5;
 	font-weight: bold;
 	font-size: 35px;
-}
+} */
 
 
 

@@ -20,8 +20,8 @@ const usersReducer = (state={}, action) => {
 
             return Object.assign({}, state, allUsers);
 
-        case RECEIVE_USER:
-            return Object.assign({}, state, {[action.user._id]: action.user});
+        // case RECEIVE_USER:
+        //     return Object.assign({}, state, {[action.user._id]: action.user});
   
         case UPDATE_USER:
 
@@ -30,7 +30,7 @@ const usersReducer = (state={}, action) => {
             return Object.assign({}, state, {[id]: user});
 
             // return Object.assign({}, {[action.user.data._id]: JSON.parse(action.user.data)});
-
+            
 
         default:
             return state;

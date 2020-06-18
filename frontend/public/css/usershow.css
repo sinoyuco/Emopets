@@ -14,8 +14,8 @@
 
 .user-show-content{
   position: absolute;
-  width: 30%;
-  height: 75%;
+  width: 30vw;
+  height: 75vh;
   background: none;
   top: 55%;
   left: 50%;
@@ -42,40 +42,43 @@
     display: flex;
     flex-direction: column;
     padding: 15px;
+    min-height: fit-content;
 }
 
-.profile-header, .profile-middle {
+.profile-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+.profile-middle {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
 
 .middle-left, .middle-right {
     display: flex;
-    flex-direction: column;
-    width: 50%;
-}
-
-.prof-name, .prof-birth {
-    font-size: 35px;
-    padding-top: 15px;
-    font-weight: 700;
+    flex-direction: row;
+    justify-content: space-between !important;
+    width: 100%;
+    margin-top: 10px;
 }
 
 .profile-footer {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
-    margin-top: 30px;
-    /* position: absolute; */
+    margin-top: 230px;
+    position: absolute;
     width: 100%;
-    /* padding-right: 50px; */
+    padding-right: 5px;
+    padding-left: 5px;
 }
 .prof-name {
     text-align: left;
     display: flex;
     flex-direction: column;
-    font-size: 22px;
+    font-size: 21px;
     /* margin-top: 25px; */
     justify-content: center;
 }
@@ -88,44 +91,40 @@
     /* margin-top: 20px; */
     justify-content: center;
 }
-.prof-goal , .prof-exp  {
-     text-align: left;
+
+
+.prof-goal, .prof-exp {
+    text-align: left;
     display: flex;
     flex-direction: column;
-    font-size: 23px;
-    margin-top: 12px;
-    padding: 3px;
+    font-size: 21px;
+    /* margin-top: 17px; */
     justify-content: center;
+    /* min-width: fit-content; */
+    width: 50% !important;
 }
 
-.prof-language {
+.prof-language,.prof-pronouns {
+    right: 0;
+    position: absolute;
+    padding-right: 15px;
+}
+
+.prof-pronouns, .prof-language {
     text-align: right;
     display: flex;
     flex-direction: column;
-    font-size: 23px;
-    margin-top: 15px;
+    font-size: 21px;
+    /* margin-top: 17px; */
     justify-content: center;
-}
-
-.prof-pronouns  {
-    text-align: right;
-    display: flex;
-    flex-direction: column;
-    font-size: 23px;
-    margin-top: 25px;
-    justify-content: center;
+    min-width: fit-content;
+    width: 50% !important;
 }
 
 .prof-language label, .prof-pronouns label,.prof-goal label ,.prof-birth label, .prof-exp label, .prof-name label {
-    font-size: 17px;
+    font-size: 15px;
     color: rgb(109, 107, 107);
     /* padding: 5px; */
-}
-
-.profile-middle {
-    display: flex;
-    flex-direction: row;    
-    justify-content: space-between;
 }
 
 
@@ -135,7 +134,7 @@
     margin-bottom: -130px;
     border: transparent;
     background: transparent;
-     justify-content: space-between;
+    justify-content: space-between;
     cursor: pointer !important;
     display: inline-block !important;
     position: relative !important;
@@ -148,9 +147,10 @@
     padding-bottom: 7px !important;
     padding-left: 15px !important;
     padding-right: 15px !important;
+    margin-right: 27px;
     /* margin-bottom: 150px; */
      height: 43px;
-    width: 135px;
+    width: 125px;
     --accent-color :#ff0066;
     /* margin-left: 72px; */
 }
