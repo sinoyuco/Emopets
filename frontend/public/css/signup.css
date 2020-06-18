@@ -39,9 +39,11 @@
     font-family: 'Varela Round', sans-serif;
     width: 500px;
     padding: 40px;
-    position: absolute;
-    top: 5%;
-    left: 35%;
+    /* position: absolute; */
+    /* top: 5%; */
+    margin: auto;
+    margin-top: 3%;
+    /* left: 35%; */
     transform: translate(-50% -50%);
     background: transparent;
     text-align: center;
@@ -192,9 +194,24 @@
 }
 .signup-dropdown {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
+.dropdowns-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.dropdown-errors {
+     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: red;
+
+}
 .signup-form input[type=submit]:hover{
      background: #2ecc71;
     width: 125px;
@@ -205,6 +222,7 @@
 
 .signup-error {
     color: red;
+    
 }
 
 .signup-no-errors-date{
