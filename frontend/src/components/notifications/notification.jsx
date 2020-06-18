@@ -23,7 +23,8 @@ class Notifications extends React.Component {
             this.props.notifications.map((notif, idx) => (
                     <NotificationListItem 
                     idx={idx}
-                    notif={notif}      
+                    notif={notif}
+                    users={this.props.users}      
                     />
                     //test
                 
@@ -42,11 +43,20 @@ class Notifications extends React.Component {
 
 
         if (this.props.notifications.length > 0 && Object.values(this.props.users).length > 0) {
+            
+            let additionalSpace = this.props.notifications.length * 25;
+            
+            let height = 350;
+
+            height += additionalSpace
+            
             return(
                 <div className="notifications-background">
-                    <div className="yes-notifications-container">
+                    <div className="yes-notifications-container"
+                    style={{height: `${height}px`}}
+                    >
                         <div>
-                            <i class="far fa-smile-beam"></i>
+                            <i class="far fa-smile fa-9x"></i>
                             <h1>Below are your likers!  Click to connect!</h1>
                             {this.notificationList()}
                         </div>
