@@ -14,8 +14,8 @@
 
 .user-show-content{
   position: absolute;
-  width: 30%;
-  height: 75%;
+  width: 30vw;
+  height: 75vh;
   background: none;
   top: 55%;
   left: 50%;
@@ -45,23 +45,24 @@
     min-height: fit-content;
 }
 
-.profile-header, .profile-middle {
+.profile-header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+.profile-middle {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+}
 
 .middle-left, .middle-right {
     display: flex;
-    flex-direction: column;
-    width: 50%;
+    flex-direction: row;
+    justify-content: space-between !important;
+    width: 100%;
+    margin-top: 10px;
 }
-
-/* .prof-name, .prof-birth {
-    font-size: 35px;
-    padding-top: 15px;
-    font-weight: 700;
-} */
 
 .profile-footer {
     display: flex;
@@ -91,36 +92,39 @@
     justify-content: center;
 }
 
-.prof-language, .prof-exp {
+
+.prof-goal, .prof-exp {
     text-align: left;
     display: flex;
     flex-direction: column;
     font-size: 21px;
-    margin-top: 17px;
+    /* margin-top: 17px; */
     justify-content: center;
-    min-width: fit-content;
+    /* min-width: fit-content; */
+    width: 50% !important;
 }
 
-.prof-pronouns, .prof-goal {
+.prof-language,.prof-pronouns {
+    right: 0;
+    position: absolute;
+    padding-right: 15px;
+}
+
+.prof-pronouns, .prof-language {
     text-align: right;
     display: flex;
     flex-direction: column;
     font-size: 21px;
-    margin-top: 17px;
+    /* margin-top: 17px; */
     justify-content: center;
     min-width: fit-content;
+    width: 50% !important;
 }
 
 .prof-language label, .prof-pronouns label,.prof-goal label ,.prof-birth label, .prof-exp label, .prof-name label {
     font-size: 15px;
     color: rgb(109, 107, 107);
     /* padding: 5px; */
-}
-
-.profile-middle {
-    display: flex;
-    flex-direction: row;    
-    justify-content: space-between;
 }
 
 
