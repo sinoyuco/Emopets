@@ -1,7 +1,7 @@
 .main-card{
   position: absolute;
   width: 30vw;
-  height: 72vh;
+  height: 80vh;
   background: none;
   top: 50%;
   left: 50%;
@@ -9,6 +9,10 @@
   transform: translate(-50%, -50%);
   font-family: 'Comfortaa', cursive;
   box-shadow: 0 5px 10px -5px #312f2f70;
+}
+
+.card-profile-bottom {
+  min-height: fit-content;
 }
 
 .cards-container {
@@ -71,10 +75,13 @@
 
 .card-profile-bottom-middle, .card-profile-bottom-bottom  {
   margin-top: -10px;
+  margin-bottom: 0;
 }
 
 .card-profile-bottom-footer {
-  margin-top: -20px;
+  /* margin-top: -20px; */
+  margin-top: 0;
+ 
 }
 
 .theback{
@@ -150,7 +157,7 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  padding: 35px;
+  padding: 10px;
 }
 
 .card-profile-b {
@@ -194,6 +201,7 @@
 .yes-btn {
   color: rgb(91, 185, 155) ;
   background-color: transparent;
+  margin-right: 25px
 }
 
 .yes-btn:hover {
@@ -203,6 +211,8 @@
 .no-btn {
   color: red;
   background-color: transparent;
+  margin-left: 25px
+
 }
 
 .no-btn:hover{
