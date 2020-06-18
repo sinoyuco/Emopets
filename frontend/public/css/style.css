@@ -1,23 +1,12 @@
 .notifications-background {
-  background-color: #E4DCD0;
+  background-color: #25394F;
   width: 100vw;
   min-height: 100vh;
   padding-top: 100px;
+  color: white;
+  font-family: 'Josefin Sans', sans-serif;
 }
 
-
-.no-notificaitons-container {
-  margin-top: 10%;
-  min-height: 50vh;
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: gray;
-  width: 50%;
-  border-radius: 25px;
-}
 
 .fa-user-alt-slash {
   margin-top: 5%;
@@ -33,26 +22,46 @@
 
 .no-notificaitons-container button {
   margin-top: 3%;
-  box-shadow: 0px 1px 0px 0px #BE3C3F;
-	border: 1px solid red;
-	background-color: red;
+	border: 2px solid red;
+	background-color: #25394F;
 	cursor: pointer;
 	border-radius: 5px;
 	color: #FFFFFF;
   outline: none;
   text-align: center;
+  border-radius: 25px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .no-notificaitons-container button:hover {
   margin-top: 3%;
-  box-shadow: 0px 1px 0px 0px #7B0000;
-	border: 1px solid #9E0000;
-	background-color: #9E0000;
+	border: 2px solid #9E0000;
+	background-color: #25394F;
 	cursor: pointer;
-	border-radius: 5px;
 	color: #FFFFFF;
   outline: none;
   text-align: center;
+  border-radius: 25px;
+  transition: 0.5s;
+  border: 2px solid #2ecc71;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.no-notificaitons-container {
+  margin-top: 10%;
+  min-height: 50vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #25394F;
+  box-shadow: 0 1px 10px 1px #888888;
+  border: 5px solid #3498db;
+  width: 50%;
+  border-radius: 25px;
 }
 
 .yes-notifications-container {
@@ -62,7 +71,48 @@
   text-align: center;
   margin-left: auto;
   margin-right: auto;
-  background-color: gray;
+  background-color: #25394F;
+  border: 5px solid #3498db;
   width: 50%;
   border-radius: 25px;
+  box-shadow: 0 1px 10px 1px #888888;
+}
+
+.notification-list-container{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.notification-list-item-notif {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.notification-list-item-notif:hover {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+  transition: 0.5s;
+  border-radius: 25px;
+  border: 2px solid #2ecc71;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+
+.list-item-image{
+  width: 76px;
+  height: 43px;
+  border-radius: 15px;
 }
