@@ -9,9 +9,10 @@ class UserShow extends React.Component {
     }
 
     componentDidMount(){
-        if (this.props.currentUser) {
+        debugger
+        // if (this.props.currentUser) {
             this.props.fetchUser(this.props.currentUser.id)
-        };
+        // };
     }
 
     goPlay() {
@@ -23,14 +24,20 @@ class UserShow extends React.Component {
     }
 
     render() {
+        debugger
         const languages = {};
-        if (this.props.currentUser === undefined) {
+        if (this.props.currentUser === undefined || this.props.currentUser === null) {
             return <> </>
         } else {
-            const {pronouns, language, name, goal, experience} = this.props.currentUser;
-            const age = new Date().getFullYear() - parseInt(this.props.currentUser.birthDate.split("-")[0]);
+            const {pronouns, language, name, goal, experience, birthDate} = this.props.currentUser;
+            let age
+            if (birthDate) {
+                age = new Date().getFullYear() - parseInt(birthDate.split("-")[0]);
+            }
             return( 
             <div className="user-show-master">
+                {/* <img src="/images/computer1.gif"/> */}
+                    <video autoPlay muted loops src="/images/video.mp4" ></video>
                 <div className="user-show-content">
                     <div className="background-profile-picture">
                         <img src={`/images/${language}-back-card.png`}/>
@@ -39,7 +46,7 @@ class UserShow extends React.Component {
                         <div className="profile-header">
                             <div className="prof-name">
                                 <label>Name</label>
-                                {this.props.currentUser.name}
+                                {name}
                             </div>
                             <div className="prof-birth">
                                 <label>Age</label>
@@ -50,21 +57,21 @@ class UserShow extends React.Component {
                             <div className="middle-left">
                                 <div className="prof-exp">
                                     <label>Experience</label>
-                                    {this.props.currentUser.experience}
+                                    {experience}
                                 </div>
                                 <div className="prof-goal">
                                     <label>Goal</label>
-                                    {this.props.currentUser.goal}
+                                    {goal}
                                 </div>
                             </div>
                             <div className="middle-right">
                                 <div className="prof-language">
                                         <label>Language</label>
-                                    {this.props.currentUser.language}
+                                    {language}
                                     </div> 
                                 <div className="prof-pronouns">
                                         <label>Pronouns</label>
-                                    {this.props.currentUser.pronouns}
+                                    {pronouns}
                                     </div> 
                             </div>
                         </div>

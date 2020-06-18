@@ -26,9 +26,9 @@ class NavBar extends React.Component{
 
   }
 
-  // componentDidMount(){
-  //   this.props.fetchNotifications(this.props.currentUser.id);
-  // }
+  componentDidMount(){
+    this.props.fetchNotifications(this.props.currentUser.id);
+  }
 
   showNav(){
     let dropdown = document.getElementsByClassName("hidden-nav-dropdown")[0]
@@ -59,9 +59,7 @@ class NavBar extends React.Component{
   // }
 
   notification(){
-    if (this.props.currentUser) this.props.fetchNotifications(this.props.currentUser.id);
-
-      if (this.props.notifications.length === undefined) {
+      if (this.props.currentUser === undefined) {
       return(
         <>
         </>
@@ -69,6 +67,8 @@ class NavBar extends React.Component{
 
     } else if (this.props.notifications.length === 0) {
       return (
+          this.props.fetchNotifications(this.props.currentUser.id);
+
         <h3 id="some-notificaitons"
           onMouseEnter={this.showNav}
           onMouseLeave={this.hideNav}
@@ -86,6 +86,8 @@ class NavBar extends React.Component{
       );
 
     } else {
+        this.props.fetchNotifications(this.props.currentUser.id);
+
       let top3 = this.props.notifications.slice(0, 2);
       // debugger;
       //   top3.map((notif, idx) => {
