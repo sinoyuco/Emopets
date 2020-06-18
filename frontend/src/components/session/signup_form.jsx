@@ -83,8 +83,12 @@ class SignupForm extends React.Component {
     };
 
     // this.props.signup(user, this.props.history);
-
     this.props.signup(user);
+
+    // if (this.props.signup(user)) {
+    //   this.props.login(user);
+    // };
+
     console.log(this.props.errors)
     // this.props.login(user);
 
@@ -199,7 +203,7 @@ class SignupForm extends React.Component {
   }
 
   handleBirthDateErr() {
-    let field = document.getElementById("signup-exp");
+    let field = document.getElementById("date-exp");
     if (field === null) return;
 
     if (this.props.errors.birthdate) {
@@ -337,6 +341,7 @@ class SignupForm extends React.Component {
               Goal:
               <br />
               <textarea
+              style={{resize: "none"}}
                 className="signup-no-errors-textarea"
                 value={this.state.goal}
                 onChange={this.update("goal")}
@@ -351,6 +356,7 @@ class SignupForm extends React.Component {
               Experience:
               <br />
               <textarea
+              style={{resize: "none"}}
                 className="signup-no-errors-textarea"
                 value={this.state.experience}
                 onChange={this.update("experience")}
@@ -360,9 +366,10 @@ class SignupForm extends React.Component {
 
             <p className="signup-error">{this.handleExpErr()}</p>
 
-            <label id="signup-birthdate">
+            <label >
               Birthdate:
               <DatePicker
+                id="date-exp"
                 className="signup-no-errors-date"
                 selected={this.state.birthDate}
                 onChange={this.handleChange}

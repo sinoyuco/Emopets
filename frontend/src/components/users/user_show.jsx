@@ -10,9 +10,9 @@ class UserShow extends React.Component {
 
     componentDidMount(){
         debugger
-        if (this.props.currentUser) {
+        // if (this.props.currentUser) {
             this.props.fetchUser(this.props.currentUser.id)
-        };
+        // };
     }
 
     goPlay() {

@@ -144,7 +144,10 @@ width: 300px;
 padding-top: 30px;
 border-radius: 15px;
 }
-
+.match-notifs {
+  display: flex;
+  flex-direction: column;
+}
 .match-notifs h3:hover {
   background-color: rgb(31, 29, 29);
   cursor: pointer;
