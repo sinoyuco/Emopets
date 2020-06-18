@@ -1,12 +1,9 @@
 import React from 'react';
 import DatePicker from "react-datepicker";
 import { Link } from 'react-router-dom';
-// import DayPicker from 'react-day-picker';
 
-// import 'react-day-picker/lib/style.css';
-// import { Dropdown } from 'semantic-ui-react';
 import "react-datepicker/dist/react-datepicker.css";
-// import 'semantic-ui-css/semantic.min.css';
+
 
 
 
@@ -14,7 +11,7 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // startDate: new Date(),
+
       birthDate: "",
       email: "",
       password: "",
@@ -43,20 +40,16 @@ class SignupForm extends React.Component {
     this.clearedErrors = false;
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //     if (nextProps.signedIn === true) {
-  //         this.props.history.push('/login');
-  //     }
 
-  //     this.setState({ errors: nextProps.errors })
-  // }
 
   update(field) {
-    //
-    return (e) =>
+    return (e) => {
+      this.props.clearSessionErrors();
+
       this.setState({
         [field]: e.currentTarget.value,
       });
+    }
   }
 
   handleDropdown(e) {

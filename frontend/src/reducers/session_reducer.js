@@ -14,7 +14,7 @@ const initialState = {
 export default function (state = initialState, action) {
   switch (action.type) {
     case RECEIVE_CURRENT_USER:
-      debugger;
+
       return {
         ...state,
         isAuthenticated: !!action.currentUser,
@@ -34,7 +34,7 @@ export default function (state = initialState, action) {
       }
 
     case UPDATE_USER:
-      debugger;
+
       // let id = JSON.parse(action.user.config.data).id
       let user = JSON.parse(action.user.config.data)
       return {

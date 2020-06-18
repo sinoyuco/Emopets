@@ -15,18 +15,18 @@ class Notifications extends React.Component {
 
         this.props.fetchNotifications(this.props.currentUser.id);
         this.props.fetchUsers();
-        debugger;
+
     }
 
     render() {
-        debugger;
+
 
         if (this.props.notifications.length > 0 && Object.values(this.props.users).length > 0) {
 
             return (
     
                 this.props.notifications.map((notif, idx) => {
-                    debugger
+ 
                     return (
                         <>
                             <h1>TEST</h1>

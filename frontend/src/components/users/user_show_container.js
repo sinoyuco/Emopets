@@ -1,20 +1,22 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import {fetchUser} from '../../actions/user_actions';
+import { fetchNotifications } from '../../actions/notification_actions';
 import UserShow from './user_show';
 
 const mapStateToProps = (state, ownProps) => {
     return {
         errors: state.errors.session,
-        // user: state.users[ownProps.match.params._id]
-        currentUser: state.session.user
+        currentUser: state.session.user,
+        notifications: state.notifications
     };
 };
 
 const mapDispatchToProps = (dispatch) => {
     return {
         logout: () => dispatch(logout()),
-        fetchUser: (id) => dispatch(fetchUser(id))
+        fetchUser: (id) => dispatch(fetchUser(id)),
+        fetchNotifications: userId => dispatch(fetchNotifications(userId))
 
     }
 }
