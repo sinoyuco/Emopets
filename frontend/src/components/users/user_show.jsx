@@ -9,6 +9,7 @@ class UserShow extends React.Component {
     }
 
     componentDidMount(){
+        debugger
         if (this.props.currentUser) {
             this.props.fetchUser(this.props.currentUser.id)
         };
@@ -23,8 +24,9 @@ class UserShow extends React.Component {
     }
 
     render() {
+        debugger
         const languages = {};
-        if (this.props.currentUser === undefined) {
+        if (this.props.currentUser === undefined || this.props.currentUser === null) {
             return <> </>
         } else {
             const {pronouns, language, name, goal, experience} = this.props.currentUser;
