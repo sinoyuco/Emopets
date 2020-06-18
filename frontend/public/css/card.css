@@ -7,7 +7,8 @@
   left: 50%;
   border-radius: 10px;  
   transform: translate(-50%, -50%);
-  font-family: 'Comfortaa', cursive;
+  /* font-family: 'Comfortaa', cursive; */
+  font-family: 'Josefin Sans', sans-serif;
   box-shadow: 0 5px 10px -5px #312f2f70;
 }
 
@@ -138,7 +139,8 @@
 }
 
 .thefront h1, .theback h1{
-  font-family: 'zilla slab', sans-serif;
+  /* font-family: 'zilla slab', sans-serif; */
+  font-family: 'Josefin Sans', sans-serif;
   padding: 30px;
   font-weight: bold;
   font-size: 24px;
@@ -230,7 +232,7 @@
   height: 307px;
   border-radius: 15px;
   background-color: #073049;
-  font-family: 'Comfortaa', cursive;
+  font-family: 'Josefin Sans', sans-serif;
   margin-left: 30px;
   text-align: left;
   color: white;
