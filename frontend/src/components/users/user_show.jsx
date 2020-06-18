@@ -9,10 +9,9 @@ class UserShow extends React.Component {
     }
 
     componentDidMount(){
-        debugger
-        // if (this.props.currentUser) {
-            this.props.fetchUser(this.props.currentUser.id)
-        // };
+        this.props.fetchUser(this.props.currentUser.id)
+        this.props.fetchNotifications(this.props.currentUser.id);
+
     }
 
     goPlay() {
@@ -24,7 +23,6 @@ class UserShow extends React.Component {
     }
 
     render() {
-        debugger
         const languages = {};
         if (this.props.currentUser === undefined || this.props.currentUser === null) {
             return <> </>

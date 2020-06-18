@@ -5,14 +5,6 @@ class NavBar extends React.Component{
   constructor(props){
     super(props);
 
-    // this.forceUpdate = this.forceUpdate.bind(this)
-    // this.handleMouseOver = this.handleMouseOver.bind(this);
-    // this.handleClick = this.handleClick.bind(this);
-  }
-
-
-  componentDidMount(){
-    this.props.fetchNotifications(this.props.currentUser.id);
   }
 
   showNav(){
@@ -26,31 +18,24 @@ class NavBar extends React.Component{
 
   }
 
-  // showNotificationNav() {
-  //   let dropdown = document.getElementsByClassName("show-nav-dropdown")[0]
-  //   dropdown.className = "hidden-nav-dropdown"
-  // }
+  componentDidMount() {
 
-  // handleClick(e) {
-  //   this.forceUpdate()
-  // }
+    this.props.fetchNotifications(this.props.currentUser.id);
 
-  // handleMouseOver(e) {
-  //   e.persist();
-  //   this.forceUpdate();
+  }
 
-
-  // }
 
   notification(){
-      if (this.props.currentUser === undefined) {
+    
+    if (this.props.currentUser === undefined) {
+
       return(
         <>
         </>
       )
 
-    } else {
-      // this.props.fetchNotifications(this.props.currentUser.id);
+    } else if (this.props.notifications.length === 0) {
+
       return (
 
         <h3 id="some-notificaitons"
@@ -69,38 +54,33 @@ class NavBar extends React.Component{
         </h3>
       );
 
-    // } else {
-    //     // this.props.fetchNotifications(this.props.currentUser.id);
+    } else {
+      let top3 = this.props.notifications.slice(0, 2);
 
-    //   let top3 = this.props.notifications.slice(0, 2);
-    //   // debugger;
-    //   //   top3.map((notif, idx) => {
-
-    //       debugger;
-    //       return (
+          return (
             
-    //           <h3 id="some-notificaitons"
-    //             onMouseEnter={this.showNav}
-    //             onMouseLeave={this.hideNav}
-    //           >
-    //             V
-    //             <div className="hidden-nav-dropdown">
-    //             {top3.map((notif, idx) => (  
-    //               <ul className='match-notifs'>
-    //                 <h3>You have a match!</h3>
+              <h3 id="some-notificaitons"
+                onMouseEnter={this.showNav}
+                onMouseLeave={this.hideNav}
+              >
+                V
+                <div className="hidden-nav-dropdown">
+                {top3.map((notif, idx) => (  
+                  <ul className='match-notifs'>
+                    <h3>You have a match!</h3>
 
-    //                 <img
-    //                   src="/images/emo_character.png"
-    //                   alt=""
-    //                 />
-    //               </ul>
-    //             )
-    //             )}
+                    {/* <img
+                      src="/images/emo_character.png"
+                      alt=""
+                    /> */}
+                  </ul>
+                )
+                )}
                   
-    //             </div>
-    //           </h3>
+                </div>
+              </h3>
             
-    //       )
+          )
         
       }
   }
@@ -108,8 +88,9 @@ class NavBar extends React.Component{
  
 
   logInOrSignUpButton() {
-    // this.forceUpdate()
-    if (this.props.currentUser === undefined) {
+
+    if (this.props.currentUser === undefined || Object.values(this.props.currentUser).length === 0) {
+
       return (
         <li className="nav-signin-login-buttons">
           <Link to="/login" >
@@ -134,9 +115,11 @@ class NavBar extends React.Component{
   }
 
   render(){
-debugger;
+
     return (
+
       <nav className="nav-bar">
+        {/* {this.handleNotifications()} */}
         <Link to="/" style={{ marginRight: "33%" }}>
           <img
             src="/images/main_logo_no_text.png"
