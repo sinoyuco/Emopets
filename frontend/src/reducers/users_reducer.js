@@ -30,7 +30,7 @@ const usersReducer = (state={}, action) => {
             return Object.assign({}, state, {[id]: user});
 
             // return Object.assign({}, {[action.user.data._id]: JSON.parse(action.user.data)});
-
+            
 
         default:
             return state;
