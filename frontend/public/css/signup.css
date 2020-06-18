@@ -1,9 +1,13 @@
-.signup-form-container{
+.signup-form-container {
     background-color: #e4dcd0;
     min-height: 120vh;
     width: auto;
     background-image: url('../images/background-pic.jpg');
 
+}
+
+.signup-form-container video {
+    width: 100vw;
 }
 
 .signup-nav {
