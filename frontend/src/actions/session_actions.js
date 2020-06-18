@@ -40,9 +40,14 @@ export const clearSessionErrors = () => ({
 
 
 export const signup = userData => dispatch => {
-    return APIUtil.signup(userData).then((user) => (
-        dispatch(receiveCurrentUser(user))
-    ), err => (
+    return APIUtil.signup(userData).then((res) => {
+        const { token } = res.data;
+        localStorage.setItem('jwtToken', token);
+        APIUtil.setAuthToken(token);
+        const decoded = jwt_decode(token);
+        dispatch(receiveCurrentUser(decoded))
+        
+    }, err => (
         dispatch(receiveErrors(err.response.data))
     ))
     };

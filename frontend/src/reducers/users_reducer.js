@@ -22,8 +22,7 @@ const usersReducer = (state={}, action) => {
 
         case RECEIVE_USER:
             return Object.assign({}, state, {[action.user._id]: action.user});
-
-
+  
         case UPDATE_USER:
 
             let id = JSON.parse(action.user.config.data).id

@@ -49,11 +49,22 @@ router.post('/register', (req, res) => {
                     bcrypt.hash(newUser.password, salt, (err, hash) => {
                         if (err) throw err;
                         newUser.password = hash;
-                        newUser.save()
-                            .then(user => res.json(user))
+                        newUser
+                            .save()
+                            .then(user => {
+                                const payload = { id: user.id, email: user.email, password: user.password, name: user.name, language: user.language, goal: user.goal, birthDate: user.birthDate, experience: user.experience, pronouns: user.pronouns}
+
+                                jwt.sign(payload, keys.secretOrKey, { expiresIn: 3600 }, (err, token) => {
+                                    res.json({
+                                        id: user.id,
+                                        success: true,
+                                        token: "Bearer " + token
+                                    });
+                                });
+                            })
                             .catch(err => console.log(err));
-                    })
-                })
+                    });
+                });
             }
         })
 })
