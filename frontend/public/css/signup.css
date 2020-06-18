@@ -45,7 +45,7 @@
     justify-content: space-between;
     /* align-items: left; */
     border: 2px solid #053049;
-    padding: 50px;
+    padding: 40px 50px;
     border-radius: 4px;
     font-family: 'Acme', sans-serif;
     font-weight: 500;
@@ -106,7 +106,7 @@
     color: #FFFFFF;
     font-family: 'Acme', sans-serif;
     color: #053049;
-    margin-bottom: 50px;
+    margin-bottom: 30px;
 }
 
 
@@ -115,6 +115,10 @@
     border-radius: 5px;
     outline: none;
     height: 30px;
+}
+
+.signup-form input[type=submit]:hover{
+    cursor: pointer;
 }
 
 .signup-form span select {
@@ -142,4 +146,10 @@
     height: 30px;
     outline: none;
     /* text-align: center; */
+}
+
+.edit-email-warning{
+    color: red;
+    margin-block-end: 0em;
+    font-size: 12px;
 }

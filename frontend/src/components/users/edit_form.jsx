@@ -61,6 +61,7 @@ class EditForm extends React.Component {
         };
         debugger;
         this.props.editUser(user)
+        this.props.history.push("/show");
         // this.props.updateUser(this.state.user)
     }
 
@@ -80,16 +81,20 @@ class EditForm extends React.Component {
                     <form onSubmit={this.handleSubmit} className="signup-form-with-header">
                         <div className="signup-form">
                             <h1>Edit your profile</h1>
-
+                            <p className="edit-email-warning">*Emails cannot be changed!</p>
                             <input
                                 type="text"
                                 value={email}
                                 // onChange={this.update("email")}
                                 // placeholder="Email"
                                 id="signup-email"
+                                disabled
                             />
                             {/* <p className="signup-error">{this.handleEmailErr()}</p> */}
 
+                            <label>
+                                Name:
+                                <br/>
                             <input
                                 type="text"
                                 value={name}
@@ -97,6 +102,7 @@ class EditForm extends React.Component {
                                 placeholder="Name"
                                 id="signup-name"
                             />
+                            </label>
 
                             {/* <p className="signup-error">{this.handleNameErr()}</p> */}
 
