@@ -10,21 +10,6 @@ class NavBar extends React.Component{
     // this.handleClick = this.handleClick.bind(this);
   }
 
-  // shouldComponentUpdate() {
-  //   return true
-  // }
-
-  // componentWillUnmount() {
-
-  // }
-
-  // componentDidUpdate() {
-
-  // }
-
-  // renderNotifications() {
-
-  // }
 
   componentDidMount(){
     this.props.fetchNotifications(this.props.currentUser.id);
