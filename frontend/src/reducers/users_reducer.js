@@ -1,5 +1,5 @@
 import { RECEIVE_CURRENT_USER} from '../actions/session_actions';
-import {RECEIVE_ALL_USERS, UPDATE_USER} from '../actions/user_actions'
+import {RECEIVE_ALL_USERS, UPDATE_USER, RECEIVE_USER} from '../actions/user_actions'
 
 const usersReducer = (state={}, action) => {
     Object.freeze(state);
@@ -9,7 +9,7 @@ const usersReducer = (state={}, action) => {
             debugger;
             const id1 = action.currentUser.data ? action.currentUser.data._id : action.currentUser.id
             const user1 = action.currentUser.data ? action.currentUser.data : action.currentUser
-            debugger;
+            // debugger;
             // return Object.assign({}, state, {[action.currentUser.data.id]: action.currentUser.data});
             return Object.assign({}, state, { [id1]: user1 } );
 
@@ -22,9 +22,9 @@ const usersReducer = (state={}, action) => {
 
             return Object.assign({}, state, allUsers);
 
-        // case RECEIVE_USER:
-        //     debugger;
-        //     return Object.assign({}, state, {[action.user.data._id]: action.user.data});
+        case RECEIVE_USER:
+            debugger;
+            return Object.assign({}, state, {[action.user.data._id]: action.user.data});
 
         case UPDATE_USER:
             debugger;

@@ -28,6 +28,7 @@ class Play extends React.Component {
     }
 
     render() {
+        debugger;
         const liked = this.props.likes.filter(like => (like['type']==='like')).map(like => like['liked']);
         const disliked = this.props.likes.filter(like => (like['type'] === 'dislike')).map(like => like['liked']);
 
@@ -35,9 +36,9 @@ class Play extends React.Component {
         if (this.props.users.length) {
             let usersSome
                 if (this.state.search.length) {
-                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (!disliked.includes(user._id)) && (this.props.currentUser.id !== user._id) && (this.state.search.includes(user.language)));
+                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (!disliked.includes(user._id)) && (this.props.currentUser.email !== user.email) && (this.state.search.includes(user.language)));
                 } else if (this.state.search.some(ele => !ele.checked) || this.state.search.length === 0) {
-                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (!disliked.includes(user._id)) && (this.props.currentUser.id !== user._id));
+                    usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (!disliked.includes(user._id)) && (this.props.currentUser.email !== user.email));
                 }
 
             let display

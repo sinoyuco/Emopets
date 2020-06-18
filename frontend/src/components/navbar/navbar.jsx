@@ -138,7 +138,6 @@ class NavBar extends React.Component{
       );
     } else {
       return (
-
         <li className="nav-logout-button">
             <button 
             onClick={() => this.props.logout()}

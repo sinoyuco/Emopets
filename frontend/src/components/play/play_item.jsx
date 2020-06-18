@@ -10,6 +10,7 @@ class PlayItem extends React.Component {
 
     handleLike(e){
         e.preventDefault();
+        debugger;
         const like ={
             liked: this.props.user._id,
             type: 'like'
