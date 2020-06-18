@@ -31,6 +31,8 @@ class UserShow extends React.Component {
             const age = new Date().getFullYear() - parseInt(this.props.currentUser.birthDate.split("-")[0]);
             return( 
             <div className="user-show-master">
+                {/* <img src="/images/computer1.gif"/> */}
+                    <video autoPlay muted loops src="/images/video.mp4" ></video>
                 <div className="user-show-content">
                     <div className="background-profile-picture">
                         <img src={`/images/${language}-back-card.png`}/>
