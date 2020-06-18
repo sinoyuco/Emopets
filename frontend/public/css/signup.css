@@ -26,7 +26,7 @@
 .signup-nav ul {
     display: flex;
     flex-direction: row;
-    width: 175px;
+    width: 200px;
     justify-content: space-between;
 }
 
@@ -51,14 +51,54 @@
     font-weight: 500;
 }
 
-.signup-form input {
+.signup-no-errors-input {
     border-radius: 4px;
-    border: 1px solid #053049;
+    border: 2px solid #053049;
     padding: 5px;
     margin-bottom: 15px;
     font-family: 'Acme', sans-serif;
     outline: none;
 }
+
+.signup-yes-errors-input {
+    border-radius: 4px;
+    border: 2px solid red;
+    padding: 5px;
+    margin-bottom: 15px;
+    font-family: 'Acme', sans-serif;
+    outline: none;
+}
+
+.signup-no-errors-select {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    border: 2px solid black;
+}
+
+.signup-yes-errors-select {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 10px;
+    border: 2px solid red;
+}
+
+.signup-no-errors-textarea {
+    border-radius: 7px;
+    outline: none;
+    resize: none;
+    width: 100%;
+    border: 2px solid black;
+}
+
+.signup-yes-errors-textarea {
+    border-radius: 7px;
+    outline: none;
+    resize: none;
+    width: 100%;
+    border: 2px solid red;
+}
+
 
 
 
@@ -69,24 +109,14 @@
     margin-bottom: 50px;
 }
 
-.signup-form span {
-    display: flex;
-    flex-direction: row;
-    margin-bottom: 10px;
 
-}
-
-.signup-form textarea {
-    border-radius: 7px;
-    outline: none;
-    resize: none;
-    width: 100%;
-}
 
 .signup-form input[type=submit] {
-    border-radius: 10px;
+    border-radius: 5px;
     outline: none;
+    height: 30px;
 }
+
 .signup-form span select {
     margin-left: 10px;
     border-radius: 7px;
@@ -96,3 +126,20 @@
     color: red;
 }
 
+.signup-no-errors-date{
+    border: 2px solid black;
+    width: 195px;
+    border-radius: 5px;
+    height: 30px;
+    outline: none;
+    /* text-align: center; */
+}
+
+.signup-yes-errors-date{
+    border: 2px solid red;
+    width: 195px;
+    border-radius: 5px;
+    height: 30px;
+    outline: none;
+    /* text-align: center; */
+}
