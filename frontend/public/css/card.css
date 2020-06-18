@@ -182,22 +182,20 @@
 
 .yes-btn {
   color: rgb(91, 185, 155) ;
-  background-color: white;
+  background-color: transparent;
 }
 
 .yes-btn:hover {
-  color: white;
-  background-color: rgb(91, 185, 155);
+  color: rgb(6, 113, 79) ;
 }
 
 .no-btn {
   color: red;
-  background-color: white;
+  background-color: transparent;
 }
 
 .no-btn:hover{
-  color: white;
-  background-color: red;
+  color: rgb(147, 1, 1);
 }
 
 .language-options {

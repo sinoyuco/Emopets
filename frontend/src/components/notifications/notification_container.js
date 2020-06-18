@@ -5,6 +5,7 @@ import Notifications from './notification'
 // import { fetchUser } from '../../util/users_util';
 
 const mSTP = state => {
+    debugger;
     return {
         currentUser: state.session.user,
         likes: state.likes,
