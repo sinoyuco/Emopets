@@ -48,6 +48,7 @@ class Play extends React.Component {
                                         <PlayItem 
                                              user={user}
                                              key={user._id}
+                                             postLike={this.props.postLike}
                                         />
                                     ))
                                 }
