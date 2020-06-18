@@ -29,7 +29,7 @@ export const logoutUser = () => ({
 });
 
 export const clearSessionErrors = () => ({
-    type: CLEAR_SESSION_ERRORS,
+    type: CLEAR_SESSION_ERRORS
 });
 
 // export const updateUser = user => ({
@@ -50,16 +50,13 @@ export const signup = userData => dispatch => {
 
 export const login = userData => dispatch => (
     APIUtil.login(userData).then(res => {
-        debugger;
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
         APIUtil.setAuthToken(token);
         const decoded = jwt_decode(token);
-        debugger;
         dispatch(receiveCurrentUser(decoded))
     })
         .catch(err => {
-            debugger
             dispatch(receiveErrors(err.response.data));
         })
 )

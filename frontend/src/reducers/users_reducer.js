@@ -6,11 +6,9 @@ const usersReducer = (state={}, action) => {
 
     switch(action.type){
         case RECEIVE_CURRENT_USER:
-            debugger;
+
             const id1 = action.currentUser.data ? action.currentUser.data._id : action.currentUser.id
             const user1 = action.currentUser.data ? action.currentUser.data : action.currentUser
-            debugger;
-            // return Object.assign({}, state, {[action.currentUser.data.id]: action.currentUser.data});
             return Object.assign({}, state, { [id1]: user1 } );
 
         case RECEIVE_ALL_USERS:
@@ -22,12 +20,9 @@ const usersReducer = (state={}, action) => {
 
             return Object.assign({}, state, allUsers);
 
-        // case RECEIVE_USER:
-        //     debugger;
-        //     return Object.assign({}, state, {[action.user.data._id]: action.user.data});
 
         case UPDATE_USER:
-            debugger;
+
             let id = JSON.parse(action.user.config.data).id
             let user = JSON.parse(action.user.config.data)
             return Object.assign({}, state, {[id]: user});
