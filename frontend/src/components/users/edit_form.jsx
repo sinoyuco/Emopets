@@ -22,11 +22,11 @@ class EditForm extends React.Component {
             experience: this.props.currentUser.experience,
 
         }
-        debugger
+        
     }
     componentDidMount() {
         this.props.fetchUser(this.props.currentUser.id)
-        debugger
+        
     } 
 
     update(field) {
