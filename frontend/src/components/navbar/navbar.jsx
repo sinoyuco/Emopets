@@ -4,11 +4,31 @@ import { Link, Redirect, Route } from 'react-router-dom';
 class NavBar extends React.Component{
   constructor(props){
     super(props);
+
+    this.forceUpdate = this.forceUpdate.bind(this)
+    // this.handleMouseOver = this.handleMouseOver.bind(this);
+    // this.handleClick = this.handleClick.bind(this);
   }
 
-  componentDidMount(){
-    this.props.fetchNotifications(this.props.currentUser.id);
+  // shouldComponentUpdate() {
+  //   return true
+  // }
+
+  // componentWillUnmount() {
+
+  // }
+
+  // componentDidUpdate() {
+
+  // }
+
+  renderNotifications() {
+
   }
+
+  // componentDidMount(){
+  //   this.props.fetchNotifications(this.props.currentUser.id);
+  // }
 
   showNav(){
     let dropdown = document.getElementsByClassName("hidden-nav-dropdown")[0]
@@ -16,38 +36,37 @@ class NavBar extends React.Component{
   }
 
   hideNav(){
+    // this.forceUpdate()
     let dropdown = document.getElementsByClassName("show-nav-dropdown")[0]
     dropdown.className ="hidden-nav-dropdown"
+
   }
 
-  showNotificationNav() {
-    let dropdown = document.getElementsByClassName("show-nav-dropdown")[0]
-    dropdown.className = "hidden-nav-dropdown"
-  }
+  // showNotificationNav() {
+  //   let dropdown = document.getElementsByClassName("show-nav-dropdown")[0]
+  //   dropdown.className = "hidden-nav-dropdown"
+  // }
+
+  // handleClick(e) {
+  //   this.forceUpdate()
+  // }
+
+  // handleMouseOver(e) {
+  //   e.persist();
+  //   this.forceUpdate();
+
+
+  // }
 
   notification(){
+    if (this.props.currentUser) this.props.fetchNotifications(this.props.currentUser.id);
 
-      if (this.props.currentUser === undefined) {
+      if (this.props.notifications.length === undefined) {
       return(
         <>
         </>
       )
-    // } else if (this.props.currentUser.likes === undefined) {
-      // return (
-      //   <h3 id="zero-notifications"
-      //   onMouseEnter={this.showNav}
-      //   onMouseLeave={this.hideNav}
-      //   >
-      //     0
-      //     <div className="hidden-nav-dropdown">
-      //       <h5>Nobody likes you!</h5>
-      //       <img
-      //         src="/images/emo_character.png"
-      //         alt=""
-      //       />
-      //     </div>
-      //   </h3>
-      // );
+
     } else if (this.props.notifications.length === 0) {
       return (
         <h3 id="some-notificaitons"
@@ -100,15 +119,18 @@ class NavBar extends React.Component{
       }
   }
 
+ 
+
   logInOrSignUpButton() {
+    // this.forceUpdate()
     if (this.props.currentUser === undefined || !this.props.currentUser.id) {
       return (
         <li className="nav-signin-login-buttons">
-        <Link to="/login">
+          <Link to="/login" >
           <button className="navbar-button">Log In</button>
         </Link>
 
-        <Link to="/signup">
+        <Link to="/signup" > 
           <button className="navbar-button">Sign Up</button>
         </Link>
         </li>
@@ -125,6 +147,7 @@ class NavBar extends React.Component{
   }
 
   render(){
+
     return (
       <nav className="nav-bar">
         <Link to="/" style={{ marginRight: "33%" }}>
@@ -142,7 +165,7 @@ class NavBar extends React.Component{
               <button className="navbar-button">Home</button>
             </Link>
           </li>
-          <li className="notification-list-item">
+          <li className="notification-list-item" >
             {this.notification()}
 
           </li>
