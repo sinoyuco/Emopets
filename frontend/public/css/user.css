@@ -1,0 +1,12 @@
+.user-show-content {
+  position: absolute;
+  width: 400px;
+  height: 550px;
+  background: none;
+  top: 50%;
+  left: 50%;
+  border-radius: 10px;  
+  transform: translate(-50%, -50%);
+  font-family: 'Comfortaa', cursive;
+  box-shadow: 0 5px 10px -5px #312f2f70;
+}

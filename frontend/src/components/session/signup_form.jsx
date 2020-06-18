@@ -241,15 +241,7 @@ class SignupForm extends React.Component {
 
   
   render() {
-    // const languageOptions = [
-    //     { key: "ru", text: "Ruby" },
-    //     { key: "re", text: "React" },
-    //     { key: "ra", text: "Rails" },
-    //     { key: "js", text: "Javascript" },
-    //     { key: "no", text: "Node.js" },
-    //     { key: "ht", text: "HTML" },
-    //     { key: "cs", text: "CSS" }
-    // ]
+
     return (
       <div className="signup-form-container" style={{ paddingTop: "50px" }}>
         <form onSubmit={this.handleSubmit} className="signup-form-with-header">

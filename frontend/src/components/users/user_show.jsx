@@ -1,8 +1,11 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 class UserShow extends React.Component {
     constructor(props){
         super(props);
+        this.goPlay = this.goPlay.bind(this);
+        this.edit = this.edit.bind(this);
     }
 
     componentDidMount(){
@@ -11,27 +14,65 @@ class UserShow extends React.Component {
         };
     }
 
+    goPlay() {
+        this.props.history.push('/play')
+    }
+
+    edit() {
+        this.props.history.push('/edit/:id')
+    }
+
     render() {
         const languages = {};
-
         if (this.props.currentUser === undefined) {
             return <> </>
-
         } else {
-        
+            const {pronouns, language, name, goal, experience} = this.props.currentUser;
             const age = new Date().getFullYear() - parseInt(this.props.currentUser.birthDate.split("-")[0]);
-      
             return( 
             <div className="user-show-master">
                 <div className="user-show-content">
-                        <img src={languages[this.props.currentUser.language]}/>
-                        <h3><strong>Name</strong>: {this.props.currentUser.name}</h3>
-                        <h3><strong>Language:</strong> {this.props.currentUser.language}</h3>
-                        <h3><strong>Goal: </strong> {this.props.currentUser.goal}</h3>
-                        <h3><strong>Experience:</strong> {this.props.currentUser.experience}</h3>
-                        <h3><strong>Age:</strong> {age}</h3>
-                        <h3><strong>Pronouns:</strong> {this.props.currentUser.pronouns}</h3>
-                    <button onClick={this.props.logout}>Logout</button>
+                    <div className="background-profile-picture">
+                        <img src={`/images/${language}-back-card.png`}/>
+                    </div>
+                    <div className="profile-info">
+                        <div className="profile-header">
+                            <div className="prof-name">
+                                <label>Name</label>
+                                {this.props.currentUser.name}
+                            </div>
+                            <div className="prof-birth">
+                                <label>Age</label>
+                                {age}
+                            </div>
+                        </div>
+                        <div className="profile-middle">
+                            <div className="middle-left">
+                                <div className="prof-exp">
+                                    <label>Experience</label>
+                                    {this.props.currentUser.experience}
+                                </div>
+                                <div className="prof-goal">
+                                    <label>Goal</label>
+                                    {this.props.currentUser.goal}
+                                </div>
+                            </div>
+                            <div className="middle-right">
+                                <div className="prof-language">
+                                        <label>Language</label>
+                                    {this.props.currentUser.language}
+                                    </div> 
+                                <div className="prof-pronouns">
+                                        <label>Pronouns</label>
+                                    {this.props.currentUser.pronouns}
+                                    </div> 
+                            </div>
+                        </div>
+                        <div className="profile-footer">
+                            <button className="play-button" onClick={this.goPlay}>Find a pair</button>
+                            <button className="edit-button" onClick={this.edit}>Edit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
             );
