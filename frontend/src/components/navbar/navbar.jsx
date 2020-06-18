@@ -6,6 +6,10 @@ class NavBar extends React.Component{
     super(props);
   }
 
+  componentDidMount(){
+    this.props.fetchNotifications(this.props.currentUser.id);
+  }
+
   showNav(){
     let dropdown = document.getElementsByClassName("hidden-nav-dropdown")[0]
     dropdown.className ="show-nav-dropdown"
