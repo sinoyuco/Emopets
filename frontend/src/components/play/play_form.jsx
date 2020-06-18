@@ -39,6 +39,23 @@ class Play extends React.Component {
                 } else if (this.state.search.some(ele => !ele.checked) || this.state.search.length === 0) {
                     usersSome = this.props.users.filter(user => (!liked.includes(user._id)) && (!disliked.includes(user._id)) && (this.props.currentUser.id !== user._id));
                 }
+
+            let display
+            if (usersSome.length) {
+                display = <ul className="card-container">
+                                {
+                                    usersSome.map(user => (
+                                        <PlayItem 
+                                             user={user}
+                                             key={user._id}
+                                             postLike={this.props.postLike}
+                                        />
+                                    ))
+                                }
+                        </ul>
+            } else {
+                display = <p>There is no more users that you haven't liked already...</p>
+            }
             return(
                 <div className="cards-container">
                     {/* {display} */}
