@@ -44,13 +44,22 @@ class NavBar extends React.Component{
         >
           V
           <div className="hidden-nav-dropdown">
-            <h3>Your Likes Below!</h3>
             <h5>Nobody likes you :(</h5>
             <img
               src="/images/emo_character.png"
               alt=""
+              height='200'
+              width='200'
             />
+          <Link to='/play' id='dropdown-text' className='no-notif-dropdown'>
+            <p>Find a Pair!</p>
+          </Link>
+
+            <Link to='/show' id='dropdown-text' className='no-notif-dropdown'>
+            <p>Your Profile</p>
+          </Link>
           </div>
+          
         </h3>
       );
 
@@ -58,7 +67,7 @@ class NavBar extends React.Component{
       let top3 = this.props.notifications.slice(0, 2);
 
           return (
-            
+            <Link to='/notifications'>
               <h3 id="some-notificaitons"
                 onMouseEnter={this.showNav}
                 onMouseLeave={this.hideNav}
@@ -68,16 +77,27 @@ class NavBar extends React.Component{
                   <div className='match-notifs'>
                     {top3.map((notif, idx) => (  
                       
-                      <p>You have a new match!</p>
+                      <p id='dropdown-text-match'>You have a new match!</p>
 
                     
                       )
                       )}
-                    <p>See all</p>
+                    <Link to='/notifications' id='dropdown-text'>
+                      <p>See all</p>
+                    </Link>
+
+                    <Link to='/play' id='dropdown-text'>
+                      <p>Find a Pair!</p>
+                    </Link>
+
+                    <Link to='/show' id='dropdown-text'>
+                      <p>Your Profile</p>
+                    </Link>
                   </div>
                   
                 </div>
               </h3>
+            </Link>
             
           )
         

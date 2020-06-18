@@ -69,7 +69,7 @@ class LoginForm extends React.Component {
 
       if (this.props.errors.password) {
         field.className = "login-yes-errors-input";
-        return "Password field is required";
+        return this.props.errors.password;
     } else {
         field.className = "login-no-errors-input";
     }
