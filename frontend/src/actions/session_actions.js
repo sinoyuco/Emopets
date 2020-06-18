@@ -1,6 +1,6 @@
 import * as APIUtil from '../util/session_api_util';
 import jwt_decode from 'jwt-decode';
-import { fetchNotifications } from './notification_actions';
+// import { fetchNotifications } from './notification_actions';
 
 export const RECEIVE_CURRENT_USER = "RECEIVE_CURRENT_USER";
 export const RECEIVE_SESSION_ERRORS = "RECEIVE_SESSION_ERRORS";
@@ -39,8 +39,8 @@ export const clearSessionErrors = () => ({
 
 
 
-export const signup = user => dispatch => {
-    return APIUtil.signup(user).then((user) => (
+export const signup = userData => dispatch => {
+    return APIUtil.signup(userData).then((user) => (
         dispatch(receiveCurrentUser(user))
     ), err => (
         dispatch(receiveErrors(err.response.data))
@@ -48,16 +48,18 @@ export const signup = user => dispatch => {
     };
 
 
-export const login = user => dispatch => (
-    APIUtil.login(user).then(res => {
+export const login = userData => dispatch => (
+    APIUtil.login(userData).then(res => {
+        debugger;
         const { token } = res.data;
         localStorage.setItem('jwtToken', token);
         APIUtil.setAuthToken(token);
         const decoded = jwt_decode(token);
+        debugger;
         dispatch(receiveCurrentUser(decoded))
     })
-    .then(() => dispatch(fetchNotifications(user.id)))
         .catch(err => {
+            debugger
             dispatch(receiveErrors(err.response.data));
         })
 )

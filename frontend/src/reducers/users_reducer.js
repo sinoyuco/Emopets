@@ -7,7 +7,11 @@ const usersReducer = (state={}, action) => {
     switch(action.type){
         case RECEIVE_CURRENT_USER:
             debugger;
-            return Object.assign({}, state, {[action.currentUser.data._id]: action.currentUser.data});
+            const id1 = action.currentUser.data ? action.currentUser.data._id : action.currentUser.id
+            const user1 = action.currentUser.data ? action.currentUser.data : action.currentUser
+            debugger;
+            // return Object.assign({}, state, {[action.currentUser.data.id]: action.currentUser.data});
+            return Object.assign({}, state, { [id1]: user1 } );
 
         case RECEIVE_ALL_USERS:
                 let allUsers = {};
