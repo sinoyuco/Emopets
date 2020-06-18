@@ -65,17 +65,16 @@ class NavBar extends React.Component{
               >
                 V
                 <div className="hidden-nav-dropdown">
-                {top3.map((notif, idx) => (  
-                  <ul className='match-notifs'>
-                    <h3>You have a match!</h3>
+                  <div className='match-notifs'>
+                    {top3.map((notif, idx) => (  
+                      
+                      <p>You have a new match!</p>
 
-                    {/* <img
-                      src="/images/emo_character.png"
-                      alt=""
-                    /> */}
-                  </ul>
-                )
-                )}
+                    
+                      )
+                      )}
+                    <p>See all</p>
+                  </div>
                   
                 </div>
               </h3>

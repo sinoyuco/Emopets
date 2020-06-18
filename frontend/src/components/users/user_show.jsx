@@ -57,20 +57,20 @@ class UserShow extends React.Component {
                                     <label>Experience</label>
                                     {experience}
                                 </div>
-                                <div className="prof-goal">
-                                    <label>Goal</label>
-                                    {goal}
+                                <div className="prof-language">
+                                    <label>Language</label>
+                                    {language}
                                 </div>
                             </div>
-                            <div className="middle-right">
-                                <div className="prof-language">
-                                        <label>Language</label>
-                                    {language}
-                                    </div> 
+                                <div className="middle-right">
+                                    <div className="prof-goal">
+                                        <label>Goal</label>
+                                        {goal}
+                                    </div>
                                 <div className="prof-pronouns">
-                                        <label>Pronouns</label>
+                                    <label>Pronouns</label>
                                     {pronouns}
-                                    </div> 
+                                </div> 
                             </div>
                         </div>
                         <div className="profile-footer">

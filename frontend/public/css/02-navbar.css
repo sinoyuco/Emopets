@@ -81,15 +81,17 @@
 
 #some-notificaitons {
     /* display: block; */
-    height: 25px;
-    width: 25px;
+    height: 30px;
+    width: 30px;
     line-height: 25px;
     -moz-border-radius: 50%; /* or 50% */
     border-radius: 50%; /* or 50% */
     background-color: red;
     color: white;
     text-align: center;
-    font-size: 12px;
+    padding-top: 2px;
+    font-size: 14px;
+    position: relative;
 }
 
 .notification-list-item{
@@ -104,51 +106,48 @@
 }
 
 .show-nav-dropdown{
-opacity: 92%;
-background-color: black;
-display: flex;
-justify-content: center;
-flex-direction: column;
-margin-left: -250px;
-width: 300px;
-padding-top: 30px;
-border-radius: 15px;
+  
+  position: absolute;
+  top: 31px;
+  opacity: 92%;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: -250px;
+  width: 300px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border-radius: 15px;
+  height: fit-content;
 }
 
 .hidden-nav-dropdown{
-display: none;
+  display: none;
 
 }
 
-#has-notificaitons {
-    /* display: block; */
-    height: 25px;
-    width: 25px;
-    line-height: 25px;
-    -moz-border-radius: 50%; /* or 50% */
-    border-radius: 50%; /* or 50% */
-    background-color: red;
-    color: white;
-    text-align: center;
-    font-size: 12px;
-}
 
-.has-nav-dropdown{
-opacity: 92%;
-background-color: black;
-display: flex;
-justify-content: center;
-flex-direction: column;
-margin-left: -250px;
-width: 300px;
-padding-top: 30px;
-border-radius: 15px;
-}
 .match-notifs {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  height: auto;
+  width: auto;
 }
-.match-notifs h3:hover {
+
+.match-notifs p {
+  /* display: block; */
+  text-align: center;
+  /* align-self: center; */
+  font-size: 12px;
+  height: 30px;
+  margin: 0;
+  padding-top: 5px;
+  width: auto;
+}
+
+.match-notifs p:hover {
   background-color: rgb(31, 29, 29);
   cursor: pointer;
 }
