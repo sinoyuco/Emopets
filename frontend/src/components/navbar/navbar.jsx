@@ -20,9 +20,13 @@ class NavBar extends React.Component{
     dropdown.className ="hidden-nav-dropdown"
   }
 
+  showNotificationNav() {
+    let dropdown = document.getElementsByClassName("show-nav-dropdown")[0]
+    dropdown.className = "hidden-nav-dropdown"
+  }
 
   notification(){
-    debugger
+
       if (this.props.currentUser === undefined) {
       return(
         <>
@@ -44,7 +48,7 @@ class NavBar extends React.Component{
       //     </div>
       //   </h3>
       // );
-    } else {
+    } else if (this.props.notifications.length === 0) {
       return (
         <h3 id="some-notificaitons"
           onMouseEnter={this.showNav}
@@ -61,7 +65,39 @@ class NavBar extends React.Component{
           </div>
         </h3>
       );
-    }
+
+    } else {
+      let top3 = this.props.notifications.slice(0, 2);
+      // debugger;
+      //   top3.map((notif, idx) => {
+
+          debugger;
+          return (
+            
+              <h3 id="some-notificaitons"
+                onMouseEnter={this.showNav}
+                onMouseLeave={this.hideNav}
+              >
+                V
+                <div className="hidden-nav-dropdown">
+                {top3.map((notif, idx) => (  
+                  <ul className='match-notifs'>
+                    <h3>You have a match!</h3>
+
+                    <img
+                      src="/images/emo_character.png"
+                      alt=""
+                    />
+                  </ul>
+                )
+                )}
+                  
+                </div>
+              </h3>
+            
+          )
+        
+      }
   }
 
   logInOrSignUpButton() {
