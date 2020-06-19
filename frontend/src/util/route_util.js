@@ -13,6 +13,22 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
     )} />
 );
 
+
+const Edit = ({ component: Component, path, errors, loggedIn, exact }) => (
+    <Route path={path} exact={exact} render={(props) => {
+        debugger 
+        return (
+            loggedIn && errors ? (
+                <Redirect to="/show/" />
+                
+            ) : (
+                    <Component {...props} />
+                )
+                
+                )
+            }} />
+);
+
 const Protected = ({ component: Component, loggedIn, ...rest }) => (
     <Route
         {...rest}
@@ -27,9 +43,12 @@ const Protected = ({ component: Component, loggedIn, ...rest }) => (
 );
 
 const mapStateToProps = state => (
-    { loggedIn: state.session.isAuthenticated }
+    { 
+        loggedIn: state.session.isAuthenticated,
+        errors: state.session.errors }
 );
 
 export const AuthRoute = withRouter(connect(mapStateToProps)(Auth));
+export const EditRoute = withRouter(connect(mapStateToProps)(Edit));
 
 export const ProtectedRoute = withRouter(connect(mapStateToProps)(Protected));

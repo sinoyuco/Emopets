@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import { AuthRoute, ProtectedRoute, EditRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 import NavBarContainer from "./navbar/navbar_container";
 import LoginFormContainer from './session/login_form_container';
@@ -22,7 +22,7 @@ const App = () => (
             <ProtectedRoute exact path="/play" component={PlayContainer} />
             <ProtectedRoute path='/show' component={UserShowContainer}/>
             <ProtectedRoute path='/notifications' component={NotificationsContainer}/>
-            <ProtectedRoute path='/edit' component={EditFormContainer}/>
+            <EditRoute path='/edit' component={EditFormContainer}/>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
         </Switch>

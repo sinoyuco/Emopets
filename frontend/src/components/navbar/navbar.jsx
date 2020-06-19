@@ -66,7 +66,7 @@ class NavBar extends React.Component{
       );
 
     } else {
-      let top3 = this.props.notifications.slice(0, 2);
+      let top3 = this.props.notifications.filter(notif => (notif['type']==='unseen'));
 
           return (
             <Link to='/notifications'>
@@ -85,7 +85,7 @@ class NavBar extends React.Component{
                       )
                       )}
                     <Link to='/notifications' id='dropdown-text'>
-                      <p>See all</p>
+                      <p>See all matches</p>
                     </Link>
 
                     <Link to='/play' id='dropdown-text'>
