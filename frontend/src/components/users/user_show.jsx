@@ -9,6 +9,7 @@ class UserShow extends React.Component {
     }
 
     componentDidMount(){
+        // this.props.fetchUsers();
         this.props.fetchUser(this.props.currentUser.id)
         this.props.fetchNotifications(this.props.currentUser.id);
 
@@ -19,7 +20,7 @@ class UserShow extends React.Component {
     }
 
     edit() {
-        this.props.history.push('/edit/:id')
+        this.props.history.push('/edit')
     }
 
     render() {

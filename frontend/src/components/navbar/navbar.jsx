@@ -66,7 +66,7 @@ class NavBar extends React.Component{
       );
 
     } else {
-      let top3 = this.props.notifications.filter(notif => (notif['type']==='unseen'));
+      let top3 = (this.props.notifications.filter(notif => (notif['type'] === 'unseen')).length ? <p id='dropdown-text-match'>You have {this.props.notifications.filter(notif => (notif['type'] === 'unseen')).length} new match(es)!</p> : null);
 
           return (
             <Link to='/notifications'>
@@ -77,13 +77,7 @@ class NavBar extends React.Component{
                 V
                 <div className="hidden-nav-dropdown">
                   <div className='match-notifs'>
-                    {top3.map((notif, idx) => (  
-                      
-                      <p id='dropdown-text-match'>You have a new match!</p>
-
-                    
-                      )
-                      )}
+                    {top3}
                     <Link to='/notifications' id='dropdown-text'>
                       <p>See all matches</p>
                     </Link>
@@ -149,6 +143,11 @@ class NavBar extends React.Component{
           />
         </Link>
         <ul>
+          {/* <li>
+            <Link to="/team">
+              <button className="navbar-button">Team</button>
+            </Link>
+          </li> */}
             {this.logInOrSignUpButton()}
           <li>
             <Link to="/">

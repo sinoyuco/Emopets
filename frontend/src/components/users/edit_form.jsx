@@ -1,4 +1,5 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 
@@ -28,6 +29,7 @@ class EditForm extends React.Component {
         
     }
     componentDidMount() {
+        // this.props.fetchUsers();
         this.props.fetchUser(this.props.currentUser.id)
             this.props.clearSessionErrors();
 
@@ -111,7 +113,7 @@ class EditForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger;
+     
         let user = {
             id: this.state.id,
             email: this.state.email,
@@ -126,12 +128,8 @@ class EditForm extends React.Component {
         };
         debugger;
         this.props.editUser(user);
-
-        if (this.props.errors.length === 0) {
-            this.props.history.push('/show')
-        };
-        
-        // this.props.editUser(user)
+        this.props.history.push('/show')
+       
        
     }
 

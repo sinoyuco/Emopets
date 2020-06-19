@@ -93,7 +93,7 @@ class Notifications extends React.Component {
             <div className="notifications-background">
                 <div className="no-notificaitons-container">
                     <div>
-                        <i class="fas fa-user-alt-slash fa-9x" />
+                        <i className="fas fa-user-alt-slash fa-9x" />
                             <h1>No likes yet  🙁</h1>
                         <Link to="/play">
                             <button>

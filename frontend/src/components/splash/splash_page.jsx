@@ -21,6 +21,13 @@ class SplashPage extends React.Component {
             src="/images/main_logo.png"
             alt="My_Logo"
           />
+          < br/>
+        </div>
+
+        <div className="meet-team-splash-button">
+          <Link to="/team">
+            <button className="splash-big-button">Meet the Team!</button>
+          </Link>
         </div>
 
         <div className="signup-and-excel">
@@ -51,11 +58,14 @@ class SplashPage extends React.Component {
             />
           </div>
         </div>
+        <div className="meet-team-splash-button">
+
         <Link to="/play">
-        <button className="splash-signup-now-button">
+          <button className="splash-big-button">
           Start Pairing Now
         </button>
         </Link>
+        </div>
       </div>
     );
     
