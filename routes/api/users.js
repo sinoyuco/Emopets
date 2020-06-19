@@ -7,6 +7,7 @@ const keys = require('../../config/keys');
 const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
+const validateUpdateInput = require('../../validation/update');
 
 router.get('/', (req, res) => {
     User.find()
@@ -121,39 +122,25 @@ router.get('/:id', (req, res) => {
 });
 
 router.patch('/edit', (req, res) => {
-    const user = User.findOneAndUpdate({_id: req.body.id}, req.body, {new: true }, function (err, user) {
-        
-        if (err) {
-            res.status(404).json(err)
-        } else {
-            res.send(user)
-        }
-    })
-    console.log(user);
-    // let id = req.params.id;
-    // let user = req.params.body
-    // let doc = await User.findOneAndUpdate(id, user, {new: true});
-    // await doc.save();
-//    User.findOneAndUpdate(req.params.id, {
-//        email: req.body.email,
-//        password: req.body.password,
-//        birthDate: req.body.birthDate,
-//        name: req.body.name,
-//        language: req.body.language,
-//        pronouns: req.body.pronouns,
-//        goal: req.body.goal,
-//        experience: req.body.experience
-//     })
+    const { errors, isValid } = validateUpdateInput(req.body);
 
-//     .then(user => res.json(user))
-//      .catch(err => res.status(404).json({ noUserFound: 'No user found' }))
-   
+    if (!isValid) {
+        return res.status(400).json(errors);
+    } else {
+
+        User.findOneAndUpdate({_id: req.body.id}, req.body, {new: true }, function (err, user) {
+            
+            if (err) {
+                res.status(404).json(err)
+            } else {
+                res.send(user)
+            }
+        })
+    }
+
      
     });
     
-    //    { new: true })
-    //     debugger;
-    //    if (!user) return res.status(404).json({noUserFound: 'No user found'})
-    //    return res.json(user);
+   
 module.exports = router;
        

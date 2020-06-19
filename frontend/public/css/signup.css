@@ -245,13 +245,13 @@
 .signup-dropdown {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .dropdowns-row {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
 
 }
 
@@ -320,13 +320,14 @@
     font-size: 15px;
 }
 
-#signup-lang {
+/* #signup-lang {
     margin-right: 15px;
-}
+} */
 #signup-lang::after {
     margin-right: 15px;
     color: white;
 }
 
-
-
+#signup-name {
+    color: white;
+}

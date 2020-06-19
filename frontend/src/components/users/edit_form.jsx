@@ -9,6 +9,9 @@ class EditForm extends React.Component {
         this.handleDropdown = this.handleDropdown.bind(this);
         this.handleDropdownp = this.handleDropdownp.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleNameErr = this.handleNameErr.bind(this)
+        this.handleGoalErr = this.handleGoalErr.bind(this)
+        this.handleExperienceErr = this.handleExperienceErr.bind(this)
 
         this.state = {
             id: this.props.currentUser.id,
@@ -26,14 +29,76 @@ class EditForm extends React.Component {
     }
     componentDidMount() {
         this.props.fetchUser(this.props.currentUser.id)
-        
+            this.props.clearSessionErrors();
+
+
+            let inputs = document.getElementsByClassName("signup-yes-errors-input");
+
+            Array.from(inputs).forEach(input => {
+                input.className = "signup-no-errors-input";
+            });
+
+            let selects = document.getElementsByClassName("signup-yes-errors-select");
+
+            Array.from(selects).forEach(select => {
+                select.className = "signup-no-errors-select";
+            });
+
+            let textareas = document.getElementsByClassName("signup-yes-errors-textarea");
+
+            Array.from(textareas).forEach(textarea => {
+                textarea.className = "signup-no-errors-textarea";
+            });
     } 
 
     update(field) {
-        return (e) =>
+        return (e) => {
+            this.props.clearSessionErrors();
+
             this.setState({
                 [field]: e.currentTarget.value,
             });
+
+        }
+    }
+
+    handleNameErr() {
+        let field = document.getElementById("signup-name");
+        if (field === null) return;
+
+        if (this.props.errors.name) {
+            field.className = "signup-yes-errors-input";
+            return "Name field is required";
+        } else {
+            field.className = "signup-no-errors-input";
+        }
+
+    }
+
+    handleGoalErr() {
+        let field = document.getElementById("signup-name");
+        if (field === null) return;
+
+        if (this.props.errors.goal) {
+            field.className = "signup-yes-errors-input";
+            return "Goal field is required";
+        } else {
+            field.className = "signup-no-errors-input";
+        }
+
+    }
+
+    handleExperienceErr(){
+        let field = document.getElementById("signup-name");
+        if (field === null) return;
+
+        if (this.props.errors.experience) {
+            field.className = "signup-yes-errors-input";
+            return "Experience field is required";
+        } else {
+            field.className = "signup-no-errors-input";
+        }
+
     }
 
     handleDropdown(e) {
@@ -60,9 +125,14 @@ class EditForm extends React.Component {
 
         };
         debugger;
-        this.props.editUser(user)
-        this.props.history.push("/show");
-        // this.props.updateUser(this.state.user)
+        this.props.editUser(user);
+
+        if (this.props.errors.length === 0) {
+            this.props.history.push('/show')
+        };
+        
+        // this.props.editUser(user)
+       
     }
 
     handleChange = (date) => {
@@ -104,6 +174,7 @@ class EditForm extends React.Component {
                                 placeholder="Name"
                                 id="signup-name"
                             />
+                                <p className="signup-error">{this.handleNameErr()}</p>
                             </label>
 
                             {/* <p className="signup-error">{this.handleNameErr()}</p> */}
@@ -116,11 +187,12 @@ class EditForm extends React.Component {
                                     onChange={this.handleDropdown}
                                     value={language}
                                     id="signup-lang"
-                                    className="signup-no-errors-select" 
+                                    className="signup-no-errors-select"
+                                    name={this.state.language === "" ? 'default' : 'selected'} 
                                 >
                                     <option value="" selected disabled hidden>
                                         Language/framework
-                </option>
+                                    </option>
                                     <option value="Ruby">Ruby</option>
                                     <option value="Rails">Rails</option>
                                     <option value="Javascript">Javascript</option>
@@ -129,6 +201,7 @@ class EditForm extends React.Component {
                                     <option value="CSS">CSS</option>
                                     <option value="Node.js">Node.js</option>
                                 </select>
+
                             </span>
                             {/* <p className="signup-error">{this.handleLangErr()}</p> */}
 
@@ -139,6 +212,7 @@ class EditForm extends React.Component {
                                     value={pronouns}
                                     id="signup-pro"
                                     className="signup-no-errors-select" 
+                                    name={this.state.pronouns === "" ? 'default' : 'selected'}
                                 >
                                     <option value="" selected disabled hidden>
                                         Pronouns
@@ -148,6 +222,7 @@ class EditForm extends React.Component {
                                     <option value="They/Them/Their">They/Them/Their</option>
                                     <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>
                                 </select>
+                                    
                             </span>
                             {/* <p className="signup-error">{this.handleProErr()}</p> */}
                             </div>
@@ -162,6 +237,7 @@ class EditForm extends React.Component {
                                     id="signup-goal"
                                     placeholder='Goal'
                                 />
+                                <p className="signup-error">{this.handleGoalErr()}</p>
                             </label>
 
                             {/* <p className="signup-error">{this.handleGoalErr()}</p> */}
@@ -178,6 +254,7 @@ class EditForm extends React.Component {
                                     id="signup-exp"
                                     placeholder='Experience'
                                 />
+                                <p className="signup-error">{this.handleExperienceErr()}</p>
                             </label>
 
                             {/* <p className="signup-error">{this.handleExpErr()}</p> */}

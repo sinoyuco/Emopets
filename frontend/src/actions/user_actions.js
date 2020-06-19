@@ -1,7 +1,10 @@
 import * as APIUtil from '../util/users_util';
+import {receiveErrors} from './session_actions';
+
 export const RECEIVE_ALL_USERS = "RECEIVE_ALL_USERS";
 export const RECEIVE_USER = 'RECEIVE_USER';
 export const UPDATE_USER = "UPDATE_USER";
+
 
 
 
@@ -34,5 +37,6 @@ export const editUser = (userData) => dispatch => {
     debugger;
     return APIUtil.editUser(userData)
 .then((user) => dispatch(updateUser(user)))
+        .catch(err => dispatch(receiveErrors(err.response.data)))
 }
 // .fail(err => console.log("error here"))
