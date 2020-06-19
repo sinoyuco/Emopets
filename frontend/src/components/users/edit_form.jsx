@@ -77,9 +77,9 @@ class EditForm extends React.Component {
             return <> </>
         } else {
             return (
-                <div className="signup-form-container" style={{ paddingTop: "50px" }}>
-                    <form onSubmit={this.handleSubmit} className="signup-form-with-header">
-                        <div className="signup-form">
+                <div className="signup-form-container1" style={{ paddingTop: "50px" }}>
+                    <form onSubmit={this.handleSubmit} >
+                        <div className="signup-form1">
                             <h1>Edit your profile</h1>
                             <p className="edit-email-warning">*Emails cannot be changed!</p>
                             <input
@@ -153,7 +153,7 @@ class EditForm extends React.Component {
                             </div>
                             <label>
                                 {/* Goal: */}
-              <br />
+                            <br />
                                 <textarea
                                     className="signup-no-errors-textarea"
                                     style={{ resize: "none" }}
