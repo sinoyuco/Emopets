@@ -28,7 +28,7 @@ class NavBar extends React.Component{
 
   notification(){
     
-    if (this.props.currentUser === undefined) {
+    if (this.props.currentUser === undefined || !Object.values(this.props.currentUser).length) {
 
       return(
         <>
@@ -36,7 +36,7 @@ class NavBar extends React.Component{
       )
 
     } else if (this.props.notifications.length === 0) {
-
+      debugger
       return (
         <Link to='/notifications'>
         <h3 id="some-notificaitons"
