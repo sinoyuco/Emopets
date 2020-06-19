@@ -391,6 +391,7 @@ class SignupForm extends React.Component {
             <p className="signup-error">{this.handleBirthDateErr()}</p>
 
             <input type="submit" value="Submit" />
+            <p className="link-to-other-form">Already have an account? <Link to="/login">Log in</Link></p>
           </div>
         </form>
       </div>

@@ -13,14 +13,34 @@ class Notifications extends React.Component {
     
 
     componentDidMount() {
-
         this.props.fetchNotifications(this.props.currentUser.id);
         this.props.fetchUsers();
+        // const filtered = this.props.notifications.filter(notif => (notif['type']==='unseen'));
+        // if(filtered.length){
+        //     debugger;
+        //     filtered.forEach(element => {
+        //         this.props.flipNotification(element._id)
+        //     });
+            
+        // }
     }
+
+    componentWillUnmount(){
+        debugger;
+        const filtered = this.props.notifications.filter(notif => (notif['type'] === 'unseen'));
+        if (filtered.length) {
+            debugger;
+            filtered.forEach(element => {
+                this.props.flipNotification(element._id)
+            });
+
+        }
+    }
+
 
     notificationList() {
         return (
-            this.props.notifications.map((notif, idx) => (
+            this.props.notifications.reverse().map((notif, idx) => (
                     <NotificationListItem 
                     idx={idx}
                     notif={notif}
