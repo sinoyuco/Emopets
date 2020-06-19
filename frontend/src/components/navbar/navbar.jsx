@@ -36,7 +36,7 @@ class NavBar extends React.Component{
       )
 
     } else if (this.props.notifications.length === 0) {
-      debugger
+      //debugger
       return (
         <Link to='/notifications'>
         <button id="some-notificaitons"

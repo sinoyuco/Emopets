@@ -29,11 +29,11 @@ class Play extends React.Component {
     }
 
     render() {
-        debugger;
+        //debugger;
         const liked = this.props.likes.filter(like => (like['type']==='like')).map(like => like['liked']);
         const disliked = this.props.likes.filter(like => (like['type'] === 'dislike')).map(like => like['liked']);
 
-        debugger;
+        //debugger;
         if (this.props.users.length) {
             let usersSome
                 if (this.state.search.length) {

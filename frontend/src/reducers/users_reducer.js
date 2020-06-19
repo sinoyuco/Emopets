@@ -27,7 +27,7 @@ const usersReducer = (state={}, action) => {
 
             let id = JSON.parse(action.user.config.data).id
             let user = JSON.parse(action.user.config.data)
-            debugger
+            //debugger
             return Object.assign({}, state, {[id]: user});
 
             // return Object.assign({}, {[action.user.data._id]: JSON.parse(action.user.data)});

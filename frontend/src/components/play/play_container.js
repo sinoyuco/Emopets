@@ -5,7 +5,7 @@ import { postLike, fetchLikes } from '../../actions/like_actions';
 import {fetchNotifications} from '../../actions/notification_actions';
 
 const mSTP = (state) => { 
-    debugger
+    //debugger
     return {
     users: Object.values(state.users),
     currentUser: state.session.user,

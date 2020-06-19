@@ -126,7 +126,7 @@ class EditForm extends React.Component {
             pronouns: this.state.pronouns,
 
         };
-        debugger;
+        //debugger;
         this.props.editUser(user);
         this.props.history.push('/show')
        
@@ -162,7 +162,7 @@ class EditForm extends React.Component {
                             {/* <p className="signup-error">{this.handleEmailErr()}</p> */}
 
                             <label>
-                                {/* Name: */}
+                                Name:
                                 <br/>
                             <input
                                 className="signup-no-errors-input"
@@ -179,7 +179,7 @@ class EditForm extends React.Component {
 
                             <div className="signup-dropdown">
                             <span>
-                                {/* <label>Language/Framework:</label> */}
+                                <label>Language/Framework:
 
                                 <select
                                     onChange={this.handleDropdown}
@@ -199,12 +199,12 @@ class EditForm extends React.Component {
                                     <option value="CSS">CSS</option>
                                     <option value="Node.js">Node.js</option>
                                 </select>
-
+                                    </label>
                             </span>
                             {/* <p className="signup-error">{this.handleLangErr()}</p> */}
 
                             <span>
-                                {/* <label>Pronouns:</label> */}
+                                <label>Pronouns:
                                 <select
                                     onChange={this.handleDropdownp}
                                     value={pronouns}
@@ -220,12 +220,12 @@ class EditForm extends React.Component {
                                     <option value="They/Them/Their">They/Them/Their</option>
                                     <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>
                                 </select>
-                                    
+                                    </label>
                             </span>
                             {/* <p className="signup-error">{this.handleProErr()}</p> */}
                             </div>
                             <label>
-                                {/* Goal: */}
+                                Goal:
                             <br />
                                 <textarea
                                     className="signup-no-errors-textarea"
@@ -241,9 +241,9 @@ class EditForm extends React.Component {
                             {/* <p className="signup-error">{this.handleGoalErr()}</p> */}
 
                             <label>
-                                {/* {" "}
-                                Experience: */}
-              <br />
+                                {/* {" "} */}
+                                Experience:
+                                 <br />
                                 <textarea
                                 className="signup-no-errors-textarea"   
                                     style={{ resize: "none" }}
