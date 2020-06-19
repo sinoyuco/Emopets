@@ -15,6 +15,11 @@
     background: #34495e;
 }
 
+.link-to-other-form {
+    font-size: 20px;
+    color: white;
+}
+
 .login-nav {
     width: auto;
     height: 60px;
