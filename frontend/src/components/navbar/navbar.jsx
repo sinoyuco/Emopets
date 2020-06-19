@@ -39,11 +39,11 @@ class NavBar extends React.Component{
       debugger
       return (
         <Link to='/notifications'>
-        <h3 id="some-notificaitons"
+        <button id="some-notificaitons"
           onMouseEnter={this.showNav}
           onMouseLeave={this.hideNav}
         >
-          V
+            <i class="fa fa-globe" aria-hidden="true"></i>
           <div className="hidden-nav-dropdown">
             <h5>Nobody likes you :(</h5>
             <img
@@ -61,7 +61,7 @@ class NavBar extends React.Component{
           </Link>
           </div>
           
-        </h3>
+        </button>
         </Link>
       );
 
@@ -74,7 +74,7 @@ class NavBar extends React.Component{
                 onMouseEnter={this.showNav}
                 onMouseLeave={this.hideNav}
               >
-                V
+                <i class="fa fa-globe" aria-hidden="true"></i>
                 <div className="hidden-nav-dropdown">
                   <div className='match-notifs'>
                     {top3}
