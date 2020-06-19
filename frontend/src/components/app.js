@@ -9,6 +9,7 @@ import UserShowContainer from './users/user_show_container';
 import PlayContainer from './play/play_container'
 import EditFormContainer from './users/edit_form_container'
 import NotificationsContainer from './notifications/notification_container';
+import LikesContainer from './liked/users_ive_liked_container';
 import TeamShow from './team/team';
 
 
@@ -19,6 +20,7 @@ const App = () => (
         <Switch>
             <Route exact path="/" component={SplashPageContainer} />
             <Route exact path="/team" component={TeamShow} />
+            <ProtectedRoute exact path="/likes" component={LikesContainer} />
             <ProtectedRoute exact path="/play" component={PlayContainer} />
             <ProtectedRoute path='/show' component={UserShowContainer}/>
             <ProtectedRoute path='/notifications' component={NotificationsContainer}/>
