@@ -85,6 +85,7 @@ class EditForm extends React.Component {
                             <input
                                 type="text"
                                 value={email}
+                                className="signup-no-errors-input"
                                 // onChange={this.update("email")}
                                 // placeholder="Email"
                                 id="signup-email"
@@ -93,9 +94,10 @@ class EditForm extends React.Component {
                             {/* <p className="signup-error">{this.handleEmailErr()}</p> */}
 
                             <label>
-                                Name:
+                                {/* Name: */}
                                 <br/>
                             <input
+                                className="signup-no-errors-input"
                                 type="text"
                                 value={name}
                                 onChange={this.update("name")}
@@ -106,17 +108,18 @@ class EditForm extends React.Component {
 
                             {/* <p className="signup-error">{this.handleNameErr()}</p> */}
 
-
+                            <div className="signup-dropdown">
                             <span>
-                                <label>Language/Framework:</label>
+                                {/* <label>Language/Framework:</label> */}
 
                                 <select
                                     onChange={this.handleDropdown}
                                     value={language}
                                     id="signup-lang"
+                                    className="signup-no-errors-select" 
                                 >
                                     <option value="" selected disabled hidden>
-                                        Please Select
+                                        Language/framework
                 </option>
                                     <option value="Ruby">Ruby</option>
                                     <option value="Rails">Rails</option>
@@ -130,15 +133,16 @@ class EditForm extends React.Component {
                             {/* <p className="signup-error">{this.handleLangErr()}</p> */}
 
                             <span>
-                                <label>Pronouns:</label>
+                                {/* <label>Pronouns:</label> */}
                                 <select
                                     onChange={this.handleDropdownp}
                                     value={pronouns}
                                     id="signup-pro"
+                                    className="signup-no-errors-select" 
                                 >
                                     <option value="" selected disabled hidden>
-                                        Please Select
-                </option>
+                                        Pronouns
+                                    </option>
                                     <option value="He/Him/His">He/Him/His</option>
                                     <option value="She/Her/Hers">She/Her/Hers</option>
                                     <option value="They/Them/Their">They/Them/Their</option>
@@ -146,27 +150,33 @@ class EditForm extends React.Component {
                                 </select>
                             </span>
                             {/* <p className="signup-error">{this.handleProErr()}</p> */}
-
+                            </div>
                             <label>
-                                Goal:
+                                {/* Goal: */}
               <br />
                                 <textarea
+                                    className="signup-no-errors-textarea"
+                                    style={{ resize: "none" }}
                                     value={goal}
                                     onChange={this.update("goal")}
                                     id="signup-goal"
+                                    placeholder='Goal'
                                 />
                             </label>
 
                             {/* <p className="signup-error">{this.handleGoalErr()}</p> */}
 
                             <label>
-                                {" "}
-                                Experience:
+                                {/* {" "}
+                                Experience: */}
               <br />
                                 <textarea
+                                className="signup-no-errors-textarea"   
+                                    style={{ resize: "none" }}
                                     value={experience}
                                     onChange={this.update("experience")}
                                     id="signup-exp"
+                                    placeholder='Experience'
                                 />
                             </label>
 

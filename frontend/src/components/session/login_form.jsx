@@ -59,10 +59,10 @@ class LoginForm extends React.Component {
         if (field === null) return;
 
       if (this.props.errors.email) {
-        field.className = "login-yes-errors-input";
+        field.className = "login-yes-errors-input1";
         return this.props.errors.email;
     } else {
-        field.className = "login-no-errors-input";
+        field.className = "login-no-errors-input1";
     }
   }
 
@@ -72,22 +72,22 @@ class LoginForm extends React.Component {
 
 
       if (this.props.errors.password) {
-        field.className = "login-yes-errors-input";
+        field.className = "login-yes-errors-input1";
         return this.props.errors.password;
     } else {
-        field.className = "login-no-errors-input";
+        field.className = "login-no-errors-input1";
     }
   }
 
   render() {
     return (
       <div className="login-form-container"> 
-        <div className="login-form">
+        <div className="login-form1">
             <h1>Log-In Here</h1>
           <form onSubmit={this.handleSubmit}>
             <input
                 id="login-email"
-              className="login-no-errors-input"
+              className="login-no-errors-input1"
               type="text"
               value={this.state.email}
               onChange={this.update("email")}
@@ -97,7 +97,7 @@ class LoginForm extends React.Component {
             <input
                 id="login-password"
               type="password"
-              className="login-no-errors-input"
+              className="login-no-errors-input1"
               value={this.state.password}
               onChange={this.update("password")}
               placeholder="Password"
