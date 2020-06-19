@@ -18,7 +18,7 @@ class Notifications extends React.Component {
         if(this.props.notifications.length){
             debugger;
             this.props.notifications.forEach(element => {
-                this.props.flipNotification(element.id)
+                this.props.flipNotification(element._id)
             });
             
         }
