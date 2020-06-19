@@ -289,15 +289,18 @@ class SignupForm extends React.Component {
             <p className="signup-error">{this.handlePassword2Err()}</p>
           <div className="signup-dropdown">
             <div className='dropdowns-row'>
-                <span>
+                <span className='signup-lang-span'>
 
                   <select
                     onChange={this.handleDropdown}
                     value={this.state.value}
                     id="signup-lang"
+                    className="signup-no-errors-select" 
+                    id={this.state.language==="" ? 'default' : 'selected' }
+                    // style={{color: 'red'}}
                   >
                     <option 
-                    className="signup-no-errors-select" 
+                    
                     value="" selected disabled hidden>
                       Language/framework
                     </option>
@@ -317,9 +320,11 @@ class SignupForm extends React.Component {
                   <select
                     onChange={this.handleDropdownp}
                     value={this.state.value}
+                    className="signup-no-errors-select"
                     id="signup-pro"
+                    id={this.state.pronouns==="" ? 'default' : 'selected' }
                   >
-                    <option className="signup-no-errors-select" value="" selected disabled hidden>
+                    <option  value="" selected disabled hidden>
                       Pronouns
                     </option>
                     <option id='option' value="He/Him/His">He/Him/His</option>
