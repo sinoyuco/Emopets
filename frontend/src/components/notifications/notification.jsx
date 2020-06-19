@@ -76,7 +76,7 @@ class Notifications extends React.Component {
                     style={{height: `${height}px`}}
                     >
                         <div>
-                            <i class="far fa-smile fa-9x"></i>
+                            <i className="far fa-smile fa-9x"></i>
                             <h1
                             style={{ marginTop: "50px" }}
                             >Below are your likers!  Email to connect!</h1>
@@ -93,7 +93,7 @@ class Notifications extends React.Component {
             <div className="notifications-background">
                 <div className="no-notificaitons-container">
                     <div>
-                        <i class="fas fa-user-alt-slash fa-9x" />
+                        <i className="fas fa-user-alt-slash fa-9x" />
                             <h1>No likes yet  🙁</h1>
                         <Link to="/play">
                             <button>
