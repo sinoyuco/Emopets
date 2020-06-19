@@ -64,6 +64,37 @@
   border-radius: 25px;
 }
 
+.send-email {
+  color: white;
+  float:  right !important;
+}
+
+.send-email:hover {
+  font-size: 14px;
+  color: white;
+}
+
+.notif-body {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.send-email i{
+  font-size: 25px;
+  margin-top: 43%;
+  /* margin-left: 30px; */
+}
+
+.send-email i:hover {
+  font-size: 26px;
+}
+
+/* a[href^="mailto:"]::after {
+  content: " (&#x1f4e8;&#x2197;&#xfe0f;)";
+} */
+
 .yes-notifications-container {
   overflow: auto;
   margin-top: 3%;
@@ -112,7 +143,10 @@
   margin-right: auto;
   /* padding-left: 15px; */
   /* padding-right: 15px; */
-  padding: 8px;
+  padding-left: 8px;
+  padding-right: -1px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   transition: 0.5s;
   border-radius: 7px;
   border: none;
