@@ -9,6 +9,10 @@ const NotificationSchema = new Schema({
     matched_with: {
         type: String,
         required: true
+    },
+    type:{
+        type: String,
+        required: true
     }
 })
 

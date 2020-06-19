@@ -20,6 +20,18 @@ router.get('/:id', (req, res) => {
         );
 });
 
+router.patch('/:id', (req, res) => {
+    const notif = Notification.findOneAndUpdate({ _id: req.params.id }, {type:'seen'}, { new: true }, function (err, notif) {
+
+        if (err) {
+            res.status(404).json(err)
+        } else {
+            res.send(notif)
+        }
+    })
+    
+});
+
 
 
 

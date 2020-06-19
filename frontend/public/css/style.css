@@ -119,19 +119,74 @@
 
 .entire-team-show{
   background-color: #25394F;
-  height: 100vh;
-
+  min-height: 100vh;
+  width: 100vw;
+  padding-top: 75px;
+  
 }
 
 .entire-team-grid{
   display: grid;
-  grid-template-columns: 25% 25%;
+  grid-template-columns: 30% 30%;
   grid-gap: 50px;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-around;
 
 }
 
 .entire-team-member {
-  background-color: red;
   width: 100%;
   height: 100%;
+  text-align: center;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.entire-team-member h1 {
+  color: #d4d4dc;
+  font-family: 'Josefin Sans', sans-serif;
+  padding: 5.2%;
+}
+
+.team-member-image {
+  height: 200px;
+  width: 200px;
+  border-radius: 25px;
+  margin-right: 15%;
+}
+
+.member-picture-and-info{
+  display: flex;
+  align-items: row;
+  align-content: center;
+  justify-content: center;
+}
+.github-and-linkedin{
+  list-style: none;
+}
+
+.fa-linkedin {
+  color: black;
+  cursor: pointer;
+}
+
+.fa-github {
+  margin-top: 50%;
+  color: black;
+  cursor: pointer;
+}
+
+.fa-linkedin:hover {
+  color: #feda6a;
+  transition: 1.25s;
+  opacity: 50%;
+  cursor: pointer;
+}
+
+.fa-github:hover {
+  margin-top: 50%;
+  color: #feda6a;
+  transition: 1.25s;
+  opacity: 50%;
+  cursor: pointer;
 }
