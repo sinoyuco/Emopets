@@ -24,14 +24,14 @@ class TeamShow extends React.Component {
             <ul className="github-and-linkedin">
             
             <li>
-              <i class="fa fa-linkedin"
+              <i className="fa fa-linkedin"
               style={{fontSize: "48px"}}
                     onClick={() => window.location = "https://www.linkedin.com/in/hira-quddus-94963413b/"}
               ></i>
             </li>
 
             <li>
-              <i class="fa fa-github"
+              <i className="fa fa-github"
               style={{fontSize: "48px"}}
               onClick={() => window.location = "https://github.com/hquddus93"}
               ></i>
@@ -50,14 +50,14 @@ class TeamShow extends React.Component {
               <ul className="github-and-linkedin">
 
                 <li>
-                  <i class="fa fa-linkedin"
+                  <i className="fa fa-linkedin"
                     style={{ fontSize: "48px" }}
                     onClick={() => window.location = "https://www.linkedin.com/in/sinan-yucesan-91289a134/"}
                   ></i>
                 </li>
 
                 <li>
-                  <i class="fa fa-github"
+                  <i className="fa fa-github"
                     style={{ fontSize: "48px" }}
                     onClick={() => window.location = "https://github.com/sinoyuco"}
                   ></i>
@@ -76,14 +76,14 @@ class TeamShow extends React.Component {
               <ul className="github-and-linkedin">
 
                 <li>
-                  <i class="fa fa-linkedin"
+                  <i className="fa fa-linkedin"
                     style={{ fontSize: "48px" }}
                     onClick={() => window.location = "https://www.linkedin.com/in/oleksandr-melnykov-347b811a8/"}
                   ></i>
                 </li>
 
                 <li>
-                  <i class="fa fa-github"
+                  <i className="fa fa-github"
                     style={{ fontSize: "48px" }}
                     onClick={() => window.location = "https://github.com/omelnykov1"}
                   ></i>
@@ -102,14 +102,14 @@ class TeamShow extends React.Component {
               <ul className="github-and-linkedin">
 
                 <li>
-                  <i class="fa fa-linkedin"
+                  <i className="fa fa-linkedin"
                     style={{ fontSize: "48px" }}
                     onClick={() => window.location = "https://www.linkedin.com/in/karlkonetsky/"}
                   ></i>
                 </li>
 
                 <li>
-                  <i class="fa fa-github"
+                  <i className="fa fa-github"
                     style={{ fontSize: "48px" }}
                     onClick={() => window.location = "https://github.com/Steelydanrules"}
                   ></i>
