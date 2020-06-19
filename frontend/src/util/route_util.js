@@ -17,9 +17,9 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
 
 const Edit = ({ component: Component, path, users, currentUser, fetchUsers, exact }) => (
     <Route path={path} exact={exact} render={(props) => {
-        debugger
+        //debugger
         // fetchUsers();
-        // debugger; 
+        //debugger; 
         
         return (
             users[currentUser.id] !== currentUser ? (
@@ -48,7 +48,7 @@ const Protected = ({ component: Component, loggedIn, ...rest }) => (
 );
 
 const mapStateToProps = state => {
-    debugger;
+    //debugger;
     return ({ 
         loggedIn: state.session.isAuthenticated,
         currentUser: state.session.user,

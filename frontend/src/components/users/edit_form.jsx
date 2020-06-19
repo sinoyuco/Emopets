@@ -126,7 +126,7 @@ class EditForm extends React.Component {
             pronouns: this.state.pronouns,
 
         };
-        debugger;
+        //debugger;
         this.props.editUser(user);
         this.props.history.push('/show')
        

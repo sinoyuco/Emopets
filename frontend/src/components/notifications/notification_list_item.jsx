@@ -4,7 +4,7 @@ import React from 'react'
 //props.users[props.notif.matched_with].language
 
 export const NotificationListItem = (props) => {
-  debugger;
+  //debugger;
   const newBanner = ((props.notif.type === 'unseen') ? <div className="new-banner-container"><p className="new-banner-message">new</p></div> : null);
   return(
     <div className="notification-list-item-notif">

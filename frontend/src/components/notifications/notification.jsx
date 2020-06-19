@@ -15,21 +15,13 @@ class Notifications extends React.Component {
     componentDidMount() {
         this.props.fetchNotifications(this.props.currentUser.id);
         this.props.fetchUsers();
-        // const filtered = this.props.notifications.filter(notif => (notif['type']==='unseen'));
-        // if(filtered.length){
-        //     debugger;
-        //     filtered.forEach(element => {
-        //         this.props.flipNotification(element._id)
-        //     });
-            
-        // }
     }
 
     componentWillUnmount(){
-        debugger;
+        //debugger;
         const filtered = this.props.notifications.filter(notif => (notif['type'] === 'unseen'));
         if (filtered.length) {
-            debugger;
+            //debugger;
             filtered.forEach(element => {
                 this.props.flipNotification(element._id)
             });
@@ -46,14 +38,6 @@ class Notifications extends React.Component {
                     notif={notif}
                     users={this.props.users}      
                     />
-                    //test
-                
-                    // <h1>TEST</h1>
-                    // <h1>TEST</h1>
-                    // <h1>TEST</h1>
-                    // <h1>TEST</h1>
-                    // <p key={idx}>You've matched with {this.props.users[notif.matched_with].name}</p>
-                    // <p>Contact your pair via email: {this.props.users[notif.matched_with].email}</p>
                 )
             )
         )
