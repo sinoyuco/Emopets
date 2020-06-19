@@ -44,7 +44,7 @@
 .signup-form {
     font-family: 'Varela Round', sans-serif;
     width: 39vw;
-    height: 125vh;
+    min-height: fit-content;
     padding: 40px;
     left: 33%;
     margin-top: 100px;
@@ -93,10 +93,19 @@
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: white;
+    color: grey;
     border-radius: 24px;
     transition: 0.25s;
 }
+
+[name=default] {
+    color:gray;
+}
+
+[name=selected] {
+    color:white;
+}
+
 
 
 .signup-yes-errors-input {
@@ -135,32 +144,6 @@
     transition: 0.25s;
 }
 
-#default {
-    color: grey;
-}
-
-#selected {
-    color: white;
-}
-
-
-
-
-/* .signup-no-errors-select option {
-    color: white;
-}
-.signup-no-errors-select::before {
-    color: white;
-}  */
-
-select > option {
-    color: red;
-}
-
-/* .signup-no-errors-select::after {
-    color: white;
-}  */
-
 .signup-yes-errors-select {
    border: 2px solid red;
     font-family: 'Varela Round', sans-serif;
@@ -171,7 +154,7 @@ select > option {
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: white;
+    color: grey;
     border-radius: 24px;
     transition: 0.25s;
 }
@@ -261,7 +244,7 @@ select > option {
 }
 .signup-dropdown {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 

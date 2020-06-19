@@ -295,13 +295,15 @@ class SignupForm extends React.Component {
                     onChange={this.handleDropdown}
                     value={this.state.value}
                     id="signup-lang"
-                    className="signup-no-errors-select" 
-                    id={this.state.language==="" ? 'default' : 'selected' }
+                    className="signup-no-errors-select"
+                    name={this.state.language === "" ? 'default' : 'selected'}
+                    
                     // style={{color: 'red'}}
                   >
                     <option 
                     
-                    value="" selected disabled hidden>
+                    value="" selected disabled hidden
+                      >
                       Language/framework
                     </option>
                     <option value="Ruby">Ruby</option>
@@ -314,17 +316,20 @@ class SignupForm extends React.Component {
                   </select>
                 </span>
                 
-
+                
                 <span>
                   {/* <label>Pronouns:</label> */}
                   <select
                     onChange={this.handleDropdownp}
                     value={this.state.value}
                     className="signup-no-errors-select"
+                    name={this.state.pronouns === "" ? 'default' : 'selected'}
+                    
                     id="signup-pro"
-                    id={this.state.pronouns==="" ? 'default' : 'selected' }
+                    
                   >
-                    <option  value="" selected disabled hidden>
+                    <option  value="" selected disabled hidden
+                      >
                       Pronouns
                     </option>
                     <option id='option' value="He/Him/His">He/Him/His</option>
