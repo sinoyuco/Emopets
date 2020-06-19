@@ -13,9 +13,15 @@ class Notifications extends React.Component {
     
 
     componentDidMount() {
-
         this.props.fetchNotifications(this.props.currentUser.id);
         this.props.fetchUsers();
+        if(this.props.notifications.length){
+            debugger;
+            this.props.notifications.forEach(element => {
+                this.props.flipNotification(element.id)
+            });
+            
+        }
     }
 
     notificationList() {

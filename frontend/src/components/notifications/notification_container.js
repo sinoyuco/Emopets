@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchNotifications } from '../../actions/notification_actions';
+import { fetchNotifications, flipNotification } from '../../actions/notification_actions';
 import { fetchUsers } from '../../actions/user_actions';
 import Notifications from './notification'
 // import { fetchUser } from '../../util/users_util';
@@ -17,6 +17,7 @@ const mSTP = state => {
 
 const mDTP = dispatch => ({
     fetchNotifications: (userId) => dispatch(fetchNotifications(userId)),
+    flipNotification: (userId) => dispatch(flipNotification(userId)),
     fetchUsers: () => dispatch(fetchUsers())
 
 });

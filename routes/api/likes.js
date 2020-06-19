@@ -33,19 +33,21 @@ router.post('/',
         // if (!isValid) {
         //     return res.status(400).json(errors);
         // }
-        if (req.body.type='like'){
+        if (req.body.type==='like'){
         Like.find({ user: req.body.liked, liked: req.user.id, type: 'like' }).then((likes) => {
             if (likes.length!==0) {
                 const newNotif = new Notification({ 
                     user: req.body.liked,
-                    matched_with: req.user.id
+                    matched_with: req.user.id,
+                    type: 'unseen'
                  });
 
                  newNotif.save().then(() => console.log('saved'));
 
                 const newNotif2 = new Notification({
                     user: req.user.id,
-                    matched_with: req.body.liked
+                    matched_with: req.body.liked,
+                    type: 'unseen'
                 });
 
                 newNotif2.save().then(() => console.log('saved'));
@@ -59,6 +61,8 @@ router.post('/',
             liked: req.body.liked,
             type: req.body.type
         });
+
+        console.log(newLike);
 
         newLike.save()
         .then(like => res.json(like))

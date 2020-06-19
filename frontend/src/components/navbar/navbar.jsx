@@ -64,7 +64,7 @@ class NavBar extends React.Component{
       );
 
     } else {
-      let top3 = this.props.notifications.slice(0, 2);
+      let top3 = this.props.notifications.filter(notif => (notif['type']==='unseen'));
 
           return (
             <Link to='/notifications'>

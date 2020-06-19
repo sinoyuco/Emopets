@@ -1,4 +1,4 @@
-import { RECEIVE_NOTIFICATIONS, CLEAR_NOTIFICATIONS} from '../actions/notification_actions';
+import { RECEIVE_NOTIFICATIONS, CLEAR_NOTIFICATIONS, UPDATE_NOTIFICATION} from '../actions/notification_actions';
 // import { RECEIVE_USER_LOGOUT} from '../actions/session_actions';
 
 const notificationsReducer = (state = {}, action) => {
@@ -10,12 +10,16 @@ const notificationsReducer = (state = {}, action) => {
                 notifs[notif._id] = notif
             });
             return Object.assign({}, notifs);
-   
+
+        case UPDATE_NOTIFICATION:
+            debugger;
+            return state;
         
         case CLEAR_NOTIFICATIONS:
-            debugger
             return [];
 
+        // case UPDATE_NOTIFICATIONS:
+        //     return 
         default:
             return state;
     }
