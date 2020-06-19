@@ -149,6 +149,11 @@ class NavBar extends React.Component{
           />
         </Link>
         <ul>
+          {/* <li>
+            <Link to="/team">
+              <button className="navbar-button">Team</button>
+            </Link>
+          </li> */}
             {this.logInOrSignUpButton()}
           <li>
             <Link to="/">
