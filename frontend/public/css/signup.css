@@ -7,6 +7,15 @@
     background: #34495e;
 }
 
+.signup-form-container1 {
+    height: 100%;
+    width: 100vw;
+    padding: 0;
+    position: absolute;
+    top: 0;
+    background: #34495e;
+}
+
 
 .signup-nav {
     width: auto;
@@ -38,6 +47,23 @@
     padding: 40px;
     left: 33%;
     margin-top: 100px;
+    margin-right: auto;
+    margin-left: auto;
+    transform: translate(-50% -50%);
+    background: transparent;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 70px 0 70px 0;
+    background: rgba(0,0,0,0.4);
+    box-shadow: 5px 7px 20px -5px  rgba(0,0,0,0.4);
+}
+
+.signup-form1 {
+    font-family: 'Varela Round', sans-serif;
+    width: 33vw;
+    padding: 40px;
+    left: 33%;
+    margin-top: 36px;
     margin-right: auto;
     margin-left: auto;
     transform: translate(-50% -50%);
@@ -178,6 +204,13 @@
     font-weight: 500;
 }
 
+.signup-form-container1 h1 {
+    font-family: 'Varela Round', sans-serif;
+    color: white;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
 
 
 .signup-form input[type=submit] {
@@ -194,12 +227,49 @@
     border-radius: 24px;
     transition: 0.25s;
 }
+
+.signup-form1 input[type=submit] {
+    font-family: 'Varela Round', sans-serif;
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #2ecc71;
+    padding: 14px 40px;
+    outline: none;
+    color: white;
+    border-radius: 24px;
+    transition: 0.25s;
+}
 .signup-dropdown {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
 }
 
+.dropdowns-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+}
+
+.dropdown-errors {
+     display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    color: red;
+
+}
 .signup-form input[type=submit]:hover{
+     background: #2ecc71;
+    width: 125px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.signup-form1 input[type=submit]:hover{
      background: #2ecc71;
     width: 125px;
     transition: 0.25s;
@@ -209,6 +279,7 @@
 
 .signup-error {
     color: red;
+    
 }
 
 .signup-no-errors-date{
