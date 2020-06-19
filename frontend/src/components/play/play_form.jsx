@@ -25,6 +25,7 @@ class Play extends React.Component {
     componentDidMount() {
         this.props.fetchUsers();
         this.props.fetchLikes(this.props.currentUser.id);
+        // this.props.fetchNotifications(this.props.currentUser.id);
     }
 
     render() {
