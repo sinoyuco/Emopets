@@ -59,11 +59,11 @@ class Notifications extends React.Component {
                     <div className="yes-notifications-container"
                     style={{height: `${height}px`}}
                     >
-                        <div>
-                            <i className="far fa-smile fa-9x"></i>
+                        <div className="notif-cont">
+                            {/* <i class="far fa-smile fa-9x"></i> */}
                             <h1
                             style={{ marginTop: "50px" }}
-                            >Below are your likers!  Email to connect!</h1>
+                            >Happy hacking!</h1>
                             <div className="notification-list-container">
                             {this.notificationList()}
                             </div>
