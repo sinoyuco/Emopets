@@ -15,9 +15,10 @@ class Notifications extends React.Component {
     componentDidMount() {
         this.props.fetchNotifications(this.props.currentUser.id);
         this.props.fetchUsers();
-        if(this.props.notifications.length){
+        const filtered = this.props.notifications.filter(notif => (notif['type']==='unseen'));
+        if(filtered.length){
             debugger;
-            this.props.notifications.forEach(element => {
+            filtered.forEach(element => {
                 this.props.flipNotification(element._id)
             });
             
