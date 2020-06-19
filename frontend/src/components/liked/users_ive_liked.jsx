@@ -55,8 +55,9 @@ class UsersIveLiked extends React.Component {
       let usersArr = Object.values(this.props.users)
   
       let matches = Object.values(this.props.notifications).map((notif) => {
-    
-        return usersObj[notif.matched_with].name
+        if (usersObj[notif.matched_with]) {
+          return usersObj[notif.matched_with].name
+        }
       }
   
       )
@@ -82,38 +83,111 @@ debugger
   )
     } else if (this.findLikes()) {
       debugger
-             return (
-               <div>
-                 <br />
-                 <br />
-                 <br />
-                 <br />
-                 <br />I hope this works!
-                 <h1>TEST</h1>
-                 <h1>TEST</h1>
-                 <h1>TEST</h1>
-                 <h1>TEST</h1>
-                 <h1>
-                   {(this.findLikes().filter(value => this.findMatches().includes(value))).map(val => (
-                     <span>
-                       <p>{val}</p>
-                      <p>MATCHED</p>
-                     </span>
+      return (
+        <div className="notifications-background">
+          <div
+            className="yes-notifications-container"
+            style={{ height: `350px` }}
+          >
+            <div>
+              <i className="far fa-smile fa-9x"></i>
+              <h1 style={{ marginTop: "50px" }}>Below are your likes!</h1>
+              <div className="notification-list-container">
+                {/* {this.notificationList()} */}
+                <div
+                  className="notification-list-item-notif"
+                  style={{ display: "flex" }}
+                  style={{ flexDirection: "row" }}
+                  style={{ padding: "20px" }}
+                  style={{
+                    justifyContent: "space-between",
+                    background: "transparent",
+                  }}
+                >
+                  <div className="name-likes" style={{ fontSize: "20px" }}>
+                    Name
+                  </div>
+                  <div
+                    className="status-likes"
+                    style={{ paddingRight: "10px" }}
+                    style={{ fontSize: "20px" }}
+                  >
+                    Status
+                  </div>
+                </div>
+                {this.findLikes()
+                  .filter((value) => this.findMatches().includes(value))
+                  .map((val) => (
+                    <div
+                      style={{ display: "flex" }}
+                      style={{ flexDirection: "row" }}
+                      style={{ padding: "20px" }}
+                      style={{ justifyContent: "space-between" }}
+                      className="notification-list-item-notif"
+                    >
+                      <div className="name-likes">{val}</div>
+                      <p style={{ paddingRight: "10px", color: "#39CCCC" }}>
+                        MATCHED
+                      </p>
+                    </div>
+                  ))}
+                {this.findLikes()
+                  .filter((value) => !this.findMatches().includes(value))
+                  .map((val) => (
+                    <div
+                      className="notification-list-item-notif"
+                      style={{ display: "flex" }}
+                      style={{ flexDirection: "row" }}
+                      style={{ padding: "20px" }}
+                      style={{ justifyContent: "space-between" }}
+                    >
+                      <div className="name-likes">{val}</div>
+                      <div
+                        className="status"
+                        style={{ paddingRight: "10px", color: "#FF4500" }}
+                      >
+                        PENDING
+                      </div>
+                    </div>
+                  ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      );
 
-                   ))}
-                 </h1>
-                 <h1>
-                   {(this.findLikes().filter(value => !this.findMatches().includes(value))).map(val => (
-                     <span>
-                       <p>{val}</p>
-                      <p>PENDING</p>
-                     </span>
+            //  return (
+            //    <div>
+            //      <br />
+            //      <br />
+            //      <br />
+            //      <br />
+            //      <br />I hope this works!
+            //      <h1>TEST</h1>
+            //      <h1>TEST</h1>
+            //      <h1>TEST</h1>
+            //      <h1>TEST</h1>
+            //      <h1>
+            //        {(this.findLikes().filter(value => this.findMatches().includes(value))).map(val => (
+            //          <span>
+            //            <p>{val}</p>
+            //           <p>MATCHED</p>
+            //          </span>
 
-                   ))}
-                 </h1>
-                 <h1>TEST</h1>
-               </div>
-             );
+            //        ))}
+            //      </h1>
+            //      <h1>
+            //        {(this.findLikes().filter(value => !this.findMatches().includes(value))).map(val => (
+            //          <span>
+            //            <p>{val}</p>
+            //           <p>PENDING</p>
+            //          </span>
+
+            //        ))}
+            //      </h1>
+            //      <h1>TEST</h1>
+            //    </div>
+            //  );
            } else {
              return <></>
            }
