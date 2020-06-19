@@ -173,3 +173,13 @@
   font-size: 16px;
 
 }
+
+.new-banner-container{
+  background: rgb(247, 103, 127);
+  border-radius: 5px;
+  margin-left: 5px;
+}
+
+.new-banner-message{
+  color: white;
+}

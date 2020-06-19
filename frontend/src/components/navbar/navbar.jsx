@@ -85,7 +85,7 @@ class NavBar extends React.Component{
                       )
                       )}
                     <Link to='/notifications' id='dropdown-text'>
-                      <p>See all</p>
+                      <p>See all matches</p>
                     </Link>
 
                     <Link to='/play' id='dropdown-text'>
