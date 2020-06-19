@@ -15,6 +15,11 @@
     background: #34495e;
 }
 
+.link-to-other-form {
+    font-size: 20px;
+    color: white;
+}
+
 .login-nav {
     width: auto;
     height: 60px;
@@ -41,7 +46,7 @@
 .login-form1 {
     font-family: 'Varela Round', sans-serif;
     width: 31vw;
-    height: 60vh;
+    height: 65vh;
     padding: 40px;
     left: 33%;
     margin-top: 200px;

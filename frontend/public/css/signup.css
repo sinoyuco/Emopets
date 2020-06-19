@@ -1,5 +1,5 @@
 .signup-form-container {
-    min-height: 120vh;
+    min-height: 140vh;
     width: 100vw;
     padding: 0;
     position: absolute;
@@ -8,7 +8,7 @@
 }
 
 .signup-form-container1 {
-    height: 100%;
+    min-height: 120vh;
     width: 100vw;
     padding: 0;
     position: absolute;
@@ -43,7 +43,8 @@
 
 .signup-form {
     font-family: 'Varela Round', sans-serif;
-    width: 33vw;
+    width: 39vw;
+    min-height: fit-content;
     padding: 40px;
     left: 33%;
     margin-top: 100px;
@@ -60,7 +61,7 @@
 
 .signup-form1 {
     font-family: 'Varela Round', sans-serif;
-    width: 33vw;
+    width: 39vw;
     padding: 40px;
     left: 33%;
     margin-top: 36px;
@@ -92,10 +93,19 @@
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: white;
+    color: grey;
     border-radius: 24px;
     transition: 0.25s;
 }
+
+[name=default] {
+    color:gray;
+}
+
+[name=selected] {
+    color:white;
+}
+
 
 
 .signup-yes-errors-input {
@@ -129,18 +139,9 @@
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: grey;
+    /* color: grey; */
     border-radius: 50px;
     transition: 0.25s;
-}
-.signup-no-errors-select:focus {
-    color: white;
-    /* width: 280px; */
-    border-color: #2ecc71;
-}
-
-.signup-no-errors-select::before {
-    color: white;
 }
 
 .signup-yes-errors-select {
@@ -153,7 +154,7 @@
     padding: 14px 10px;
     width: 200px;
     outline: none;
-    color: white;
+    color: grey;
     border-radius: 24px;
     transition: 0.25s;
 }
@@ -193,7 +194,6 @@
     border-radius: 24px;
     transition: 0.25s;
 }
-
 
 
 
@@ -244,7 +244,7 @@
 }
 .signup-dropdown {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
 }
 
@@ -323,3 +323,10 @@
 #signup-lang {
     margin-right: 15px;
 }
+#signup-lang::after {
+    margin-right: 15px;
+    color: white;
+}
+
+
+
