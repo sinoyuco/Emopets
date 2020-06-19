@@ -322,7 +322,7 @@ class SignupForm extends React.Component {
                     <option className="signup-no-errors-select" value="" selected disabled hidden>
                       Pronouns
                     </option>
-                    <option value="He/Him/His">He/Him/His</option>
+                    <option id='option' value="He/Him/His">He/Him/His</option>
                     <option value="She/Her/Hers">She/Her/Hers</option>
                     <option value="They/Them/Their">They/Them/Their</option>
                     <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>

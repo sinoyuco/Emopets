@@ -107,13 +107,16 @@
     border-radius: 50px;
     transition: 0.25s;
 }
-.signup-no-errors-select:focus {
+#option {
+    color: white;
+}
+/* .signup-no-errors-select:before {
     color: white;
 }
 
 .signup-no-errors-select::after {
     color: white;
-}
+} */
 
 .signup-yes-errors-select {
    border: 2px solid red;
