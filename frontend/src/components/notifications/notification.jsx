@@ -50,7 +50,7 @@ class Notifications extends React.Component {
 
         if (this.props.notifications.length > 0 && Object.values(this.props.users).length > 0) {
             
-            let additionalSpace = this.props.notifications.length * 25;
+            let additionalSpace = this.props.notifications.length * 52;
             
             let height = 350;
 
@@ -63,8 +63,12 @@ class Notifications extends React.Component {
                     >
                         <div>
                             <i class="far fa-smile fa-9x"></i>
-                            <h1>Below are your likers!  Click to connect!</h1>
+                            <h1
+                            style={{ marginTop: "50px" }}
+                            >Below are your likers!  Email to connect!</h1>
+                            <div className="notification-list-container">
                             {this.notificationList()}
+                            </div>
                         </div>
                     </div>
                 </div>

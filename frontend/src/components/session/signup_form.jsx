@@ -240,7 +240,7 @@ class SignupForm extends React.Component {
   render() {
 
     return (
-      <div className="signup-form-container" style={{ paddingTop: "50px" }}>
+      <div className="signup-form-container" >
         <form onSubmit={this.handleSubmit} className="signup-form-with-header">
           <div className="signup-form">
             <h1>Sign Up Here</h1>
@@ -287,51 +287,58 @@ class SignupForm extends React.Component {
             />
 
             <p className="signup-error">{this.handlePassword2Err()}</p>
+          <div className="signup-dropdown">
+            <div className='dropdowns-row'>
+                <span>
 
-            <span>
-              <label>Language/Framework:</label>
+                  <select
+                    onChange={this.handleDropdown}
+                    value={this.state.value}
+                    id="signup-lang"
+                  >
+                    <option 
+                    className="signup-no-errors-select" 
+                    value="" selected disabled hidden>
+                      Language/framework
+                    </option>
+                    <option value="Ruby">Ruby</option>
+                    <option value="Rails">Rails</option>
+                    <option value="Javascript">Javascript</option>
+                    <option value="React">React</option>
+                    <option value="HTML">HTML</option>
+                    <option value="CSS">CSS</option>
+                    <option value="Node.js">Node.js</option>
+                  </select>
+                </span>
+                
 
-              <select
-                onChange={this.handleDropdown}
-                value={this.state.value}
-                id="signup-lang"
-              >
-                <option 
-                className="signup-no-errors-select" 
-                value="" selected disabled hidden>
-                  Please Select
-                </option>
-                <option value="Ruby">Ruby</option>
-                <option value="Rails">Rails</option>
-                <option value="Javascript">Javascript</option>
-                <option value="React">React</option>
-                <option value="HTML">HTML</option>
-                <option value="CSS">CSS</option>
-                <option value="Node.js">Node.js</option>
-              </select>
+                <span>
+                  {/* <label>Pronouns:</label> */}
+                  <select
+                    onChange={this.handleDropdownp}
+                    value={this.state.value}
+                    id="signup-pro"
+                  >
+                    <option className="signup-no-errors-select" value="" selected disabled hidden>
+                      Pronouns
+                    </option>
+                    <option id='option' value="He/Him/His">He/Him/His</option>
+                    <option value="She/Her/Hers">She/Her/Hers</option>
+                    <option value="They/Them/Their">They/Them/Their</option>
+                    <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>
+                  </select>
+                </span>
+              </div>
+
+            <span className='dropdown-errors'>
+                <p className="signup-error">{this.handleLangErr()}</p>
+
+                <p className="signup-error">{this.handleProErr()}</p>
             </span>
-            <p className="signup-error">{this.handleLangErr()}</p>
-
-            <span>
-              <label>Pronouns:</label>
-              <select
-                onChange={this.handleDropdownp}
-                value={this.state.value}
-                id="signup-pro"
-              >
-                <option className="signup-no-errors-select" value="" selected disabled hidden>
-                  Please Select
-                </option>
-                <option value="He/Him/His">He/Him/His</option>
-                <option value="She/Her/Hers">She/Her/Hers</option>
-                <option value="They/Them/Their">They/Them/Their</option>
-                <option value="Xe/Xem/Xyr">Xe/Xem/Xyr</option>
-              </select>
-            </span>
-            <p className="signup-error">{this.handleProErr()}</p>
+          </div>
 
             <label>
-              Goal:
+              {/* Goal: */}
               <br />
               <textarea
               style={{resize: "none"}}
@@ -339,6 +346,7 @@ class SignupForm extends React.Component {
                 value={this.state.goal}
                 onChange={this.update("goal")}
                 id="signup-goal"
+                placeholder="Your goal"
               />
             </label>
 
@@ -346,7 +354,7 @@ class SignupForm extends React.Component {
 
             <label>
               {" "}
-              Experience:
+              {/* Experience: */}
               <br />
               <textarea
               style={{resize: "none"}}
@@ -354,18 +362,20 @@ class SignupForm extends React.Component {
                 value={this.state.experience}
                 onChange={this.update("experience")}
                 id="signup-exp"
+                placeholder="Experience"
               />
             </label>
 
             <p className="signup-error">{this.handleExpErr()}</p>
 
             <label >
-              Birthdate:
+              {/* Birthdate: */}
               <DatePicker
                 id="date-exp"
                 className="signup-no-errors-date"
                 selected={this.state.birthDate}
                 onChange={this.handleChange}
+                placeholderText='Birthdate'
               />
             </label>
             <p className="signup-error">{this.handleBirthDateErr()}</p>
