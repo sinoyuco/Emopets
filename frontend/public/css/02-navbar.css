@@ -183,11 +183,18 @@
 }
 
 .new-banner-container{
-  background: rgb(247, 103, 127);
+  background: rgb(250, 78, 107);
   border-radius: 5px;
   margin-left: 5px;
+  margin-bottom: auto;
+  top: 0 !important;
+  right: 0;
+  width: 3vw;
+  height: 3vh;
+  text-align: center;
 }
 
 .new-banner-message{
+  text-align: center;
   color: white;
 }
