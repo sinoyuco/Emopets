@@ -1,13 +1,14 @@
 .entire-splash {
-	background-color: #E4DCD0;
+	background-color: #34495e;
 	height: 1500px;
 	width: 100vw;
+	font-family: 'Josefin Sans', sans-serif
 
 }
 
 .splash-header {
   color: red;
-	margin-top: 100px;
+	margin-top: 25px;
 }
 
 .splash-logo{
@@ -16,7 +17,7 @@
 }
 
 .top-of-splash{
-	padding-top: 200px;
+	padding-top: 100px;
 	display: flex;
 	justify-content: center;
 }
@@ -47,26 +48,6 @@
 	margin-bottom: 25px;
 }
 
-.splash-signup-now-button {
-	display: flex;
-	align-items: center;
-	flex-direction: row;
-	margin-left: auto;
-	margin-right: auto;
-	margin-top: 50px;
-	box-shadow:inset 0px 1px 0px 0px #3B4449;
-	border: 1px solid #053049;
-	background-color: #053049;
-	cursor: pointer;
-	border-radius: 5px;
-	/* padding-left: ; */
-	height: 45px;
-	width: 165px;
-	color: #FFFFFF;
-	outline: none;
-	padding-left: 25px;
-}
-
 .splash-make-profile {
 	margin-right: 20%;
 	margin-top: 4%;
@@ -82,6 +63,27 @@
 	margin-top: 4%;
 }
 
+.splash-signup-now-button {
+	display: flex;
+	align-items: center;
+	flex-direction: row;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	margin-top: 50px;
+	border: 2px solid #053049;
+	background-color: #34495D;
+	cursor: pointer;
+	border-radius: 25px;
+	/* padding-left: ; */
+	height: 45px;
+	width: 165px;
+	color: #FFFFFF;
+	outline: none;
+	padding-left: 25px;
+	font-family: 'Josefin Sans', sans-serif
+}
+
 .splash-signup-now-button:hover {
 	display: flex;
 	align-items: center;
@@ -89,15 +91,17 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 50px;
-	box-shadow:inset 0px 1px 0px 0px #2D5066;
-	border: 1px solid #0A4266;
-	background-color: #0A4266;
+	border: 2px solid #2ecc71;
+	background-color: #34495D;
 	cursor: pointer;
-	border-radius: 5px;
+	border-radius: 25px;
+	transition: .5s;
 	/* padding-left: ; */
 	height: 45px;
-	width: 165px;
+	width: 225px;
 	color: #FFFFFF;
 	outline: none;
-	padding-left: 25px;
+	padding-left: 55px;
+	padding-right: 50px;
+	font-family: 'Josefin Sans', sans-serif
 }
