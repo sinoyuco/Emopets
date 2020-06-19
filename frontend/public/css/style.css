@@ -116,3 +116,22 @@
   height: 43px;
   border-radius: 15px;
 }
+
+.entire-team-show{
+  background-color: #25394F;
+  height: 100vh;
+
+}
+
+.entire-team-grid{
+  display: grid;
+  grid-template-columns: 25% 25%;
+  grid-gap: 50px;
+
+}
+
+.entire-team-member {
+  background-color: red;
+  width: 100%;
+  height: 100%;
+}

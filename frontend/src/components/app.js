@@ -9,6 +9,8 @@ import UserShowContainer from './users/user_show_container';
 import PlayContainer from './play/play_container'
 import EditFormContainer from './users/edit_form_container'
 import NotificationsContainer from './notifications/notification_container';
+import TeamShow from './team/team';
+
 
 
 const App = () => (
@@ -16,6 +18,7 @@ const App = () => (
         <NavBarContainer />
         <Switch>
             <Route exact path="/" component={SplashPageContainer} />
+            <Route exact path="/team" component={TeamShow} />
             <ProtectedRoute exact path="/play" component={PlayContainer} />
             <ProtectedRoute path='/show' component={UserShowContainer}/>
             <ProtectedRoute path='/notifications' component={NotificationsContainer}/>
