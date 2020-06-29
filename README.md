@@ -47,8 +47,8 @@ Within OwnProps.Match, users can like each other, and mutual likes will lead to 
 The above code snippet is the portion of the post action for likes that is responsible for querying for an opposing like and creating notifications if such a like is found.
 
 * Card Animation and Filtering
+![Alt Text](https://media.giphy.com/media/daPBXoNCEyHKF16hY0/giphy.gif)
 
-<iframe src="https://giphy.com/embed/daPBXoNCEyHKF16hY0" width="480" height="248" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/daPBXoNCEyHKF16hY0">via GIPHY</a></p>
 
 For the main functionality of the app, users are able to navigate themselves to the 'play' page, where there is a stack of cards for all the users that have signed up to the platform. Cards are flipped initially only showing a color and text combination of the language/framework they have chosen, and will flip to the front side showing more detailed information about the user upon hover.
 
