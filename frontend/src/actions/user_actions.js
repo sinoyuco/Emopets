@@ -34,7 +34,7 @@ export const fetchUser = (userId) => dispatch => (APIUtil.fetchUser(userId))
 
 
 export const editUser = (userData) => dispatch => {
-    debugger;
+    //debugger;
     return APIUtil.editUser(userData)
 .then((user) => dispatch(updateUser(user)))
         .catch(err => dispatch(receiveErrors(err.response.data)))

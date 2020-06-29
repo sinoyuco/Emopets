@@ -5,6 +5,6 @@ export const fetchNotifications = (userId) => (
 );
 
 export const updateNotifications = (notifId) => {
-    debugger;
+    //debugger;
     return axios.patch(`api/notifications/${notifId}`)
 };

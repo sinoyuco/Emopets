@@ -85,7 +85,7 @@ class SignupForm extends React.Component {
     console.log(this.props.errors)
     // this.props.login(user);
 
-    // debugger
+    //debugger
     // if (this.props.errors.length === 0 || this.state.name){
     //   this.props.login(user);
     // }

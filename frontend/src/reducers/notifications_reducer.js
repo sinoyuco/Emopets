@@ -12,7 +12,7 @@ const notificationsReducer = (state = {}, action) => {
             return Object.assign({}, notifs);
 
         case UPDATE_NOTIFICATION:
-            debugger;
+            //debugger;
             return Object.assign({}, state, {[action.notification.data._id]: action.notification.data});
         
         case CLEAR_NOTIFICATIONS:

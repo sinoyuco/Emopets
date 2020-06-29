@@ -36,7 +36,7 @@ class NavBar extends React.Component{
       )
 
     } else if (this.props.notifications.length === 0) {
-      debugger
+      //debugger
       return (
         <Link to='/notifications'>
         <button id="some-notificaitons"
@@ -52,6 +52,13 @@ class NavBar extends React.Component{
               height='200'
               width='200'
             />
+
+            <Link to='/Likes' id='dropdown-text'
+                className='no-notif-dropdown'
+            >
+                <p>See all likes</p>
+            </Link>
+
           <Link to='/play' id='dropdown-text' className='no-notif-dropdown'>
             <p>Find a Pair!</p>
           </Link>
@@ -80,6 +87,10 @@ class NavBar extends React.Component{
                     {top3}
                     <Link to='/notifications' id='dropdown-text'>
                       <p>See all matches</p>
+                    </Link>
+
+                    <Link to='/Likes' id='dropdown-text'>
+                      <p>See all likes</p>
                     </Link>
 
                     <Link to='/play' id='dropdown-text'>

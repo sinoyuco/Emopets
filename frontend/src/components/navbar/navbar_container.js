@@ -4,7 +4,7 @@ import { logout } from "../../actions/session_actions";
 import { fetchNotifications, clearNotifications } from '../../actions/notification_actions';
 
 const mapStateToProps = (state) => {
-  debugger;
+  //debugger;
   return({
   currentUser: state.session.user,
   notifications: Object.values(state.notifications)

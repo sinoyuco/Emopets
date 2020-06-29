@@ -10,7 +10,7 @@ class PlayItem extends React.Component {
 
     handleLike(e){
         e.preventDefault();
-        debugger;
+        //debugger;
         const like ={
             liked: this.props.user._id,
             type: 'like'
@@ -29,7 +29,7 @@ class PlayItem extends React.Component {
 
     birthHandler(date) {
         if (this.props.user.data) {
-            debugger;
+            //debugger;
             const birth = this.props.user.birthDate.split('-')
             return [birth[0], birth[1], birth[2].slice(0, 2)].join('/')
         }
