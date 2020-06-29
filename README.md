@@ -47,6 +47,11 @@ Within OwnProps.Match, users can like each other, and mutual likes will lead to 
 The above code snippet is the portion of the post action for likes that is responsible for querying for an opposing like and creating notifications if such a like is found.
 
 * Card Animation and Filtering
+
+
+
+
+
 ![Alt Text](https://media.giphy.com/media/daPBXoNCEyHKF16hY0/giphy.gif)
 
 
