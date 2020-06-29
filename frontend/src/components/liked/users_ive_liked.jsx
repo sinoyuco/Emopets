@@ -25,7 +25,7 @@ class UsersIveLiked extends React.Component {
 
       let likes = this.findLikes()
       let matches = this.findMatches()
-    debugger
+
     }
 
   }
@@ -68,10 +68,10 @@ class UsersIveLiked extends React.Component {
   }
 
   render(){
-debugger
+
     // if (Object.values(this.props.notifications).length === 0 && Object.values(this.props.likes).length === 0) {
     if (this.findLikes() === undefined || !this.findLikes()) {
-      debugger
+      
   return (
         <>
         <h1>GET TO PAIRING</h1>
@@ -82,7 +82,7 @@ debugger
         </>
   )
     } else if (this.findLikes()) {
-      debugger
+      
       return (
         <div className="notifications-background">
           <div

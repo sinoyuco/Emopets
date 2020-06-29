@@ -51,6 +51,7 @@
 
 .thecard:hover{
   transform: rotateY(180deg);
+  transition-delay: .2s;
   box-shadow: none;
 }
 
