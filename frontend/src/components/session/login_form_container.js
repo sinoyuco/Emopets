@@ -7,8 +7,8 @@ const mapStateToProps = (state) => {
         errors: state.errors.session,
         currentUser: state.session.user,
         demoUser: {
-            email: 'josh@gmail.com',
-            password: 'josh123'
+            email: 'djoko@gmail.com',
+            password: 'djoko123'
         }
     };
 };
